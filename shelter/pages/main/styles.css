@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Arial";
+  src: url("../../assets/fonts/arial.ttf");
+  src: local("Arial"), local("Arial Regular"), url("../../assets/fonts/arial.woff") format("woff");
+}
+@font-face {
+  font-family: "Georgia";
+  src: url("../../assets/fonts/georgia.ttf");
+  src: local("Georgia"), local("Georgia Regular"), url("../../assets/fonts/georgia.woff") format("woff");
+}
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
