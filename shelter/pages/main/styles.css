@@ -27,8 +27,9 @@ h3 {
   font-style: normal;
   font-weight: 400;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 45px;
   letter-spacing: 0.06em;
+  color: #545454;
 }
 
 h4 {
@@ -98,9 +99,12 @@ header ul li {
   font-size: 15px;
   line-height: 160%;
 }
-header ul li a.active, header ul li a:hover, header ul li a:active, header ul li a:focus {
+header ul li a.active, header ul li a:active {
   color: #FFFFFF;
   border-bottom: 3px solid #F1CDB3;
+}
+header ul li a:hover, header ul li a:focus {
+  color: #FFFFFF;
 }
 
 .puppy {
@@ -167,7 +171,6 @@ header ul li a.active, header ul li a:hover, header ul li a:active, header ul li
 .about h3 {
   width: 370px;
   margin-top: 14px;
-  color: #545454;
 }
 .about p {
   margin-top: 25px;
@@ -214,7 +217,6 @@ header ul li a.active, header ul li a:hover, header ul li a:active, header ul li
   background: #FDDCC4;
   border: 2px solid #FDDCC4;
   cursor: pointer;
-  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .our-friends .slider-container .right {
   transform: rotate(-180deg);
@@ -233,13 +235,16 @@ header ul li a.active, header ul li a:hover, header ul li a:active, header ul li
   align-items: center;
   background: #FAFAFA;
   border-radius: 9px;
+  transition: 0.3s all;
 }
 .our-friends .slider-container .slide img {
   width: auto;
+  border-radius: 9px 9px 0px 0px;
 }
 .our-friends .slider-container .slide:hover {
   background: #FFFFFF;
   cursor: pointer;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .our-friends .slider-container .slide:hover > .learn-more {
   background: #FDDCC4;
@@ -296,7 +301,7 @@ header ul li a.active, header ul li a:hover, header ul li a:active, header ul li
 }
 
 #help {
-  padding: 80px 0 100px;
+  padding: 80px 0 98px;
 }
 #help .help {
   margin: 0 auto;
@@ -313,23 +318,23 @@ header ul li a.active, header ul li a:hover, header ul li a:active, header ul li
 }
 #help .help .flex-x5 {
   display: flex;
-  gap: 120px;
+  gap: 119.5px;
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 55px;
 }
 #help .help .flex-x4 {
   display: flex;
-  gap: 120px;
+  gap: 119.5px;
   justify-content: center;
   flex-wrap: wrap;
 }
 #help .help .flex img {
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
 #donation {
-  padding: 82px 0 100px;
+  padding: 81px 0 99px;
   background: #F6F6F6;
 }
 #donation .donation {
@@ -351,7 +356,7 @@ header ul li a.active, header ul li a:hover, header ul li a:active, header ul li
 }
 #donation .donation .text-block h3 {
   width: 300px;
-  line-height: 130%;
+  line-height: 45px;
 }
 #donation .donation .card {
   display: flex;
@@ -415,6 +420,4 @@ footer h4.footer {
 }
 footer img {
   height: auto;
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

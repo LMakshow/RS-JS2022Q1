@@ -29,6 +29,7 @@ h3 {
   font-size: 35px;
   line-height: 130%;
   letter-spacing: 0.06em;
+  color: #545454;
 }
 
 h4 {
@@ -99,9 +100,11 @@ header ul li {
   font-size: 15px;
   line-height: 160%;
 }
-header ul li a.active, header ul li a:hover, header ul li a:active, header ul li a:focus {
-  color: #292929;
+header ul li a.active, header ul li a:active {
   border-bottom: 3px solid #F1CDB3;
+}
+header ul li a:hover, header ul li a:focus {
+  color: #292929;
 }
 
 #our-friends {
@@ -138,13 +141,16 @@ header ul li a.active, header ul li a:hover, header ul li a:active, header ul li
   align-items: center;
   background: #FAFAFA;
   border-radius: 9px;
+  transition: 0.3s all;
 }
 .our-friends .slide img {
   width: auto;
+  border-radius: 9px 9px 0px 0px;
 }
 .our-friends .slide:hover {
   background: #FFFFFF;
   cursor: pointer;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .our-friends .slide:hover > .learn-more {
   background: #FDDCC4;
@@ -217,7 +223,6 @@ header ul li a.active, header ul li a:hover, header ul li a:active, header ul li
   background: #FDDCC4;
   border: 2px solid #FDDCC4;
   cursor: pointer;
-  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .nav-container .right {
   transform: rotate(-180deg);
@@ -266,6 +271,4 @@ footer h4.footer {
 }
 footer img {
   height: auto;
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
