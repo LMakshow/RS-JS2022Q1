@@ -366,6 +366,10 @@ header ul li a:hover, header ul li a:focus {
   border-radius: 9px;
   align-items: center;
   box-sizing: border-box;
+  transition: all 0.2s;
+}
+#donation .donation .card:hover {
+  background: #FDDCC4;
 }
 #donation .donation .card img {
   margin-right: 15px;
