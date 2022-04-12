@@ -13,7 +13,8 @@ $font-serif: Georgia, 'Times New Roman', Times, serif;
     src: local('Georgia'), local('Georgia Regular'),
            url('../../assets/fonts/georgia.woff') format('woff');
   }
-  
+$color-hamburger: #F1CDB3;
+
 @import "../../sass/mixins";
 @import "../../sass/hamburger";
 
@@ -712,7 +713,7 @@ footer {
         align-items: center;
     }
 
-    img {
+    .footer-puppy {
         height: auto;
         @include media-tablet {
             grid-column: 1 / span 2;
@@ -721,6 +722,9 @@ footer {
         }
         @include media-mobile {
             grid-column: 1 / span 1;
+            max-width: 300px;
+            width: 81.25%;
+            padding: 0 30px;
         }
     }
 }
