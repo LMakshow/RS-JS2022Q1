@@ -19,6 +19,7 @@ $font-serif: Georgia, 'Times New Roman', Times, serif;
 
 html {
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -556,7 +557,8 @@ header {
             border-radius: 9px;
             align-items: center;
             box-sizing: border-box;
-            
+            transition: all 0.2s;
+                     
             &:hover {
                 background: #FDDCC4;
             }
