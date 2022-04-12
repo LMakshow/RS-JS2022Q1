@@ -201,6 +201,8 @@ header .header__list li a:hover, header .header__list li a:focus {
 @media (max-width: 767px) {
   .puppy .text-block h2 {
     width: auto;
+    margin: 0 auto;
+    max-width: 250px;
     font-size: 25px;
     line-height: 32px;
     letter-spacing: 0.06em;
@@ -531,6 +533,14 @@ header .header__list li a:hover, header .header__list li a:focus {
   width: 320px;
   margin-bottom: 60px;
 }
+@media (max-width: 767px) {
+  #help .help h3 {
+    font-size: 25px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+}
 #help .help .help__container {
   display: flex;
   -moz-column-gap: 119.5px;
@@ -582,19 +592,66 @@ header .header__list li a:hover, header .header__list li a:focus {
   justify-content: center;
   align-items: center;
 }
-#donation .donation img {
+@media (max-width: 1279px) {
+  #donation .donation {
+    width: auto;
+    flex-direction: column;
+  }
+}
+#donation .donation .donation__dog {
   width: auto;
   margin-right: 30px;
 }
+@media (max-width: 1279px) {
+  #donation .donation .donation__dog {
+    margin-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  #donation .donation .donation__dog {
+    max-width: 505px;
+    width: 81.25%;
+  }
+}
 #donation .donation .text-block {
-  width: 380px;
+  max-width: 380px;
   display: flex;
   gap: 20px;
   flex-direction: column;
 }
+@media (max-width: 1279px) {
+  #donation .donation .text-block {
+    order: -1;
+    margin-bottom: 60px;
+  }
+}
 #donation .donation .text-block h3 {
   width: 300px;
   line-height: 45px;
+}
+@media (max-width: 767px) {
+  #donation .donation .text-block h3 {
+    width: auto;
+    margin: 0 auto;
+    font-size: 25px;
+    line-height: 130%;
+    justify-self: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+}
+@media (max-width: 767px) {
+  #donation .donation .text-block h5 {
+    font-size: 15px;
+    line-height: 160%;
+    text-align: center;
+    letter-spacing: 0em;
+  }
+}
+@media (max-width: 767px) {
+  #donation .donation .text-block p {
+    padding: 0 20px;
+  }
 }
 #donation .donation .card {
   display: flex;
@@ -605,6 +662,15 @@ header .header__list li a:hover, header .header__list li a:focus {
   align-items: center;
   box-sizing: border-box;
   transition: all 0.2s;
+}
+@media (max-width: 767px) {
+  #donation .donation .card {
+    width: 282px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+  }
 }
 #donation .donation .card:hover {
   background: #FDDCC4;
@@ -618,22 +684,59 @@ header .header__list li a:hover, header .header__list li a:focus {
   line-height: 18px;
   color: #B2B2B2;
 }
+@media (max-width: 767px) {
+  #donation .donation .description {
+    text-align: justify;
+  }
+}
 
 footer {
   background: center/cover no-repeat url("../../assets/images/footer-gradient-background.jpg");
   color: #F1CDB3;
   padding-top: 40px;
 }
+@media (max-width: 1279px) {
+  footer {
+    padding-top: 30px;
+  }
+}
 footer .contacts {
   position: relative;
   width: 1200px;
   height: 310px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 280px 302px 300px;
   justify-content: space-between;
   margin: 0 auto;
 }
+@media (max-width: 1279px) {
+  footer .contacts {
+    width: auto;
+    height: auto;
+    grid-template-columns: 280px 302px;
+    row-gap: 65px;
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 767px) {
+  footer .contacts {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    justify-items: center;
+  }
+}
 footer .contacts h3 {
   color: #FFFFFF;
+}
+@media (max-width: 767px) {
+  footer .contacts h3 {
+    width: 270px;
+    margin: 0 auto;
+    font-size: 25px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
 }
 footer .contacts .email {
   margin-top: 16px;
@@ -645,6 +748,11 @@ footer .contacts .email {
 footer .contacts .email img {
   margin-right: 20px;
 }
+@media (max-width: 1279px) {
+  footer .contacts .email {
+    margin: 0;
+  }
+}
 footer .contacts .place {
   margin-top: 16px;
   width: 302px;
@@ -655,6 +763,11 @@ footer .contacts .place {
 footer .contacts .place img {
   margin-right: 20px;
 }
+@media (max-width: 1279px) {
+  footer .contacts .place {
+    margin: 0;
+  }
+}
 footer h4.footer {
   color: #F1CDB3;
   display: flex;
@@ -662,4 +775,16 @@ footer h4.footer {
 }
 footer img {
   height: auto;
+}
+@media (max-width: 1279px) {
+  footer img {
+    grid-column: 1/span 2;
+    justify-self: center;
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  footer img {
+    grid-column: 1/span 1;
+  }
 }/*# sourceMappingURL=styles.css.map */

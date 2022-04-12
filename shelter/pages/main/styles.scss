@@ -168,6 +168,8 @@ header {
         }
         @include media-mobile {
             width: auto;
+            margin: 0 auto;
+            max-width: 250px;
             font-size: 25px;
             line-height: 32px;
             letter-spacing: 0.06em;
@@ -482,6 +484,12 @@ header {
         h3 {
             width: 320px;
             margin-bottom: 60px;
+            @include media-mobile {
+                font-size: 25px;
+                line-height: 130%;
+                text-align: center;
+                letter-spacing: 0.06em;
+            }
         }
 
         .help__container {
@@ -531,21 +539,58 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+        @include media-tablet {
+            width: auto;
+            flex-direction: column;
+        }
 
-        img {
+        .donation__dog {
             width: auto;
             margin-right: 30px;
+            @include media-tablet {
+                margin-right: 0;
+            }
+            @include media-mobile {
+                max-width: 505px;
+                width: 81.25%;
+            }
         }
 
         .text-block {
-            width: 380px;
+            max-width: 380px;
             display: flex;
             gap: 20px;
             flex-direction: column;
+            @include media-tablet {
+                order: -1;
+                margin-bottom: 60px;
+            }
 
             h3 {
                 width: 300px;
                 line-height: 45px;
+                @include media-mobile {
+                    width: auto;
+                    margin: 0 auto;
+                    font-size: 25px;
+                    line-height: 130%;
+                    justify-self: center;
+                    text-align: center;
+                    letter-spacing: 0.06em;
+                }
+            }
+            h5 {
+                @include media-mobile {
+                    font-size: 15px;
+                    line-height: 160%;
+                    text-align: center;
+                    letter-spacing: 0em;
+                }
+            }
+            p {
+                @include media-mobile {
+                    padding: 0 20px;
+                }
             }
         }
         
@@ -558,6 +603,13 @@ header {
             align-items: center;
             box-sizing: border-box;
             transition: all 0.2s;
+            @include media-mobile {
+                width: 282px;
+                margin: 0 auto;
+                font-size: 15px;
+                line-height: 110%;
+                letter-spacing: 0.06em;
+            }
                      
             &:hover {
                 background: #FDDCC4;
@@ -573,6 +625,9 @@ header {
             font-size: 12px;
             line-height: 18px;
             color: #B2B2B2;
+            @include media-mobile {
+                text-align: justify;
+            }
         }
         
     }
@@ -582,17 +637,42 @@ footer {
     background: center/cover no-repeat url('../../assets/images/footer-gradient-background.jpg');
     color: #F1CDB3;
     padding-top: 40px;
+    @include media-tablet {
+        padding-top: 30px;
+    }
 
     .contacts {
         position: relative;
         width: 1200px;
         height: 310px;
-        display: flex;
+        display: grid;
+        grid-template-columns: 280px 302px 300px;
         justify-content: space-between;
         margin: 0 auto;
+        @include media-tablet {
+            width: auto;
+            height: auto;
+            grid-template-columns: 280px 302px;
+            row-gap: 65px;
+            justify-content: space-evenly;
+        }
+        @include media-mobile {
+            grid-template-columns: 1fr;
+            row-gap: 40px;
+            justify-items: center;
+        }
+     
 
         h3 {
             color: #FFFFFF;
+            @include media-mobile {
+                width: 270px;
+                margin: 0 auto;
+                font-size: 25px;
+                line-height: 130%;
+                text-align: center;
+                letter-spacing: 0.06em;
+            }
         }
 
         .email {
@@ -604,6 +684,9 @@ footer {
             img {
                 margin-right: 20px;
             }
+            @include media-tablet {
+                margin: 0;
+            }
         }
 
         .place {
@@ -614,6 +697,9 @@ footer {
             gap: 33px;
             img {
                 margin-right: 20px;
+            }
+            @include media-tablet {
+                margin: 0;
             }
         }
 
@@ -628,6 +714,14 @@ footer {
 
     img {
         height: auto;
-}
+        @include media-tablet {
+            grid-column: 1 / span 2;
+            justify-self: center;
+            margin: 0;
+        }
+        @include media-mobile {
+            grid-column: 1 / span 1;
+        }
+    }
 }
 
