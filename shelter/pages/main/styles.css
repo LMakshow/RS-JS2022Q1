@@ -663,6 +663,7 @@ header .header__list li a:hover, header .header__list li a:focus {
   box-sizing: border-box;
   transition: all 0.2s;
 }
+
 @media (max-width: 767px) {
   #donation .donation .card {
     width: 282px;
@@ -672,6 +673,7 @@ header .header__list li a:hover, header .header__list li a:focus {
     letter-spacing: 0.06em;
   }
 }
+
 #donation .donation .card:hover {
   background: #FDDCC4;
 }
