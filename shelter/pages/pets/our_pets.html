@@ -15,9 +15,23 @@
   <!-- <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/"> -->
   <!-- <meta property="og:image" content="image.png"> -->
 
-  <!-- <link rel="icon" href="/favicon.ico"> -->
-  <!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
-  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+<link rel="apple-touch-icon" sizes="57x57" href="../../assets/icons/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../../assets/icons/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../../assets/icons/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../../assets/icons/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../../assets/icons/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../../assets/icons/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../../assets/icons/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../../assets/icons/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/icons/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../assets/icons/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../assets/icons/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon/favicon-16x16.png">
+<link rel="manifest" href="../../assets/icons/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="../../assets/icons/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="normalize.css">
@@ -28,17 +42,22 @@
 <body>
 <section id="header">
      <header class="header">
-        <div class="logo"><a href="../main/index.html">
+        <div class="logo"><a href="../../index.html">
           <h1>Cozy House</h1>
           <p>Shelter for pets in Boston</p></a>
        </div>
-       <nav>
-         <ul>
-           <li><a href="../main/index.html">About the shelter</a></li>
-           <li><a class="active" href="../pets/our_pets.html">Our pets</a></li>
-           <li><a href="../main/index.html#help">Help the shelter</a></li>
-           <li><a href="#contacts">Contacts</a></li>
+       <nav class="header__navigation">
+         <ul class="header__list">
+           <li class="header__item"><a href="../../index.html">About the shelter</a></li>
+           <li class="header__item"><a class="active" href="our_pets.html">Our pets</a></li>
+           <li class="header__item"><a href="../../index.html#help">Help the shelter</a></li>
+           <li class="header__item"><a href="#contacts">Contacts</a></li>
          </ul>
+         <div class="header__hamburger">
+          <span class="hamburger">
+              <span class="hamburger__line"></span>
+          </span>
+        </div>
        </nav>
       </header> 
     </section>
@@ -79,7 +98,7 @@
               </div>
               <div class="slide">
                 <img src="../../assets/images/pets-scarlet.png" alt="Scarlet">
-                <p class="card-title">Scarlet</p>
+                <p class="card-title">Scarlett</p>
                 <button class="learn-more" type="button">Learn more</button>
               </div>
               <div class="slide">
@@ -89,30 +108,39 @@
               </div>
             </div>
           <div class="nav-container">
-            <button class="button-text inactive" disabled="disabled"><<</button>
-            <button class="button-text inactive" disabled="disabled"><</button>
+            <button class="button-text inactive" disabled="disabled">&lt;&lt;</button>
+            <button class="button-text inactive" disabled="disabled">&lt;</button>
             <button class="button-text active" disabled="disabled">1</button>
-            <button class="button-text">></button>
-            <button class="button-text">>></button>          
+            <button class="button-text">&gt;</button>
+            <button class="button-text">&gt;&gt;</button>          
           </div>
     </section>
 </main>
 
 <footer id="contacts">
-    <div class="contacts">
-      <div class="email">
-        <h3>For questions and suggestions</h3>
-        <a href="mailto:email@shelter.com"><h4 class="footer"><img src="../../assets/icons/icon-email.svg" alt="Email">email@shelter.com</h4></a>
-        <a href="tel:+13 674 567 75 54"><h4 class="footer"><img src="../../assets/icons/icon-phone.svg" alt="Phone">+13 674 567 75 54</h4></a>
-      </div>
-      <div class="place">
-        <h3>We are waiting for your visit</h3>
-        <a href="https://goo.gl/maps/dvXiJ3EMSG2sSFFi8" target="_blank"><h4 class="footer"><img src="../../assets/icons/icon-marker.svg" alt="Location 1">1 Central Street, Boston (entrance from the store)</h4></a>
-        <a href="https://goo.gl/maps/F5wgbzLLRzniP3ns5" target="_blank"><h4 class="footer"><img src="../../assets/icons/icon-marker.svg" alt="Location 2">18 South Park, London</h4></a>
-      </div>
-      <img src="../../assets/images/footer-puppy.png" alt="An image of cool puppy saying Hi">
+  <div class="contacts">
+    <div class="email">
+      <h3>For questions and suggestions</h3>
+      <a href="mailto:email@shelter.com">
+        <h4 class="footer"><img src="../../assets/icons/icon-email.svg" alt="Email">email@shelter.com</h4>
+      </a>
+      <a href="tel:+13 674 567 75 54">
+        <h4 class="footer"><img src="../../assets/icons/icon-phone.svg" alt="Phone">+13 674 567 75 54</h4>
+      </a>
     </div>
-  </footer>
+    <div class="place">
+      <h3>We are waiting for your visit</h3>
+      <a href="https://goo.gl/maps/dvXiJ3EMSG2sSFFi8" target="_blank">
+        <h4 class="footer"><img src="../../assets/icons/icon-marker.svg" alt="Location 1">1 Central Street, Boston (entrance
+          from the store)</h4>
+      </a>
+      <a href="https://goo.gl/maps/F5wgbzLLRzniP3ns5" target="_blank">
+        <h4 class="footer"><img src="../../assets/icons/icon-marker.svg" alt="Location 2">18 South Park, London</h4>
+      </a>
+    </div>
+    <img class="footer-puppy" src="../../assets/images/footer-puppy.png" alt="An image of cool puppy saying Hi">
+  </div>
+</footer>
 <!-- <script src="js/scripts.js"></script> -->
 </body>
 </html>
