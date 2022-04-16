@@ -84,6 +84,9 @@ header {
         width: auto;
         margin: 30px 30px 60px;
     }
+    @include media-mobile {
+        margin-left: 3.125%;
+    }
 
     h1 {
         font-family: $font-serif;
@@ -182,6 +185,7 @@ header {
     p {
         margin-top: 42px;
         max-width: 460px;
+        color: #CDCDCD;
         @include media-mobile {
             margin: 42px 3.125%;
             align-items: center;
@@ -206,7 +210,7 @@ header {
         border: 0;
         transition: .2s all;
         @include media-tablet {
-            margin: 42px auto;
+            margin: 42px auto 50px;
         }
 
         &:hover, &:active, &:focus {
@@ -222,6 +226,10 @@ header {
             width: 74%;
             margin: 50px 4% 0 22%;
         }
+        @include media-mobile {
+            width: 81.25%;
+            margin: 55px 4% 0 15.63%;
+        }
     }
 }
 
@@ -232,11 +240,15 @@ header {
     display: flex;
     justify-content: center;
     @include media-tablet {
-        margin: 80px 3.125% 100px;
+        margin: 80px 7.8% 100px;
         height: auto;
         width: auto;
         flex-direction: column-reverse;
         align-items: center;
+    }
+    @include media-mobile {
+        margin-top: 42px;
+        margin-bottom: 43px;
     }
 
     img {
@@ -244,8 +256,11 @@ header {
         margin-right: 120px;
         @include media-tablet {
             margin: 80px auto 0;
-            max-width: 430px;
-            width: 100%;
+            max-width: 300px;
+            width: 81.25vw;
+        }
+        @include media-mobile {
+            margin-top: 42px;
         }
     }
 
@@ -256,9 +271,12 @@ header {
     h3 {
         max-width: 370px;
         margin-top: 14px;
+        @include media-tablet{
+            margin-top: 0;
+        }
         @include media-mobile {
             max-width: 280px;
-            margin: 14px auto 0;
+            margin: 0 auto;
             font-size: 25px;
             line-height: 32px;
             letter-spacing: 0.06em;
@@ -271,6 +289,7 @@ header {
         margin-top: 25px;
         color: #4C4C4C;
         @include media-mobile {
+            margin-top: 23px;
             text-align: justify;
         }
     }
@@ -305,6 +324,7 @@ header {
     h3 {
         width: 400px;
         @include media-mobile {
+            width: auto;
             max-width: 300px;            
             font-size: 25px;
             line-height: 32px;
@@ -443,8 +463,8 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 261px;
-        height: 52px;
+        padding: 15px 45px;
+        // height: 52px;
         font-family: $font-serif;
         font-size: 17px;
         line-height: 130%;
@@ -463,6 +483,9 @@ header {
 
 #help {
         padding: 80px 0 98px;
+        @include media-tablet {
+            padding-bottom: 100px;
+        }
         @include media-mobile {
             padding: 42px 0;
         }
@@ -486,6 +509,9 @@ header {
             width: 320px;
             margin-bottom: 60px;
             @include media-mobile {
+                width: auto;
+                margin-bottom: 42px;
+                max-width: 230px;
                 font-size: 25px;
                 line-height: 130%;
                 text-align: center;
@@ -502,13 +528,15 @@ header {
             @include media-tablet {
                 display: grid;
                 grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-                column-gap: 60px;
+                column-gap: 63px;
+                row-gap: 53px;
                 min-width: 70%;
             }
             @include media-mobile {
                 display: grid;
                 grid-template: repeat(5, 1fr) / repeat(2, 1fr);
-                gap: 30px;
+                column-gap: 37px;
+                row-gap: 27px;
                 min-width: 70%;
                 h4 {
                     font-size: 15px;
@@ -533,6 +561,9 @@ header {
 #donation {
     padding: 81px 0 99px;
     background: #F6F6F6;
+    @include media-mobile {
+        padding: 42px 0;
+    }
 
     .donation {
         margin: 0 auto;
@@ -566,15 +597,19 @@ header {
                 order: -1;
                 margin-bottom: 60px;
             }
+            @include media-mobile {
+                margin-bottom: 42px;
+            }
 
             h3 {
-                width: 300px;
+                max-width: 300px;
                 line-height: 45px;
                 @include media-mobile {
+                    max-width: 220px;
                     width: auto;
                     margin: 0 auto;
                     font-size: 25px;
-                    line-height: 130%;
+                    line-height: 32px;
                     justify-self: center;
                     text-align: center;
                     letter-spacing: 0.06em;
@@ -606,7 +641,8 @@ header {
             transition: all 0.2s;
 
             @include media-mobile {
-                width: 282px;
+                width: auto;
+                max-width: 282px;
                 margin: 0 auto;
                 font-size: 15px;
                 line-height: 110%;
@@ -668,10 +704,10 @@ footer {
         h3 {
             color: #FFFFFF;
             @include media-mobile {
-                width: 270px;
+                max-width: 270px;
                 margin: 0 auto;
                 font-size: 25px;
-                line-height: 130%;
+                line-height: 32px;
                 text-align: center;
                 letter-spacing: 0.06em;
             }
@@ -679,7 +715,7 @@ footer {
 
         .email {
             margin-top: 16px;
-            width: 280px;
+            max-width: 280px;
             display: flex;
             flex-direction: column;
             gap: 40px;
@@ -689,11 +725,16 @@ footer {
             @include media-tablet {
                 margin: 0;
             }
+            @include media-mobile {
+                h4.footer {
+                    justify-content: center;
+                }
+            }
         }
 
         .place {
             margin-top: 16px;
-            width: 302px;
+            max-width: 302px;
             display: flex;
             flex-direction: column;
             gap: 33px;
@@ -701,6 +742,10 @@ footer {
                 margin-right: 20px;
             }
             @include media-tablet {
+                margin: 0;
+            }
+            @include media-mobile {
+                gap: 40px;
                 margin: 0;
             }
         }
@@ -724,8 +769,7 @@ footer {
         @include media-mobile {
             grid-column: 1 / span 1;
             max-width: 300px;
-            width: 81.25%;
-            padding: 0 30px;
+            width: 81.25vw;
         }
     }
 }

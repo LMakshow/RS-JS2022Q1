@@ -112,6 +112,11 @@ header {
     margin: 0px 30px 0px;
   }
 }
+@media (max-width: 767px) {
+  header {
+    margin-left: 3.125%;
+  }
+}
 header h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: normal;
@@ -189,6 +194,7 @@ header .header__list li a:hover, header .header__list li a:focus {
 }
 @media (max-width: 1279px) {
   .our-friends {
+    gap: 30px;
     width: auto;
     margin: 0;
   }
@@ -224,6 +230,7 @@ header .header__list li a:hover, header .header__list li a:focus {
     width: auto;
     max-width: 930px;
     padding: 0 12.2vw;
+    margin-bottom: 10px;
     -moz-column-gap: 5.2vw;
          column-gap: 5.2vw;
   }
@@ -231,6 +238,7 @@ header .header__list li a:hover, header .header__list li a:focus {
 @media (max-width: 767px) {
   .our-friends .slider {
     width: 300px;
+    margin-bottom: 0;
     padding: 0 0;
     justify-content: center;
   }
@@ -247,7 +255,7 @@ header .header__list li a:hover, header .header__list li a:focus {
   transition: 0.3s all;
 }
 .our-friends .slide img {
-  width: auto;
+  width: 100%;
   border-radius: 9px 9px 0px 0px;
 }
 .our-friends .slide:hover {
@@ -386,7 +394,7 @@ footer .contacts h3 {
 }
 @media (max-width: 767px) {
   footer .contacts h3 {
-    width: 270px;
+    max-width: 270px;
     margin: 0 auto;
     font-size: 25px;
     line-height: 130%;
@@ -396,7 +404,7 @@ footer .contacts h3 {
 }
 footer .contacts .email {
   margin-top: 16px;
-  width: 280px;
+  max-width: 280px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -409,9 +417,14 @@ footer .contacts .email img {
     margin: 0;
   }
 }
+@media (max-width: 767px) {
+  footer .contacts .email h4.footer {
+    justify-content: center;
+  }
+}
 footer .contacts .place {
   margin-top: 16px;
-  width: 302px;
+  max-width: 302px;
   display: flex;
   flex-direction: column;
   gap: 33px;
@@ -421,6 +434,12 @@ footer .contacts .place img {
 }
 @media (max-width: 1279px) {
   footer .contacts .place {
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  footer .contacts .place {
+    gap: 40px;
     margin: 0;
   }
 }
@@ -443,7 +462,6 @@ footer .footer-puppy {
   footer .footer-puppy {
     grid-column: 1/span 1;
     max-width: 300px;
-    width: 81.25%;
-    padding: 0 30px;
+    width: 81.25vw;
   }
 }/*# sourceMappingURL=styles.css.map */

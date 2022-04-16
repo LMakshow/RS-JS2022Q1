@@ -116,6 +116,11 @@ header {
     margin: 30px 30px 60px;
   }
 }
+@media (max-width: 767px) {
+  header {
+    margin-left: 3.125%;
+  }
+}
 header h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: normal;
@@ -213,6 +218,7 @@ header .header__list li a:hover, header .header__list li a:focus {
 .puppy .text-block p {
   margin-top: 42px;
   max-width: 460px;
+  color: #CDCDCD;
 }
 @media (max-width: 767px) {
   .puppy .text-block p {
@@ -240,7 +246,7 @@ header .header__list li a:hover, header .header__list li a:focus {
 }
 @media (max-width: 1279px) {
   .puppy .text-block .button {
-    margin: 42px auto;
+    margin: 42px auto 50px;
   }
 }
 .puppy .text-block .button:hover, .puppy .text-block .button:active, .puppy .text-block .button:focus {
@@ -256,6 +262,12 @@ header .header__list li a:hover, header .header__list li a:focus {
     margin: 50px 4% 0 22%;
   }
 }
+@media (max-width: 767px) {
+  .puppy img {
+    width: 81.25%;
+    margin: 55px 4% 0 15.63%;
+  }
+}
 
 .about {
   margin: 80px auto 100px;
@@ -266,11 +278,17 @@ header .header__list li a:hover, header .header__list li a:focus {
 }
 @media (max-width: 1279px) {
   .about {
-    margin: 80px 3.125% 100px;
+    margin: 80px 7.8% 100px;
     height: auto;
     width: auto;
     flex-direction: column-reverse;
     align-items: center;
+  }
+}
+@media (max-width: 767px) {
+  .about {
+    margin-top: 42px;
+    margin-bottom: 43px;
   }
 }
 .about img {
@@ -280,8 +298,13 @@ header .header__list li a:hover, header .header__list li a:focus {
 @media (max-width: 1279px) {
   .about img {
     margin: 80px auto 0;
-    max-width: 430px;
-    width: 100%;
+    max-width: 300px;
+    width: 81.25vw;
+  }
+}
+@media (max-width: 767px) {
+  .about img {
+    margin-top: 42px;
   }
 }
 .about .text-block {
@@ -291,10 +314,15 @@ header .header__list li a:hover, header .header__list li a:focus {
   max-width: 370px;
   margin-top: 14px;
 }
+@media (max-width: 1279px) {
+  .about h3 {
+    margin-top: 0;
+  }
+}
 @media (max-width: 767px) {
   .about h3 {
     max-width: 280px;
-    margin: 14px auto 0;
+    margin: 0 auto;
     font-size: 25px;
     line-height: 32px;
     letter-spacing: 0.06em;
@@ -308,6 +336,7 @@ header .header__list li a:hover, header .header__list li a:focus {
 }
 @media (max-width: 767px) {
   .about p {
+    margin-top: 23px;
     text-align: justify;
   }
 }
@@ -348,6 +377,7 @@ header .header__list li a:hover, header .header__list li a:focus {
 }
 @media (max-width: 767px) {
   .our-friends h3 {
+    width: auto;
     max-width: 300px;
     font-size: 25px;
     line-height: 32px;
@@ -486,8 +516,7 @@ header .header__list li a:hover, header .header__list li a:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 261px;
-  height: 52px;
+  padding: 15px 45px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 17px;
   line-height: 130%;
@@ -504,6 +533,11 @@ header .header__list li a:hover, header .header__list li a:focus {
 
 #help {
   padding: 80px 0 98px;
+}
+@media (max-width: 1279px) {
+  #help {
+    padding-bottom: 100px;
+  }
 }
 @media (max-width: 767px) {
   #help {
@@ -535,6 +569,9 @@ header .header__list li a:hover, header .header__list li a:focus {
 }
 @media (max-width: 767px) {
   #help .help h3 {
+    width: auto;
+    margin-bottom: 42px;
+    max-width: 230px;
     font-size: 25px;
     line-height: 130%;
     text-align: center;
@@ -553,8 +590,9 @@ header .header__list li a:hover, header .header__list li a:focus {
   #help .help .help__container {
     display: grid;
     grid-template: repeat(3, 1fr)/repeat(3, 1fr);
-    -moz-column-gap: 60px;
-         column-gap: 60px;
+    -moz-column-gap: 63px;
+         column-gap: 63px;
+    row-gap: 53px;
     min-width: 70%;
   }
 }
@@ -562,7 +600,9 @@ header .header__list li a:hover, header .header__list li a:focus {
   #help .help .help__container {
     display: grid;
     grid-template: repeat(5, 1fr)/repeat(2, 1fr);
-    gap: 30px;
+    -moz-column-gap: 37px;
+         column-gap: 37px;
+    row-gap: 27px;
     min-width: 70%;
   }
   #help .help .help__container h4 {
@@ -584,6 +624,11 @@ header .header__list li a:hover, header .header__list li a:focus {
 #donation {
   padding: 81px 0 99px;
   background: #F6F6F6;
+}
+@media (max-width: 767px) {
+  #donation {
+    padding: 42px 0;
+  }
 }
 #donation .donation {
   margin: 0 auto;
@@ -625,16 +670,22 @@ header .header__list li a:hover, header .header__list li a:focus {
     margin-bottom: 60px;
   }
 }
+@media (max-width: 767px) {
+  #donation .donation .text-block {
+    margin-bottom: 42px;
+  }
+}
 #donation .donation .text-block h3 {
-  width: 300px;
+  max-width: 300px;
   line-height: 45px;
 }
 @media (max-width: 767px) {
   #donation .donation .text-block h3 {
+    max-width: 220px;
     width: auto;
     margin: 0 auto;
     font-size: 25px;
-    line-height: 130%;
+    line-height: 32px;
     justify-self: center;
     text-align: center;
     letter-spacing: 0.06em;
@@ -663,17 +714,16 @@ header .header__list li a:hover, header .header__list li a:focus {
   box-sizing: border-box;
   transition: all 0.2s;
 }
-
 @media (max-width: 767px) {
   #donation .donation .card {
-    width: 282px;
+    width: auto;
+    max-width: 282px;
     margin: 0 auto;
     font-size: 15px;
     line-height: 110%;
     letter-spacing: 0.06em;
   }
 }
-
 #donation .donation .card:hover {
   background: #FDDCC4;
 }
@@ -732,17 +782,17 @@ footer .contacts h3 {
 }
 @media (max-width: 767px) {
   footer .contacts h3 {
-    width: 270px;
+    max-width: 270px;
     margin: 0 auto;
     font-size: 25px;
-    line-height: 130%;
+    line-height: 32px;
     text-align: center;
     letter-spacing: 0.06em;
   }
 }
 footer .contacts .email {
   margin-top: 16px;
-  width: 280px;
+  max-width: 280px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -755,9 +805,14 @@ footer .contacts .email img {
     margin: 0;
   }
 }
+@media (max-width: 767px) {
+  footer .contacts .email h4.footer {
+    justify-content: center;
+  }
+}
 footer .contacts .place {
   margin-top: 16px;
-  width: 302px;
+  max-width: 302px;
   display: flex;
   flex-direction: column;
   gap: 33px;
@@ -767,6 +822,12 @@ footer .contacts .place img {
 }
 @media (max-width: 1279px) {
   footer .contacts .place {
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  footer .contacts .place {
+    gap: 40px;
     margin: 0;
   }
 }
@@ -789,7 +850,6 @@ footer .footer-puppy {
   footer .footer-puppy {
     grid-column: 1/span 1;
     max-width: 300px;
-    width: 81.25%;
-    padding: 0 30px;
+    width: 81.25vw;
   }
 }/*# sourceMappingURL=styles.css.map */
