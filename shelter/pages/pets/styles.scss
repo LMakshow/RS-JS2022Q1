@@ -13,7 +13,11 @@ $font-serif: Georgia, 'Times New Roman', Times, serif;
     src: local('Georgia'), local('Georgia Regular'),
            url('../../assets/fonts/georgia.woff') format('woff');
   }
-  
+ 
+$color-hamburger: #000000;
+
+@import "../../sass/mixins";
+@import "../../sass/hamburger";
 
 html {
     font-family: Arial, Helvetica, sans-serif;
@@ -63,6 +67,7 @@ h5 {
     background: #FFFFFF;
     padding: 30px 0 30px;
     position: fixed;
+    z-index: 5;
     top: 0;
     width: 100%;
 }
@@ -74,6 +79,10 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+    @include media-tablet {
+        width: auto;
+        margin: 0px 30px 0px;
+    }
 
     h1 {
         font-family: $font-serif;
@@ -98,8 +107,11 @@ header {
         color: #292929;
     }
     
-    ul {
+    .header__list {
         display: flex;
+        @include media-mobile {
+            display: none;
+        }
         
         li {
             display: flex;
@@ -117,11 +129,24 @@ header {
         }
         }
     }
+
+    .header__navigation {
+        @include media-mobile {
+            display: flex;
+            align-items: center;
+        }
+    }
 }
 
 #our-friends {
     background: #F6F6F6;
     padding: 200px 0 100px;
+    @include media-tablet {
+        padding: 200px 0 76px;
+    }
+    @include media-mobile {
+        padding: 162px 0 42px;
+    }
 }
 
 .our-friends {
@@ -134,9 +159,24 @@ header {
     text-align: center;
     flex-direction: column;
     gap: 60px;
+    @include media-tablet {
+        width: auto;
+        margin: 0;
+    }
+    @include media-mobile {
+        gap: 42px;
+    }
 
     h3 {
         width: 400px;
+        @include media-mobile {
+            max-width: 300px;            
+            font-size: 25px;
+            line-height: 32px;
+            letter-spacing: 0.06em;
+            align-items: center;
+            text-align: center;
+        }
     }
   
 
@@ -146,6 +186,18 @@ header {
         justify-content: space-between;
         width: 1200px;
         row-gap: 30px;
+        @include media-tablet {
+            justify-content: space-around;
+            width: auto;
+            max-width: 930px;
+            padding: 0 12.2vw;
+            column-gap: 5.2vw;
+        }
+        @include media-mobile {
+            width: 300px;
+            padding: 0 0;
+            justify-content: center;
+        }
     }
 
     .slide {
@@ -171,7 +223,20 @@ header {
             background: #FDDCC4;
             border: 2px solid #FDDCC4; 
         }
+        @include media-tablet {
+            &:nth-child(n+7) {
+                display:none;
+            }
+        }
+        @include media-mobile {
+            &:nth-child(n+4) {
+                display:none;
+            }
+        }
     }
+
+
+    
 
     .card-title {
         font-family: $font-serif;
@@ -211,6 +276,9 @@ header {
         display: flex;
         gap: 20px;
         align-items: center;
+        @include media-mobile {
+            gap: 10px;
+        }
 
     .button-text {
         width: 52px;
@@ -260,17 +328,42 @@ footer {
     background: center/cover no-repeat url('../../assets/images/footer-gradient-background.jpg');
     color: #F1CDB3;
     padding-top: 40px;
+    @include media-tablet {
+        padding-top: 30px;
+    }
 
     .contacts {
         position: relative;
         width: 1200px;
         height: 310px;
-        display: flex;
+        display: grid;
+        grid-template-columns: 280px 302px 300px;
         justify-content: space-between;
         margin: 0 auto;
+        @include media-tablet {
+            width: auto;
+            height: auto;
+            grid-template-columns: 280px 302px;
+            row-gap: 65px;
+            justify-content: space-evenly;
+        }
+        @include media-mobile {
+            grid-template-columns: 1fr;
+            row-gap: 40px;
+            justify-items: center;
+        }
+     
 
         h3 {
             color: #FFFFFF;
+            @include media-mobile {
+                width: 270px;
+                margin: 0 auto;
+                font-size: 25px;
+                line-height: 130%;
+                text-align: center;
+                letter-spacing: 0.06em;
+            }
         }
 
         .email {
@@ -281,6 +374,9 @@ footer {
             gap: 40px;
             img {
                 margin-right: 20px;
+            }
+            @include media-tablet {
+                margin: 0;
             }
         }
 
@@ -293,6 +389,9 @@ footer {
             img {
                 margin-right: 20px;
             }
+            @include media-tablet {
+                margin: 0;
+            }
         }
 
         
@@ -304,7 +403,18 @@ footer {
         align-items: center;
     }
 
-    img {
+    .footer-puppy {
         height: auto;
-}
+        @include media-tablet {
+            grid-column: 1 / span 2;
+            justify-self: center;
+            margin: 0;
+        }
+        @include media-mobile {
+            grid-column: 1 / span 1;
+            max-width: 300px;
+            width: 81.25%;
+            padding: 0 30px;
+        }
+    }
 }
