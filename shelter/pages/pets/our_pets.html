@@ -40,6 +40,23 @@
 </head>
 
 <body>
+  <div class="header__hamburger">
+    <span class="hamburger">
+        <span class="hamburger__line"></span>
+    </span>
+  </div>
+  <div class="header__hamburger-menu">
+    <div class="hamburger-logo"><a href="../../index.html">
+      <h1>Cozy House</h1>
+      <p>Shelter for pets in Boston</p></a>
+    </div>
+    <ul class="header__hamburger-list">
+      <li><a class="header__hamburger-item" href="../../index.html">About the shelter</a></li>
+      <li><a class="header__hamburger-item active" href="#">Our pets</a></li>
+      <li><a class="header__hamburger-item" href="../../index.html#help">Help the shelter</a></li>
+      <li><a class="header__hamburger-item" href="#contacts">Contacts</a></li>
+    </ul>
+</div>
 <section id="header">
      <header class="header">
         <div class="logo"><a href="../../index.html">
@@ -49,15 +66,11 @@
        <nav class="header__navigation">
          <ul class="header__list">
            <li class="header__item"><a href="../../index.html">About the shelter</a></li>
-           <li class="header__item"><a class="active" href="our_pets.html">Our pets</a></li>
+           <li class="header__item"><a class="active" href="#">Our pets</a></li>
            <li class="header__item"><a href="../../index.html#help">Help the shelter</a></li>
            <li class="header__item"><a href="#contacts">Contacts</a></li>
          </ul>
-         <div class="header__hamburger">
-          <span class="hamburger">
-              <span class="hamburger__line"></span>
-          </span>
-        </div>
+         
        </nav>
       </header> 
     </section>
@@ -65,7 +78,9 @@
 <main id="our-friends">
     <section class="our-friends">
         <h3>Our friends who<br> are looking for a house</h3>
-           <div class="slider">
+        <div class="slider__wrap-big">
+          <div class="slider__wrapper">
+            <div class="slider">
               <div class="slide">
                 <img src="../../assets/images/pets-katrine.png" alt="Katrine">
                 <p class="card-title">Katrine</p>
@@ -107,12 +122,14 @@
                 <button class="learn-more" type="button">Learn more</button>
               </div>
             </div>
+          </div>
+        </div>
           <div class="nav-container">
-            <button class="button-text inactive" disabled="disabled">&lt;&lt;</button>
-            <button class="button-text inactive" disabled="disabled">&lt;</button>
-            <button class="button-text active" disabled="disabled">1</button>
-            <button class="button-text">&gt;</button>
-            <button class="button-text">&gt;&gt;</button>          
+            <button class="button-text button-first inactive" disabled="disabled">&lt;&lt;</button>
+            <button class="button-text button-prev inactive" disabled="disabled">&lt;</button>
+            <button class="button-text button-number active" disabled="disabled">1</button>
+            <button class="button-text button-next">&gt;</button>
+            <button class="button-text button-last">&gt;&gt;</button>          
           </div>
     </section>
 </main>
@@ -141,6 +158,13 @@
     <img class="footer-puppy" src="../../assets/images/footer-puppy.png" alt="An image of cool puppy saying Hi">
   </div>
 </footer>
-<!-- <script src="js/scripts.js"></script> -->
+<div class="overlay hidden">
+  <section class="popup">
+    <div class="popup__wrapper">
+
+    </div>
+  </section>
+</div>
+<script src="../../assets/scripts.js"></script>
 </body>
 </html>
