@@ -344,6 +344,10 @@ popupButtonHover = () => {
         if (!document.querySelector('.popup__button')) return;
         e.stopPropagation()
     });
+    document.querySelector('.popup__button').addEventListener('click', (e) => {
+        if (!document.querySelector('.popup__button')) return;
+        removeHamburgerMenu();
+    });
 }
 
 popupButtonNoHoverWhenOverPopupWrapper = () => {

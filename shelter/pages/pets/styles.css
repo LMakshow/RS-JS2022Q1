@@ -49,6 +49,34 @@
   transform: rotate(-90deg);
 }
 
+.hamburger-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 30px 10px;
+}
+.hamburger-logo h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.hamburger-logo p {
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  margin: 0 auto;
+  width: auto;
+}
+
 .hamburger__line {
   top: calc(50% - 1px);
   left: 0;
@@ -57,7 +85,6 @@
 .header__hamburger-menu {
   position: fixed;
   z-index: 8;
-  padding: 30px 10px;
   width: 320px;
   height: 100vh;
   background: #292929;
@@ -315,33 +342,6 @@ h5 {
   z-index: 5;
   top: 0;
   width: 100%;
-}
-
-.hamburger-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.hamburger-logo h1 {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 110%;
-  letter-spacing: 0.06em;
-  color: #F1CDB3;
-  margin: 0;
-  margin-bottom: 10px;
-}
-.hamburger-logo p {
-  display: flex;
-  justify-content: center;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.1em;
-  color: #FFFFFF;
-  margin: 0 auto;
-  width: auto;
 }
 
 .hamburger {

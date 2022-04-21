@@ -73,35 +73,6 @@ h5 {
     width: 100%;
 }
 
-.hamburger-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    h1 {
-    font-family: $font-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 110%;
-    letter-spacing: 0.06em;
-    color: #F1CDB3;
-    margin: 0;
-    margin-bottom: 10px;
-    }
-
-    p {
-    display: flex;
-    justify-content: center;
-    font-size: 13px;
-    line-height: 15px;
-    letter-spacing: 0.1em;
-    color: #FFFFFF;
-    margin: 0 auto;
-    width: auto;
-    }
-}
-
 .hamburger {
     display: none;
     cursor: pointer;
