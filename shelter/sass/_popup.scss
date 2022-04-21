@@ -1,0 +1,139 @@
+.popup {
+    position: relative;
+    
+}
+
+.popup__wrapper {
+    display: flex;
+    background: #FAFAFA;
+    border-radius: 9px;
+    width: 900px;
+    height: 500px;
+    transition: all 0.5s;
+    pointer-events: none;
+    @include media-tablet {
+        width: 630px;
+        height: auto;
+    }
+    @include media-mobile {
+        width: 240px;
+        height: auto;
+    }
+}
+
+.popup__image {
+    width: 500px;
+    height: 500px;
+    border-radius: 9px;
+    @include media-tablet {
+        width: auto;
+        height: auto;
+        min-width: 350px;
+        min-height: 350px;
+    }
+    @include media-mobile {
+        display: none;
+    }
+}
+
+.popup__text {
+    padding: 50px 30px 30px 20px;
+    width: 352px;
+    @include media-tablet {
+        width: 260px;
+        padding: 10px;
+    }
+    @include media-mobile {
+        width: auto;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 35px;
+        line-height: 45px;
+        color: #000000;
+    }
+
+    h4 {
+        padding-top: 10px;
+        color: #000000;
+    }
+
+    p {
+        padding: 40px 0;
+        font-family: $font-serif;
+        font-size: 15px;
+        line-height: 17px;
+        letter-spacing: 0.06em;
+        color: #000000;
+        @include media-tablet {
+            padding: 20px 0;
+            font-size: 13px;
+            line-height: 14px;
+        }
+        @include media-mobile {
+            text-align: justify;
+        }
+    }
+}
+
+.popup__list {
+    position: relative;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+
+    li {
+        padding-bottom: 10px;
+        font-family: $font-serif;
+        font-size: 15px;
+        line-height: 17px;
+        letter-spacing: 0.06em;
+        color: #000000;
+        @include media-tablet {
+            padding-bottom: 5px;
+        }
+        @include media-mobile {
+            text-align: left;
+        }
+    }
+    
+    li:before {
+        content: "•";
+        color: #F1CDB3;
+        position: absolute;
+        left: 0;
+    }
+}
+
+.popup__button {
+    position: absolute;
+    right: -42px;
+    top: -52px;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    background: none;
+    box-sizing: border-box;
+    border-radius: 100px;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    transition: .2s all;
+    @include media-mobile {
+        right: -32px;
+    }
+
+    &:hover, &.hover {
+        background: #FDDCC4;
+        border: 2px solid #FDDCC4;  
+        cursor: pointer;
+    }
+
+    &.nohover:hover {
+        border: 2px solid #F1CDB3;
+        background: transparent;
+    }
+}
+
