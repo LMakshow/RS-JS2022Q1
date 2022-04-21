@@ -40,15 +40,27 @@
 <body>
 <main>
 
+<div class="header__hamburger-menu">
+    <div class="hamburger-logo"><a href="#">
+      <h1>Cozy House</h1>
+      <p>Shelter for pets in Boston</p></a>
+    </div>
+    <ul class="header__hamburger-list">
+      <li><a class="header__hamburger-item active" href="#">About the shelter</a></li>
+      <li><a class="header__hamburger-item" href="pages/pets/our_pets.html">Our pets</a></li>
+      <li><a class="header__hamburger-item" href="#help">Help the shelter</a></li>
+      <li><a class="header__hamburger-item" href="#contacts">Contacts</a></li>
+    </ul>
+</div>
 <section class="hero-page">
    <header id="header" class="header">
-     <div class="logo"><a href="index.html">
+     <div class="logo"><a href="#">
        <h1>Cozy House</h1>
        <p>Shelter for pets in Boston</p></a>
     </div>
     <nav class="header__navigation">
       <ul class="header__list">
-        <li class="header__item"><a class="active" href="#header">About the shelter</a></li>
+        <li class="header__item"><a class="active" href="#">About the shelter</a></li>
         <li class="header__item"><a href="pages/pets/our_pets.html">Our pets</a></li>
         <li class="header__item"><a href="#help">Help the shelter</a></li>
         <li class="header__item"><a href="#contacts">Contacts</a></li>
@@ -59,7 +71,7 @@
         </span>
       </div>
     </nav>
-   </header> 
+   </header>
   <div class="puppy">
     <div class="text-block">
       <h2>Not only people need a house</h2>
@@ -86,10 +98,17 @@
   <section class="our-friends">
     <h3>Our friends who<br> are looking for a house</h3>
     <div class="slider-container">
-      <div class="slider__button">
+      <div class="slider__button-left">
         <button class="button-arrow"><img src="assets/icons/Arrow.svg" alt="Arrow left"></button>
       </div>
+    <div class="slider__wrap-big">
+      <div class="slider__wrapper">
         <div class="slider">
+          <div class="slide">
+            <img src="assets/images/pets-woody.png" alt="Katrine">
+            <p class="card-title">Woody</p>
+            <button class="learn-more" type="button">Learn more</button>
+          </div>
           <div class="slide">
             <img src="assets/images/pets-katrine.png" alt="Katrine">
             <p class="card-title">Katrine</p>
@@ -106,7 +125,9 @@
             <button class="learn-more" type="button">Learn more</button>
           </div>
         </div>
-      <div class="slider__button"> 
+      </div>
+      </div>
+      <div class="slider__button-right"> 
         <button class="button-arrow right"><img src="assets/icons/Arrow.svg" alt="Arrow right"></button>
       </div> 
     </div>
@@ -196,6 +217,29 @@
 </footer>
 
 </main>
-  <!-- <script src="js/scripts.js"></script> -->
+
+<div class="overlay hidden">  <!-- hidden -->
+ 
+  <section class="popup">
+    <div class="popup__wrapper">
+      <img class="popup__image" src="assets/images/pets-jennifer.png" alt="Jennifer">
+      <div class="popup__text">
+        <h3>Jennifer</h3>
+        <h4>Dog - Labrador</h4>
+        <p>Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</p>
+        <ul class="popup__list">
+          <li><b>Age:</b> 2 months</li>
+          <li><b>Inoculations:</b> none</li>
+          <li><b>Diseases:</b> none</li>
+          <li><b>Parasites:</b> none</li>
+        </ul>
+      </div>
+    </div>
+    <div class="popup__button"><img src="assets/icons/close-x.svg" alt="Arrow right"></div>
+  </section>
+
+</div>
+
+  <script src="assets/scripts.js"></script>
 </body>
 </html>

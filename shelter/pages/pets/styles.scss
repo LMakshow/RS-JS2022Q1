@@ -18,6 +18,7 @@ $color-hamburger: #000000;
 
 @import "../../sass/mixins";
 @import "../../sass/hamburger";
+@import "../../sass/popup";
 
 html {
     font-family: Arial, Helvetica, sans-serif;
@@ -70,6 +71,41 @@ h5 {
     z-index: 5;
     top: 0;
     width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 48px;
+    right: 30px;
+    width: 30px;
+    height: 22px;    
+    z-index: 10;
+    margin-right: 23px;
+    transition: all .5s;
+    
+
+    @include media-mobile {
+        display: inline-block;
+    }
+    &:before {
+        @extend %hamburger-line;
+        top: 0;
+        left: 0;
+    }
+    &:after {
+        @extend %hamburger-line;
+        bottom: 0;
+        left: 0;
+    }
+    &.opened {
+        rotate: -90deg;
+        > * {background: #F1CDB3;}
+        &:before, &:after {
+            background: #F1CDB3;
+        }
+    }
 }
 
 header {
@@ -182,24 +218,39 @@ header {
             text-align: center;
         }
     }
-  
+    
+    .slider__wrapper {
+        width: 1200px;
+        overflow: hidden;
+        align-items: center;
+        @include media-tablet {
+            width: 580px;
+        }
+        @include media-mobile {
+            width: 270px;
+        }
+    }
 
     .slider {
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-between;
+        height: 900px;
         width: 1200px;
         row-gap: 30px;
+        column-gap: 40px;
         @include media-tablet {
             justify-content: space-around;
             width: auto;
+            height: 1365px;
             max-width: 930px;
-            padding: 0 12.2vw;
+            // padding: 0 12.2vw;
             margin-bottom: 10px;
-            column-gap: 5.2vw;
+            // column-gap: 5.2vw;
         }
         @include media-mobile {
-            width: 300px;
+            width: auto;
             margin-bottom: 0;
             padding: 0 0;
             justify-content: center;
@@ -229,16 +280,16 @@ header {
             background: #FDDCC4;
             border: 2px solid #FDDCC4; 
         }
-        @include media-tablet {
-            &:nth-child(n+7) {
-                display:none;
-            }
-        }
-        @include media-mobile {
-            &:nth-child(n+4) {
-                display:none;
-            }
-        }
+        // @include media-tablet {
+        //     &:nth-child(n+7) {
+        //         display:none;
+        //     }
+        // }
+        // @include media-mobile {
+        //     &:nth-child(n+4) {
+        //         display:none;
+        //     }
+        // }
     }
 
 
@@ -305,17 +356,18 @@ header {
         letter-spacing: 0.06em;
         color: #292929;
 
-        &.inactive{
+        &:disabled {
             border: 2px solid #CDCDCD;
             color: #CDCDCD;
         }
 
         &.active {
             background: #F1CDB3;
-            border: 2px solid #F1CDB3;  
+            border: 2px solid #F1CDB3;
+            color: #292929;
         }
 
-        &:hover, &:focus {
+        &:hover {
             &:not([disabled]) {
             background: #FDDCC4;
             border: 2px solid #FDDCC4;  
