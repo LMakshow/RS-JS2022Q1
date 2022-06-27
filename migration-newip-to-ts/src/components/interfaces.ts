@@ -1,3 +1,5 @@
+import { SourcesData, NewsData } from './types';
+
 export interface DOMDraw {
-  draw(data: {}): void
+  draw(data: [] | SourcesData['sources'] | NewsData['articles']): void;
 }
