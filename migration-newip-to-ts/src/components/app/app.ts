@@ -3,25 +3,23 @@ import { NewsData, SourcesData } from '../types';
 import { AppView } from '../view/appView';
 
 interface App {
-  controller: AppController;
-  view: AppView;
   start(): void;
 }
 
 class NewsApp implements App {
-  controller: AppController;
-  view: AppView;
+  private readonly _controller: AppController;
+  private readonly _view: AppView;
 
   constructor() {
-    this.controller = new AppController();
-    this.view = new AppView();
+    this._controller = new AppController();
+    this._view = new AppView();
   }
 
-  start() {
+  public start() {
     document
       .querySelector('.sources')
-      .addEventListener('click', (e) => this.controller.getNews(e, (data: NewsData) => this.view.drawNews(data)));
-    this.controller.getSources((data: SourcesData) => this.view.drawSources(data));
+      .addEventListener('click', (e) => this._controller.getNews(e, (data: NewsData) => this._view.drawNews(data)));
+    this._controller.getSources((data: SourcesData) => this._view.drawSources(data));
   }
 }
 
