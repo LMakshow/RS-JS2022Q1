@@ -3,10 +3,12 @@ import { NewsData, SourcesData } from '../types';
 import { AppView } from '../view/appView';
 
 interface App {
+  controller: AppController;
+  view: AppView;
   start(): void;
 }
 
-class NewsApp implements App {
+class NewsApp implements Pick<App, 'start'> {
   private readonly _controller: AppController;
   private readonly _view: AppView;
 

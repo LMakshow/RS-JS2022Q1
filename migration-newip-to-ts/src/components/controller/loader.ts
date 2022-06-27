@@ -16,7 +16,7 @@ export interface ILoad {
   makeUrl(options: Record<string, unknown>, endpoint: string): string;
 }
 
-export class Loader implements ILoad {
+export class Loader implements Readonly<ILoad> {
   baseLink: string;
   options: { [key: string]: string };
 
