@@ -11,11 +11,8 @@ import { HTTPStatus } from '../enum';
 export interface ILoad {
   baseLink: string;
   options: { [key: string]: string };
-  getResp(
-    e: { endpoint: string; options?: Record<string, unknown> },
-    callback: (data?: NewsData | SourcesData) => void
-  ): void;
-  errorHandler(res: Response): Response;
+  getResp(e: { endpoint: string; options?: Record<string, unknown> }, callback: <T>(data?: T) => void): void;
+  errorHandler<T extends Response>(res: T): T;
   makeUrl(options: Record<string, unknown>, endpoint: string): string;
 }
 
@@ -37,7 +34,7 @@ export class Loader implements ILoad {
     this.load('GET', endpoint, callback, options);
   }
 
-  errorHandler(res: Response): Response {
+  errorHandler<T extends Response>(res: T): T {
     if (!res.ok) {
       if (HTTPStatus[res.status])
         console.log(`Sorry, but there is ${res.status} ${HTTPStatus[res.status]} error: ${res.statusText}`);
