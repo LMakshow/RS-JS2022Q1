@@ -1,4 +1,5 @@
 import { NewsData, SourcesData } from '../types';
+import { HTTPStatus } from '../enum';
 
 /**
  * Loader takes link (here to newsApi) and apiKey in options.
@@ -38,8 +39,8 @@ export class Loader implements ILoad {
 
   errorHandler(res: Response): Response {
     if (!res.ok) {
-      if (res.status === 401 || res.status === 404)
-        console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
+      if (HTTPStatus[res.status])
+        console.log(`Sorry, but there is ${res.status} ${HTTPStatus[res.status]} error: ${res.statusText}`);
       throw Error(res.statusText);
     }
 
