@@ -3,15 +3,30 @@ import AppLoader from './appLoader';
 import { ILoad } from './loader';
 
 interface Controller extends ILoad {
-  getSources(callback: ((data?: SourcesData) => void) | undefined): void;
+  getSources(
+    category: string,
+    language: string,
+    country: string,
+    callback: ((data?: SourcesData) => void) | undefined
+  ): void;
   getNews(e: Event, callback: ((data?: NewsData) => void) | undefined): void;
 }
 
 class AppController extends AppLoader implements Controller {
-  getSources(callback: ((data?: SourcesData) => void) | undefined) {
+  getSources(
+    category: string,
+    language: string,
+    country: string,
+    callback: ((data?: SourcesData) => void) | undefined
+  ) {
     super.getResp(
       {
         endpoint: 'sources',
+        options: {
+          category: category,
+          language: language,
+          country: country,
+        },
       },
       callback
     );

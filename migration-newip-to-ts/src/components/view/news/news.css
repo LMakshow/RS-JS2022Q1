@@ -6,6 +6,13 @@
   margin: 40px auto;
 }
 
+.news__info {
+  font-weight: 700;
+  font-size: 1.7rem;
+  align-self: center;
+  color: #00009D;
+}
+
 .news__grid {
   margin: 0 auto;
   display: grid;

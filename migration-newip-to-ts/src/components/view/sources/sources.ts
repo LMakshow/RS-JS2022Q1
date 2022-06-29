@@ -16,7 +16,12 @@ class Sources implements DOMDraw {
       fragment.append(sourceClone);
     });
 
+    document.querySelector('.sources').innerHTML = '';
     document.querySelector('.sources').append(fragment);
+    if (document.querySelector('.sources').innerHTML === '')
+      document.querySelector('.sources').innerHTML = `...No news sources to show for category: ${localStorage.getItem(
+        'category'
+      )}, language: ${localStorage.getItem('language')} and country: ${localStorage.getItem('country')}.`;
   }
 }
 

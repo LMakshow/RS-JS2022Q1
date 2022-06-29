@@ -55,6 +55,7 @@ class News implements DOMDraw {
       }
     });
 
+    document.querySelector('.news__info').innerHTML = '';
     document.querySelector('.news__grid').innerHTML = '';
     document.querySelector('.news__grid').appendChild(fragmentGrid);
     document.querySelector('.news__flex').innerHTML = '';

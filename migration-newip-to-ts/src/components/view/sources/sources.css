@@ -8,6 +8,8 @@
     align-items: center;
     scrollbar-color: #70d6ff #f0f6ff;
     scrollbar-width: thin;
+    color: #00009D;
+    text-align: center;
 }
 
 .sources::-webkit-scrollbar {

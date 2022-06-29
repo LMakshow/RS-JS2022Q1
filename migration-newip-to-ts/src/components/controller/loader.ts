@@ -49,7 +49,9 @@ export class Loader implements Readonly<ILoad> {
     let url = `${this.baseLink}${endpoint}?`;
 
     Object.keys(urlOptions).forEach((key) => {
-      url += `${key}=${urlOptions[key]}&`;
+      if (urlOptions[key] && urlOptions[key] !== 'all') {
+        url += `${key}=${urlOptions[key]}&`;
+      }
     });
 
     return url.slice(0, -1);
