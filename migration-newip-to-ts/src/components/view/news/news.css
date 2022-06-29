@@ -40,6 +40,13 @@
   justify-content: flex-end;
   color: #fff;
   text-decoration: none;
+  transition: 0.25s;
+}
+
+.news__item-grid:hover,
+.news__item-grid:focus {
+  transform: scale(1.008);
+  box-shadow: 0 0.4em 0.4em -0.2em rgba(0, 0, 157, 0.3);
 }
 
 .news__container-grid {
