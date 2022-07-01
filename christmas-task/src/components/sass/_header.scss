@@ -1,0 +1,85 @@
+.header {
+  background-color: $primary-color;
+  font-family: $font-header;
+  position: relative;
+  z-index: 10;
+}
+
+.header__container {
+  max-width: 1200px;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header__link {
+  display: flex;
+  align-items: center;
+  transition: .3s;
+}
+
+.header__link:hover {
+  filter: invert(42%) sepia(94%) saturate(317%) hue-rotate(141deg) brightness(93%) contrast(97%);
+}
+
+.header__icon_main {
+  height: 50px;
+  width: auto;
+}
+
+.header__icon {
+  height: 30px;
+  width: auto;
+}
+
+.search-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.search-box {
+  background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
+  backdrop-filter: blur(31px);
+  width: 254px;
+  height: 36px;
+  font-family: $font-header;
+  padding: 0 45px 0 10px;
+  font-size: 24px;
+  line-height: 30px;
+  color: $text-color;
+  border-radius: 30px;
+  border: 1px solid $accent-color;
+  background-image: url("./assets/svg/search.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 220px center;
+}
+
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 60px;
+  background-image: url("./assets/svg/ball.svg");
+  background-size: 48px 60px;
+}
+
+.cart__text {
+  padding-top: 10px;
+  font-size: 24px;
+  line-height: 36px;
+  color: $primary-color;
+}

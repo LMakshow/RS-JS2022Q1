@@ -1,0 +1,36 @@
+.footer {
+  position: relative;
+  z-index: 10;
+  background-color: $primary-color;
+  font-family: $font-header;
+}
+
+.footer__container {
+  max-width: 1200px;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  font-size: 26px;
+  line-height: 36px;
+}
+
+.footer__link {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: .3s;
+}
+
+.footer__link:hover {
+  filter: invert(42%) sepia(94%) saturate(317%) hue-rotate(141deg) brightness(93%) contrast(97%);
+}
+
+.footer__image-RS {
+  height: 40px;
+}
+
+.footer__image-GH {
+  height: 40px;
+}
