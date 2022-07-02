@@ -1,0 +1,73 @@
+.toys-page {
+  background: $primary-color;
+  width: 100%;
+}
+
+.toys__container {
+  max-width: 1720px;
+  height: calc(100vh - 120px);
+  display: flex;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.toys__options {
+  display: flex;
+  flex-direction: column;
+  width: 446px;
+  gap: 25px;
+}
+
+.toys-sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toys__text {
+  text-transform: uppercase;
+  font-family: $font-header;
+  font-size: 24px;
+  color: $text-color;
+}
+
+.toys-sort__select,
+.toys-reset {
+  width: 240px;
+  height: 30px;
+  background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
+  backdrop-filter: blur(31px);
+  border-radius: 30px;
+  font-family: $font-main;
+  padding: 0 5px;
+  font-size: 16px;
+  color: $text-color;
+}
+
+.toys-sort__option {
+  background-color: $accent-color;
+}
+
+.toys-shape__select {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.toys-shape__option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  transition: .3s;
+  cursor: pointer;
+
+  &:hover {
+    filter: $hover-effect;
+  }
+}
+
+.toys-shape__img {
+  height: 42px;
+}

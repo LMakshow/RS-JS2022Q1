@@ -40,7 +40,7 @@
     </div>
   </header>
 
-  <main class="main__container">
+  <main class="main-page hide">
     <img class="main__image-left" src="./assets/ball/1.png" alt="">
     <img class="main__image-right" src="./assets/ball/2.png" alt="">
     <div class="main__ui">
@@ -50,6 +50,53 @@
       <button class="main__button">Начать</button>
     </div>
   </main>
+
+  <div class="toys-page">
+    <div class="toys__container">
+      <div class="toys__options">
+
+        <div class="toys-sort">
+          <p class="toys__text">Сортировать</p>
+          <select class="toys-sort__select" name="toys-sort__select" id="toys-sort__select">
+            <option class="toys-sort__option" value="nameA-Z" selected>По названию (от А до Я)</option>
+            <option class="toys-sort__option" value="nameZ-A">По названию (от Я до А)</option>
+            <option class="toys-sort__option" value="year-new">По году (от новых к старым)</option>
+            <option class="toys-sort__option" value="year-old">По году (от старых к новым)</option>
+          </select>
+        </div>
+
+        <div class="toys-shape">
+          <p class="toys__text">Форма</p>
+          <ul class="toys-shape__select">
+            <li class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/bell.svg" alt=""><p>Колокол</p></li>
+            <li class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/ball.svg" alt=""><p>Шар</p></li>
+            <li class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/cone.svg" alt=""><p>Шишка</p></li>
+            <li class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/snowflake.svg" alt=""><p>Снежинка</p></li>
+            <li class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/toy.svg" alt=""><p>Фигурка</p></li>
+          </ul>
+        </div>
+
+        <div class="toys-number">
+          <p class="toys__text">Количество экземпляров</p>
+        </div>
+
+        <div class="toys-year">
+          <p class="toys__text">Год приобретения</p>
+        </div>
+
+        <div class="toys-color">
+          <p class="toys__text">Цвет</p>
+        </div>
+
+        <div class="toys-size">
+          <p class="toys__text">Размер</p>
+        </div>
+
+        <button class="toys-reset">Сбросить фильтры</button>
+ 
+      </div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="footer__container">
