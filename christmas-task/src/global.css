@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Finlandica&family=Neucha&display=swap");
+@import 'nouislider/dist/nouislider.css';
 body {
   font-family: "Finlandica", sans-serif;
   margin: 0;
@@ -235,7 +236,7 @@ a {
 
 .toys__container {
   max-width: 1720px;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 140px);
   display: flex;
   margin: auto;
   padding: 20px 0;
@@ -300,4 +301,47 @@ a {
 
 .toys-shape__img {
   height: 42px;
+}
+
+.toys-number,
+.toys-year {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slider {
+  height: 4px;
+  border: none;
+  background: #278D9F;
+}
+.slider .noUi-handle::before, .slider .noUi-handle::after {
+  display: none;
+}
+.slider .noUi-connect {
+  background: #fff;
+}
+.slider .noUi-handle {
+  height: 16px;
+  width: 16px;
+  top: -6px;
+  right: -8px;
+  /* half the width */
+  border-radius: 8px;
+  background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
+}
+.slider .noUi-handle .noUi-touch-area {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+.slider__labels {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=global.css.map */
