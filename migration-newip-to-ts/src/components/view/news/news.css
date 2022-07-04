@@ -42,7 +42,6 @@
 .news__item-grid {
   display: flex;
   border-radius: 5px;
-  background: linear-gradient(358.86deg, #000000 0.9%, rgba(0, 0, 0, 0) 31.55%);
   flex-direction: column;
   justify-content: flex-end;
   color: #fff;
@@ -57,9 +56,10 @@
 }
 
 .news__container-grid {
-  margin: 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(0deg, #000000, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%);
   gap: 5px;
 }
 

@@ -15,9 +15,7 @@ class News implements DOMDraw {
       if (idx < 4) {
         const newsClone = newsItemGrid.content.cloneNode(true) as HTMLElement;
 
-        newsClone.querySelector<HTMLElement>(
-          '.news__item-grid'
-        ).style.background = `linear-gradient(358.86deg, #000 0.9%, rgba(0, 0, 0, 0) 50%), no-repeat center/cover url(${
+        newsClone.querySelector<HTMLElement>('.news__item-grid').style.background = `no-repeat center/cover url(${
           item.urlToImage || 'images/news_placeholder.jpg'
         })`;
         newsClone.querySelector('.news__item-grid').setAttribute('href', item.url);
