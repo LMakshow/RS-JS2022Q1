@@ -67,13 +67,13 @@
 
         <div class="toys-shape">
           <p class="toys__text">Форма</p>
-          <ul class="toys-shape__select">
-            <li class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/bell.svg" alt=""><p>Колокол</p></li>
-            <li class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/ball.svg" alt=""><p>Шар</p></li>
-            <li class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/cone.svg" alt=""><p>Шишка</p></li>
-            <li class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/snowflake.svg" alt=""><p>Снежинка</p></li>
-            <li class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/toy.svg" alt=""><p>Фигурка</p></li>
-          </ul>
+          <div class="toys-shape__select">
+            <input class="checkbox-none" type="checkbox" name="shape" value="bell" id="bell"><label for="bell" class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/bell.svg" alt="">Колокол</label>
+            <input class="checkbox-none" type="checkbox" name="shape" value="ball" id="ball"><label for="ball" class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/ball.svg" alt="">Шар</label>
+            <input class="checkbox-none" type="checkbox" name="shape" value="cone" id="cone"><label for="cone" class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/cone.svg" alt="">Шишка</label>
+            <input class="checkbox-none" type="checkbox" name="shape" value="snowflake" id="snowflake"><label for="snowflake" class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/snowflake.svg" alt="">Снежинка</label>
+            <input class="checkbox-none" type="checkbox" name="shape" value="toy" id="toy"><label for="toy" class="toys-shape__option"><img class="toys-shape__img" src="./assets/svg/toy.svg" alt="">Фигурка</label>
+          </div>
         </div>
 
         <div class="toys-number">
@@ -96,10 +96,27 @@
 
         <div class="toys-color">
           <p class="toys__text">Цвет</p>
+          <div class="toys-color__list">
+            <input class="toys-color__btn btn_white" type="checkbox" name="color" value="white"></button>
+            <input class="toys-color__btn btn_yellow" type="checkbox" name="color" value="yellow"></button>
+            <input class="toys-color__btn btn_red" type="checkbox" name="color" value="red"></button>
+            <input class="toys-color__btn btn_blue" type="checkbox" name="color" value="blue"></button>
+            <input class="toys-color__btn btn_green" type="checkbox" name="color" value="green"></button>
+          </div>
         </div>
 
         <div class="toys-size">
           <p class="toys__text">Размер</p>
+          <div class="toys-size__list">
+            <label><input class="toys-size__btn" type="checkbox" name="size" value="big">Большой</label>
+            <label><input class="toys-size__btn" type="checkbox" name="size" value="med">Средний</label>
+            <label><input class="toys-size__btn" type="checkbox" name="size" value="small">Маленький</label>
+          </div>
+        </div>
+
+        <div class="toys-fav">
+          <input class="toys-color__btn btn_fav" id="fav" type="checkbox" name="fav" value="on">
+          <label for="fav" class="toys__text">Только любимые</label>
         </div>
 
         <button class="toys-reset">Сбросить фильтры</button>

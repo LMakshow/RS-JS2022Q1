@@ -39,6 +39,7 @@ a {
 
 .header__container {
   max-width: 1200px;
+  width: 90%;
   display: flex;
   height: 60px;
   justify-content: space-between;
@@ -126,6 +127,7 @@ a {
 
 .footer__container {
   max-width: 1200px;
+  width: 90%;
   display: flex;
   height: 60px;
   justify-content: space-between;
@@ -236,7 +238,8 @@ a {
 
 .toys__container {
   max-width: 1720px;
-  height: calc(100vh - 140px);
+  width: 90%;
+  min-height: calc(100vh - 160px);
   display: flex;
   margin: auto;
   padding: 20px 0;
@@ -245,8 +248,9 @@ a {
 .toys__options {
   display: flex;
   flex-direction: column;
-  width: 446px;
-  gap: 25px;
+  width: 410px;
+  gap: 10px;
+  justify-content: space-around;
 }
 
 .toys-sort {
@@ -266,23 +270,22 @@ a {
 .toys-reset {
   width: 240px;
   height: 30px;
-  background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
-  -webkit-backdrop-filter: blur(31px);
-          backdrop-filter: blur(31px);
+  background: #3C5757;
   border-radius: 30px;
   font-family: "Finlandica", sans-serif;
   padding: 0 5px;
   font-size: 16px;
   color: #fff;
+  border: 2px solid #3C5757;
+  transition-duration: 0.4s;
 }
 
 .toys-sort__option {
-  background-color: #278D9F;
+  background-color: #fff;
 }
 
 .toys-shape__select {
   display: flex;
-  margin-top: 10px;
   justify-content: space-between;
 }
 
@@ -299,6 +302,17 @@ a {
   filter: invert(42%) sepia(94%) saturate(317%) hue-rotate(141deg) brightness(93%) contrast(97%);
 }
 
+.checkbox-none:checked + .toys-shape__option {
+  filter: invert(42%) sepia(94%) saturate(317%) hue-rotate(141deg) brightness(93%) contrast(97%);
+}
+
+.checkbox-none {
+  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .toys-shape__img {
   height: 42px;
 }
@@ -312,6 +326,7 @@ a {
 
 .slider {
   height: 4px;
+  margin: 0 8px;
   border: none;
   background: #278D9F;
 }
@@ -344,4 +359,116 @@ a {
 .slider__labels {
   display: flex;
   justify-content: space-between;
+}
+
+.toys-color,
+.toys-size {
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.toys-color__list,
+.toys-size__list {
+  display: flex;
+  gap: 20px;
+}
+
+.toys-color__btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  border: solid 1px #278D9F;
+  margin: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: #278D9F;
+}
+.toys-color__btn:hover {
+  border: solid 1px #fff;
+}
+.toys-color__btn:checked {
+  background: no-repeat center/contain url(./assets/svg/snow.svg), #278D9F;
+}
+
+.btn_white {
+  background: #fff;
+}
+.btn_white:checked {
+  background: no-repeat center/contain url(./assets/svg/snow-accent.svg), #fff;
+}
+
+.btn_yellow {
+  background: #fdd700;
+}
+.btn_yellow:checked {
+  background: no-repeat center/contain url(./assets/svg/snow-accent.svg), #fdd700;
+}
+
+.btn_red {
+  background: #fd0000;
+}
+.btn_red:checked {
+  background: no-repeat center/contain url(./assets/svg/snow.svg), #fd0000;
+}
+
+.btn_blue {
+  background: #2299eb;
+}
+.btn_blue:checked {
+  background: no-repeat center/contain url(./assets/svg/snow.svg), #2299eb;
+}
+
+.btn_green {
+  background: #08aa05;
+}
+.btn_green:checked {
+  background: no-repeat center/contain url(./assets/svg/snow.svg), #08aa05;
+}
+
+.toys-size__btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px 0 0;
+  padding: 0;
+  border-radius: 4px;
+  vertical-align: top;
+  outline: none;
+  border: solid 1px #278D9F;
+  transition: all 0.3s ease;
+  background: #278D9F;
+  cursor: pointer;
+}
+.toys-size__btn:hover {
+  border: solid 1px #fff;
+}
+.toys-size__btn:checked {
+  background: no-repeat center/contain url(./assets/svg/snow.svg), #278D9F;
+}
+
+.toys-fav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn_fav {
+  order: 1;
+}
+
+.toys-reset:hover {
+  border: 2px solid #278D9F;
+}
+
+.toys-reset:active {
+  background: #278D9F;
 }/*# sourceMappingURL=global.css.map */

@@ -7,7 +7,8 @@
 
 .toys__container {
   max-width: 1720px;
-  height: calc(100vh - 140px);
+  width: 90%;
+  min-height: calc(100vh - 160px);
   display: flex;
   margin: auto;
   padding: 20px 0;
@@ -16,8 +17,9 @@
 .toys__options {
   display: flex;
   flex-direction: column;
-  width: 446px;
-  gap: 25px;
+  width: 410px;
+  gap: 10px;
+  justify-content: space-around;
 }
 
 .toys-sort {
@@ -37,22 +39,22 @@
 .toys-reset {
   width: 240px;
   height: 30px;
-  background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
-  backdrop-filter: blur(31px);
+  background: $accent-dark-color;
   border-radius: 30px;
   font-family: $font-main;
   padding: 0 5px;
   font-size: 16px;
   color: $text-color;
+  border: 2px solid $accent-dark-color;
+  transition-duration: 0.4s;
 }
 
 .toys-sort__option {
-  background-color: $accent-color;
+  background-color: $text-color;
 }
 
 .toys-shape__select {
   display: flex;
-  margin-top: 10px;
   justify-content: space-between;
 }
 
@@ -70,11 +72,23 @@
   }
 }
 
+.checkbox-none:checked + .toys-shape__option {
+  filter: $hover-effect;
+}
+
+.checkbox-none {
+  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .toys-shape__img {
   height: 42px;
 }
 
-.toys-number {
+.toys-number,
+.toys-year {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -82,6 +96,7 @@
 
 .slider {
   height: 4px;
+  margin: 0 8px;
   border: none;
   background: $accent-color;
 
@@ -119,4 +134,125 @@
 .slider__labels {
   display: flex;
   justify-content: space-between;
+}
+
+.toys-color,
+.toys-size {
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.toys-color__list,
+.toys-size__list {
+  display: flex;
+  gap: 20px;
+}
+
+.toys-color__btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  border: solid 1px $accent-color;
+  margin: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: $accent-color;
+
+  &:hover{
+    border: solid 1px $text-color;
+  }
+
+  &:checked {
+    background: no-repeat center/contain url(./assets/svg/snow.svg), $accent-color;
+  }
+}
+
+.btn_white {
+  background: #fff;
+
+  &:checked {
+    background: no-repeat center/contain url(./assets/svg/snow-accent.svg), #fff;
+  }
+}
+
+.btn_yellow {
+  background: #fdd700;
+
+  &:checked {
+    background: no-repeat center/contain url(./assets/svg/snow-accent.svg), #fdd700;
+  }
+}
+
+.btn_red {
+  background: #fd0000;
+
+  &:checked {
+    background: no-repeat center/contain url(./assets/svg/snow.svg), #fd0000;
+  }
+}
+
+.btn_blue {
+  background: #2299eb;
+
+  &:checked {
+    background: no-repeat center/contain url(./assets/svg/snow.svg), #2299eb;
+  }
+}
+
+.btn_green {
+  background: #08aa05;
+
+  &:checked {
+    background: no-repeat center/contain url(./assets/svg/snow.svg), #08aa05;
+  }
+}
+
+.toys-size__btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px 0 0;
+  padding: 0;
+  border-radius: 4px;
+  vertical-align: top;
+  outline: none;
+  border: solid 1px $accent-color;
+  transition: all 0.3s ease;
+  background: $accent-color;
+  cursor: pointer;
+
+  &:hover {
+    border: solid 1px $text-color;
+  }
+
+  &:checked {
+    background: no-repeat center/contain url(./assets/svg/snow.svg), $accent-color;
+  }
+}
+
+.toys-fav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn_fav {
+  order: 1;
+}
+
+.toys-reset:hover {
+  border: 2px solid $accent-color;
+}
+
+.toys-reset:active {
+  background: $accent-color;
 }
