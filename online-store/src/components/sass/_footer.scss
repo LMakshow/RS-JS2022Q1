@@ -1,8 +1,9 @@
 .footer {
   position: relative;
   z-index: 10;
-  background-color: $primary-color;
+  background-color: $accent-dark-color;
   font-family: $font-header;
+  margin-top: 5px;
 }
 
 .footer__container {
@@ -15,6 +16,10 @@
   margin: auto;
   font-size: 26px;
   line-height: 36px;
+}
+
+.footer__text {
+  display: flex;
 }
 
 .footer__link {

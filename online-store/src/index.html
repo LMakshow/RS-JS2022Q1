@@ -17,21 +17,26 @@
     content="PhotoShop - ваша гавань для покупки нового фотоаппарата! Зеркальные и беззеркальные, компакты и ультразумы - здесь можно найти всё и даже больше!">
 
   <link rel="icon" stabs="512x512" href="./assets/favicon.png">
-  <link rel="stylesheet" href="global.css">
+  <!-- <link rel="stylesheet" href="global.css"> -->
 </head>
 
 <body>
   <header class="header">
     <div class="header__container">
       <nav class="navigation">
-        <a class="header__link main" href="#"><img class="header__icon_main" src="./assets/svg/tree.svg"
-            alt="Главная"></a>
-        <a class="header__link shop" href="#">Игрушки</a>
-        <a class="header__link xmas" href="#">Ёлка</a>
+        <a class="header__link main" href="#"><img class="header__icon_main" src="./assets/icons/logo-main.png"
+            alt="Главная"><span class="header__link_span">PhotoShop</span></a>
       </nav>
       <div class="search-container">
-        <a class="header__link snow" href="#"><img class="header__icon" src="./assets/svg/snow.svg" alt="Снег"></a>
-        <a class="header__link audio" href="#"><img class="header__icon" src="./assets/svg/audio.svg" alt="Музыка"></a>
+        <div class="shop-options__sort">
+          <p class="shop-options__text">Сортировка:</p>
+          <select class="shop-sort__select" name="shop-sort__select" id="shop-sort__select">
+            <option class="shop-sort__option" value="price-up" selected>цена (сначала дешевые)</option>
+            <option class="shop-sort__option" value="price-down">цена (сначала дорогие)</option>
+            <option class="shop-sort__option" value="mpix-up">мегапиксели (возрастание)</option>
+            <option class="shop-sort__option" value="mpix-down">мегапиксели (убывание)</option>
+          </select>
+        </div>
         <input class="search-box" type="search" placeholder="Поиск" autocomplete="off">
         <div class="cart">
           <p class="cart__text">0</p>
@@ -44,48 +49,43 @@
     <div class="shop-container">
       <div class="shop-options">
 
-        <div class="shop-options__sort">
-          <p class="shop-options__text">Сортировать</p>
-          <select class="shop-sort__select" name="shop-sort__select" id="shop-sort__select">
-            <option class="shop-sort__option" value="nameA-Z" selected>По цене (сначала дешевые)</option>
-            <option class="shop-sort__option" value="nameZ-A">По цене (сначала дорогие)</option>
-            <option class="shop-sort__option" value="year-new">По мегапикселям (по возрастанию)</option>
-            <option class="shop-sort__option" value="year-old">По мегапикселям (по убыванию)</option>
-          </select>
-        </div>
-
         <div class="shop-maker">
           <p class="shop-options__text">Производитель</p>
-          <div class="shop-maker__select">
-            <input class="checkbox-none" type="checkbox" name="maker" value="canon" id="canon">
-            <label for="canon" class="shop-maker__option">
-              <img class="shop-maker__img" src="./assets/icons/logo-canon.svg" alt="">
-              Canon
-            </label>
+          <div class="shop-maker__list">
+            <div class="shop-maker__select">
+              <input class="checkbox_shop" type="checkbox" name="maker" value="canon" id="canon">
+              <label for="canon" class="shop-maker__option">
+                <img class="shop-maker__img" src="./assets/icons/logo-canon.svg" alt="">
+              </label>
+            </div>
 
-            <input class="checkbox-none" type="checkbox" name="maker" value="fujifilm" id="fujifilm">
-            <label for="fujifilm" class="shop-maker__option">
-              <img class="shop-maker__img" src="./assets/icons/logo-fujifilm.svg" alt="">
-              Fujifilm
-            </label>
+            <div class="shop-maker__select">
+              <input class="checkbox_shop" type="checkbox" name="maker" value="fujifilm" id="fujifilm">
+              <label for="fujifilm" class="shop-maker__option">
+                <img class="shop-maker__img" src="./assets/icons/logo-fujifilm.svg" alt="">
+              </label>
+            </div>
 
-            <input class="checkbox-none" type="checkbox" name="maker" value="panasonic" id="panasonic">
-            <label for="panasonic" class="shop-maker__option">
-              <img class="shop-maker__img" src="./assets/icons/logo-panasonic.svg" alt="">
-              Panasonic
-            </label>
+            <div class="shop-maker__select">
+              <input class="checkbox_shop" type="checkbox" name="maker" value="panasonic" id="panasonic">
+              <label for="panasonic" class="shop-maker__option">
+                <img class="shop-maker__img" src="./assets/icons/logo-panasonic.svg" alt="">
+              </label>
+            </div>
 
-            <input class="checkbox-none" type="checkbox" name="maker" value="nikon" id="nikon">
-            <label for="nikon" class="shop-maker__option">
-              <img class="shop-maker__img" src="./assets/icons/logo-nikon.svg" alt="">
-              Nikon
-            </label>
+            <div class="shop-maker__select">
+              <input class="checkbox_shop" type="checkbox" name="maker" value="nikon" id="nikon">
+              <label for="nikon" class="shop-maker__option">
+                <img class="shop-maker__img" src="./assets/icons/logo-nikon.svg" alt="">
+              </label>
+            </div>
 
-            <input class="checkbox-none" type="checkbox" name="maker" value="sony" id="sony">
-            <label for="sony" class="shop-maker__option">
-              <img class="shop-maker__img" src="./assets/icons/logo-sony.svg" alt="">
-              Sony
-            </label>
+            <div class="shop-maker__select">
+              <input class="checkbox_shop" type="checkbox" name="maker" value="sony" id="sony">
+              <label for="sony" class="shop-maker__option">
+                <img class="shop-maker__img" src="./assets/icons/logo-sony.svg" alt="">
+              </label>
+            </div>
           </div>
         </div>
 
@@ -110,43 +110,55 @@
         <div class="shop-type">
           <p class="shop-options__text">Тип</p>
           <div class="shop-type__list">
-            <input class="checkbox-none" type="checkbox" name="type" value="dslr" id="dslr">
-            <label for="dslr" class="shop-maker__option">
-              <img class="shop-maker__img" src="./assets/icons/type-dslr.svg" alt="">
-              Зеркальные
-            </label>
 
-            <input class="checkbox-none" type="checkbox" name="type" value="mirrorless" id="mirrorless">
-            <label for="mirrorless" class="shop-maker__option">
-              <img class="shop-maker__img" src="./assets/icons/type-mirrorless.svg" alt="">
-              Беззеркальные
-            </label>
+            <div class="shop-maker__select">
+              <input class="checkbox_shop" type="checkbox" name="type" value="dslr" id="dslr">
+              <label for="dslr" class="shop-maker__option">
+                <!-- <img class="shop-maker__img" src="./assets/icons/type-dslr.svg" alt=""> -->
+                Зеркальные
+              </label>
+            </div>
 
-            <input class="checkbox-none" type="checkbox" name="type" value="compact" id="compact">
-            <label for="compact" class="shop-maker__option">
-              <img class="shop-maker__img" src="./assets/icons/type-compact.svg" alt="">
-              Компакты
-            </label>
+            <div class="shop-maker__select">
+              <input class="checkbox_shop" type="checkbox" name="type" value="mirrorless" id="mirrorless">
+              <label for="mirrorless" class="shop-maker__option">
+                <!-- <img class="shop-maker__img" src="./assets/icons/type-mirrorless.svg" alt=""> -->
+                Беззеркальные
+              </label>
+            </div>
 
-            <input class="checkbox-none" type="checkbox" name="type" value="ultrazoom" id="ultrazoom">
-            <label for="ultrazoom" class="shop-maker__option">
-              <img class="shop-maker__img" src="./assets/icons/type-ultrazoom.svg" alt="">
-              Ультразумы
-            </label>
+            <div class="shop-maker__select">
+              <input class="checkbox_shop" type="checkbox" name="type" value="compact" id="compact">
+              <label for="compact" class="shop-maker__option">
+                <!-- <img class="shop-maker__img" src="./assets/icons/type-compact.svg" alt=""> -->
+                Компакты
+              </label>
+            </div>
+
+            <div class="shop-maker__select">
+              <input class="checkbox_shop" type="checkbox" name="type" value="ultrazoom" id="ultrazoom">
+              <label for="ultrazoom" class="shop-maker__option">
+                <!-- <img class="shop-maker__img" src="./assets/icons/type-ultrazoom.svg" alt=""> -->
+                Ультразумы
+              </label>
+            </div>
           </div>
         </div>
 
         <div class="shop-stab">
           <p class="shop-options__text">Стабилизация</p>
           <div class="shop-stab__list">
-            <label><input class="shop-stab__btn" type="checkbox" name="stab" value="big">Нет</label>
-            <label><input class="shop-stab__btn" type="checkbox" name="stab" value="med">Оптическая</label>
-            <label><input class="shop-stab__btn" type="checkbox" name="stab" value="small">Матричная</label>
+            <label class="shop-stab__option"><input class="checkbox_shop" type="checkbox" name="stab"
+                value="big">Нет</label>
+            <label class="shop-stab__option"><input class="checkbox_shop" type="checkbox" name="stab"
+                value="med">Оптическая</label>
+            <label class="shop-stab__option"><input class="checkbox_shop" type="checkbox" name="stab"
+                value="small">Матричная</label>
           </div>
         </div>
 
         <div class="shop-stock">
-          <input class="shop-type__btn btn_stock" id="stock" type="checkbox" name="stock" value="on">
+          <input class="checkbox_shop btn_stock" id="stock" type="checkbox" name="stock" value="on">
           <label for="stock" class="shop-options__text">Только в наличии</label>
         </div>
 
@@ -160,7 +172,7 @@
     <div class="footer__container">
       <a class="footer__link" href="https://github.com/LMakshow"><img class="footer__image-GH"
           src="./assets/svg/github.svg" alt="GitHub">Maksym Lytvyn</a>
-      <p>© 2022, Фото и цены: <a class="footer__link" href="https://elmir.ua/cameras/">Elmir</a></p>
+      <p class="footer__text">© 2022, Фото и цены: <a class="footer__link" href="https://elmir.ua/cameras/"> Elmir</a></p>
       <a class="footer__link" href="https://rs.school/js/"><img class="footer__image-RS" src="./assets/svg/rss.svg"
           alt="RS School logo"></a>
     </div>

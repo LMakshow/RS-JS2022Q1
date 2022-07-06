@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Finlandica&family=Neucha&display=swap');
-$primary-color: #192F2D;
-$accent-color: #278D9F;
-$accent-dark-color: #3C5757;
-$text-color: #fff;
-$font-header: 'Neucha', cursive;
-$font-main: 'Finlandica', sans-serif;
-$hover-effect: invert(42%) sepia(94%) saturate(317%) hue-rotate(141deg) brightness(93%) contrast(97%);
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500;700&display=swap');
+$primary-color: #fff;
+$accent-color: #c00;
+$accent-dark-color: #F2F4F5;
+$text-color: #191919;
+$text-secondary-color: #7f7f7f;
+$font-header: 'Alegreya Sans', sans-serif;
+$font-main: 'Alegreya Sans', sans-serif;
+$hover-effect: invert(10%) sepia(93%) saturate(5894%) hue-rotate(2deg) brightness(91%) contrast(113%);
 
 body {
   font-family: $font-main;
   margin: 0;
   padding: 0;
   color: $text-color;
+  background: $accent-dark-color;
 }
 
 h1,
