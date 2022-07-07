@@ -21,7 +21,7 @@ export default class ShopSlider implements Slider {
 
   start() {
     const sliderTarget: noUiSlider.target = document.querySelector(`.${this.sliderQuery}__slider`);
-    const sliderLabels = [
+    const sliderLabels: HTMLInputElement[] = [
       document.querySelector(`.${this.sliderQuery}__labels-low`),
       document.querySelector(`.${this.sliderQuery}__labels-high`),
     ];
@@ -40,6 +40,12 @@ export default class ShopSlider implements Slider {
       },
     });
 
-    sliderTarget.noUiSlider.on('update', (values, handle) => (sliderLabels[handle].innerHTML = String(values[handle])));
+    sliderTarget.noUiSlider.on('update', (values, handle) => (sliderLabels[handle].value = String(values[handle])));
+    sliderLabels[0].addEventListener('change', function () {
+      sliderTarget.noUiSlider.set([this.value, null]);
+    });
+    sliderLabels[1].addEventListener('change', function () {
+      sliderTarget.noUiSlider.set([null, this.value]);
+    });
   }
 }

@@ -7,23 +7,34 @@
 
 .shop-container {
   max-width: 1720px;
-  width: 90%;
-  min-height: calc(100vh - 160px);
+  width: 95%;
   display: flex;
   margin: auto;
+  gap: 15px;
   // padding: 20px 0;
+}
+
+.shop-left-side {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 15px;
 }
 
 .shop-options {
   display: flex;
   flex-direction: column;
-  width: 320px;
-  padding: 10px;
+  width: 100%;
+  padding: 15px;
   gap: 10px;
   justify-content: space-around;
   background: $primary-color;
-  border: $accent-color 2px solid;
+  // border: $accent-color 2px solid;
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px, rgba(0, 0, 0, 0.09) 0px 2px 5px, rgba(0, 0, 0, 0.07) 0px 0px 2px 0.00144px;
+  height: calc(100vh - 230px);
+  min-height: 590px;
+  max-height: 740px;
 }
 
 .shop-maker {
@@ -61,12 +72,12 @@
   }
 }
 
-.checkbox_shop:checked + .shop-maker__option, 
-.checkbox_shop:checked + .shop-options__text {
+.checkbox_shop:checked+.shop-maker__option,
+.checkbox_shop:checked+.shop-options__text {
   filter: $hover-effect;
 }
 
-.checkbox-none:checked + .shop-maker__img {
+.checkbox-none:checked+.shop-maker__img {
   filter: $hover-effect;
 }
 
@@ -78,21 +89,21 @@
 }
 
 .shop-maker__img {
-  height: 18px;
+  height: 17px;
 }
 
 .checkbox_shop {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   margin: 0;
   transition: all 0.3s ease;
   cursor: pointer;
   background: no-repeat center/contain url(./assets/svg/checkbox-unchecked.svg);
 
-  &:hover{
+  &:hover {
     filter: $hover-effect;
   }
 
@@ -112,7 +123,7 @@
   height: 4px;
   margin: 0 8px;
   border: none;
-  background: $accent-color;
+  background: $text-secondary-color;
 
   & .noUi-handle::before,
   & .noUi-handle::after {
@@ -120,7 +131,7 @@
   }
 
   & .noUi-connect {
-    background: $text-color;
+    background: $accent-color;
   }
 
   & .noUi-handle {
@@ -148,6 +159,23 @@
 .slider__labels {
   display: flex;
   justify-content: space-between;
+}
+
+.shop-price__labels-low,
+.shop-price__labels-high,
+.shop-mpix__labels-low,
+.shop-mpix__labels-high {
+  appearance: textfield;
+  text-align: center;
+  width: 60px;
+  height: 30px;
+  border: 1px solid #999;
+  color: #303030;
+  font-size: 13px;
+  line-height: 30px;
+  outline: none;
+  padding: 0 5px;
+  border-radius: 10px;
 }
 
 .shop-type,
@@ -197,7 +225,7 @@
   padding: 0 5px;
   font-size: 16px;
   color: $text-color;
-  border: 2px solid $accent-dark-color;
+  border: 2px solid $text-secondary-color;
   transition-duration: 0.4s;
 }
 
@@ -207,4 +235,98 @@
 
 .shop-reset:active {
   background: $accent-color;
+}
+
+.shop-goods {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  gap: 12px;
+  justify-content: flex-start;
+  background: $primary-color;
+  // border: $accent-color 2px solid;
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px, rgba(0, 0, 0, 0.09) 0px 2px 5px, rgba(0, 0, 0, 0.07) 0px 0px 2px 0.00144px;
+  margin-bottom: 15px;
+}
+
+.shop-card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 10px;
+  width: 250px;
+  height: 450px;
+  justify-content: flex-start;
+  background: $primary-color;
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  transition: all 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px, rgba(0, 0, 0, 0.09) 0px 2px 5px, rgba(0, 0, 0, 0.07) 0px 0px 2px 0.00144px;
+
+  &:hover {
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3), 0px 2px 5px rgba(0, 0, 0, 0.15), 0px 0px 2px 0.00144px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.shop-card__name {
+  font-weight: 700;
+  line-height: 26px;
+  height: 52px;
+  font-size: 21px;
+}
+
+.shop-card__price-mp {
+  display: flex;
+}
+
+.shop-card__block {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.text-big {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+}
+
+.text-aux {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: $text-secondary-color;
+}
+
+.shop-card__price-mpix,
+.shop-card__stock-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.text-in-stock {
+  color: $accent-color;
+}
+
+.text-out-of-stock {
+  color: $text-secondary-color;
+}
+
+.shop-card__cart {
+  width: 119px;
+  height: 32px;
+  background: $text-color;
+  color: $primary-color;
+  border: $text-color 2px solid;
+  border-radius: 8px;
+  font-family: $font-main;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
 }
