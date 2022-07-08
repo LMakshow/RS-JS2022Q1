@@ -7,6 +7,14 @@ interface Slider {
   start: () => void;
 }
 
+/**
+ * Slider takes sliderQuery: class of the future slider,
+ * sliderRange: array of numbers of slider's range and
+ * sliderStep: minimal step of the slider.
+ *
+ * It will connect the slider to the sliderQuery__labels-low
+ * and sliderQuery__labels-high as their input labels.
+ */
 export default class ShopSlider implements Slider {
   sliderQuery: string;
   sliderRange: number[];

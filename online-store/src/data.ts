@@ -1,4 +1,16 @@
-const data = [
+export type CameraData = {
+  num: string;
+  name: string;
+  mpix: string;
+  price: string;
+  manufacturer: string;
+  type: string;
+  stabilization: string;
+  img: string;
+  stock: boolean;
+}[];
+
+const data: CameraData = [
   {
     num: '1',
     name: 'Canon EOS 4000D 18-55 DC III',
@@ -8,7 +20,7 @@ const data = [
     type: 'зеркальный',
     stabilization: 'оптическая',
     img: 'canon_eos_4000d_18-55_dc_iii_3011c004',
-    stock: false,
+    stock: true,
   },
   {
     num: '2',
@@ -19,7 +31,7 @@ const data = [
     type: 'зеркальный',
     stabilization: 'оптическая',
     img: 'canon_eos_5d_mark_iv_24-105l_is_ii_usm_kit_1483c030',
-    stock: false,
+    stock: true,
   },
   {
     num: '3',
@@ -30,7 +42,7 @@ const data = [
     type: 'зеркальный',
     stabilization: 'оптическая',
     img: 'canon_eos_2000d_18-55_dc_iii_2728c007',
-    stock: false,
+    stock: true,
   },
   {
     num: '4',
@@ -51,7 +63,7 @@ const data = [
     manufacturer: 'Canon',
     type: 'зеркальный',
     stabilization: 'оптическая',
-    img: 'canon_eos_m6_mark_ii_body_black_3611c051',
+    img: 'canon_eos_6d_mk_ii_body',
     stock: true,
   },
   {
@@ -74,7 +86,7 @@ const data = [
     type: 'беззеркальный',
     stabilization: 'оптическая',
     img: 'canon_eos_c70_cinema_camera',
-    stock: true,
+    stock: false,
   },
   {
     num: '8',
@@ -89,7 +101,7 @@ const data = [
   },
   {
     num: '9',
-    name: 'Canon EOS M50 Mk2 + 15-45 IS STM + 55-200 IS STM White',
+    name: 'Canon EOS M50 Mk2 + 15-45 IS STM + 55-200 IS',
     mpix: '24',
     price: '36399',
     manufacturer: 'Canon',
@@ -100,7 +112,7 @@ const data = [
   },
   {
     num: '10',
-    name: 'Canon EOS M6 Mark II + 15-45 IS STM + EVF Kit Black',
+    name: 'Canon EOS M6 Mark II + 15-45 IS STM + EVF Kit',
     mpix: '34',
     price: '40199',
     manufacturer: 'Canon',
@@ -184,7 +196,7 @@ const data = [
     type: 'беззеркальный',
     stabilization: 'матричная',
     img: 'fujifilm_x-s10+_xf_16-80mm_f4_0_kit_black_16670077',
-    stock: false,
+    stock: true,
   },
   {
     num: '18',
@@ -206,7 +218,7 @@ const data = [
     type: 'беззеркальный',
     stabilization: 'матричная',
     img: 'fujifilm_x-t4_body_black_16650467',
-    stock: false,
+    stock: true,
   },
   {
     num: '20',
@@ -287,14 +299,14 @@ const data = [
   },
   {
     num: '27',
-    name: 'Panasonic LUMIX DC-G90MEE-K Kit 12-60mm Black',
+    name: 'Panasonic LUMIX DC-G90MEE-K Kit 12-60mm',
     mpix: '21',
     price: '30999',
     manufacturer: 'Panasonic',
     type: 'беззеркальный',
     stabilization: 'оптическая',
     img: 'panasonic_lumix_dc-g90mee-k_kit_12-60mm_black',
-    stock: false,
+    stock: true,
   },
   {
     num: '28',
@@ -305,7 +317,7 @@ const data = [
     type: 'компакт',
     stabilization: 'оптическая',
     img: 'panasonic_lumix_dc-tz200ee-k_black',
-    stock: false,
+    stock: true,
   },
   {
     num: '29',
@@ -360,7 +372,7 @@ const data = [
     type: 'беззеркальный',
     stabilization: 'оптическая',
     img: 'sony_alpha_9m2_body_black_ilce9m2b_cec',
-    stock: false,
+    stock: true,
   },
   {
     num: '34',
