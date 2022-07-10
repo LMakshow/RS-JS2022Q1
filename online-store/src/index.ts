@@ -26,7 +26,17 @@ shopSortSelect.addEventListener('change', () => {
 
 // Init search box
 const searchBox: HTMLInputElement = document.querySelector('.search-box');
-searchBox.addEventListener('input', () => draw());
+const searchClear: HTMLInputElement = document.querySelector('.search-clear');
+searchBox.addEventListener('input', () => {
+  searchBox.value ? searchBox.classList.add('with-clear') : searchBox.classList.remove('with-clear');
+  draw();
+});
+searchClear.addEventListener('click', () => {
+  searchBox.value = '';
+  searchBox.classList.remove('with-clear');
+  searchBox.focus();
+  draw();
+});
 
 // Init filter checkboxes and sliders
 const shopOptions: HTMLElement = document.querySelector('.shop-options');
