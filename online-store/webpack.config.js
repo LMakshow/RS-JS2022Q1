@@ -10,6 +10,12 @@ const CopyPlugin = require('copy-webpack-plugin');
 const baseConfig = {
   entry: [path.resolve(__dirname, './src/index.ts')],
   mode: 'development',
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'src'),
+    },
+    port: 7700,
+  },
   module: {
     rules: [
       {

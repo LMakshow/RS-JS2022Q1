@@ -4,6 +4,7 @@ interface Slider {
   sliderQuery: string;
   sliderRange: number[];
   sliderStep: number;
+  sliderTarget: noUiSlider.target;
   start: () => void;
 }
 
@@ -19,6 +20,7 @@ export default class ShopSlider implements Slider {
   sliderQuery: string;
   sliderRange: number[];
   sliderStep: number;
+  sliderTarget: noUiSlider.target;
 
   constructor(sliderQuery: string, sliderRange: number[], sliderStep: number) {
     this.sliderQuery = sliderQuery;
@@ -28,13 +30,13 @@ export default class ShopSlider implements Slider {
   }
 
   start() {
-    const sliderTarget: noUiSlider.target = document.querySelector(`.${this.sliderQuery}__slider`);
+    this.sliderTarget = document.querySelector(`.${this.sliderQuery}__slider`);
     const sliderLabels: HTMLInputElement[] = [
       document.querySelector(`.${this.sliderQuery}__labels-low`),
       document.querySelector(`.${this.sliderQuery}__labels-high`),
     ];
 
-    noUiSlider.create(sliderTarget, {
+    noUiSlider.create(this.sliderTarget, {
       start: [this.sliderRange[0], this.sliderRange[1]],
       connect: true,
       range: {
@@ -48,12 +50,11 @@ export default class ShopSlider implements Slider {
       },
     });
 
-    sliderTarget.noUiSlider.on('update', (values, handle) => (sliderLabels[handle].value = String(values[handle])));
-    sliderLabels[0].addEventListener('change', function () {
-      sliderTarget.noUiSlider.set([this.value, null]);
-    });
-    sliderLabels[1].addEventListener('change', function () {
-      sliderTarget.noUiSlider.set([null, this.value]);
-    });
+    this.sliderTarget.noUiSlider.on(
+      'update',
+      (values, handle) => (sliderLabels[handle].value = String(values[handle]))
+    );
+    sliderLabels[0].addEventListener('change', () => this.sliderTarget.noUiSlider.set([sliderLabels[0].value, null]));
+    sliderLabels[1].addEventListener('change', () => this.sliderTarget.noUiSlider.set([null, sliderLabels[1].value]));
   }
 }

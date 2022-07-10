@@ -9,7 +9,7 @@ export default class RenderCards implements DOMDraw {
     const fragment = document.createDocumentFragment();
     const sourceItemTemp: HTMLTemplateElement = document.querySelector('.shop-card-template');
 
-    if (!data) {
+    if (!data.length) {
       const p = document.createElement('p');
       p.textContent = 'Извините, по выбранным фильтрам товаров нет.';
       p.classList.add('text-no-cards');
