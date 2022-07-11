@@ -1,7 +1,12 @@
 import { CameraData } from '../../data';
 import * as noUiSlider from 'nouislider';
 
-export default class CameraFilter {
+interface Filter {
+  filter(data: CameraData): CameraData;
+  filtersReset(): void;
+}
+
+export default class CameraFilter implements Filter {
   private searchBox: HTMLInputElement;
   private makersList: NodeListOf<HTMLInputElement>;
   private priceSlider: noUiSlider.target;
