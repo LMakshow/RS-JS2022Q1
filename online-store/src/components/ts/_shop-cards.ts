@@ -1,17 +1,17 @@
 import { CameraData } from '../../data';
 
 interface DOMDraw {
-  draw(data: Record<string, unknown>[]): void;
+  draw(data: Record<string, unknown>[], cart: Record<string, unknown>): void;
 }
 
 export default class RenderCards implements DOMDraw {
-  draw(data: CameraData): void {
+  draw(data: CameraData, cart: { [key: string]: number }): void {
     const fragment = document.createDocumentFragment();
     const sourceItemTemp: HTMLTemplateElement = document.querySelector('.shop-card-template');
 
     if (!data.length) {
       const p = document.createElement('p');
-      p.textContent = 'Извините, по выбранным фильтрам товаров нет.';
+      p.textContent = 'Извините, по вашему запросу товаров нет.';
       p.classList.add('text-no-cards');
 
       fragment.append(p);
@@ -35,6 +35,11 @@ export default class RenderCards implements DOMDraw {
         item.stock
           ? sourceClone.querySelector('.shop-card__stock').classList.add('text-in-stock')
           : sourceClone.querySelector('.shop-card__stock').classList.add('text-out-of-stock');
+
+        sourceClone.querySelector('.shop-card__cart').textContent = cart[item.name] ? 'Выбрано!' : 'В корзину';
+        cart[item.name]
+          ? sourceClone.querySelector('.shop-card__cart').classList.add('added')
+          : sourceClone.querySelector('.shop-card__cart').classList.remove('added');
 
         fragment.append(sourceClone);
       });
