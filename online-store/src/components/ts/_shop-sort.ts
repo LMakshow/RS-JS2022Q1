@@ -5,8 +5,21 @@ interface Sort {
 }
 
 export default class SortCards implements Sort {
-  public sort(data: CameraData, sortType: string): CameraData {
-    switch (sortType) {
+  public shopSortSelect: HTMLSelectElement;
+  constructor(query: string) {
+    this.shopSortSelect = document.querySelector(query);
+    this.init();
+  }
+
+  private init() {
+    const sortOrder = localStorage.getItem('sortOrder');
+    if (sortOrder) {
+      this.shopSortSelect.value = sortOrder;
+    }
+  }
+
+  public sort(data: CameraData): CameraData {
+    switch (this.shopSortSelect.value) {
       case 'nameAZ':
         return this.nameAZ(data);
       case 'nameZA':
@@ -44,5 +57,10 @@ export default class SortCards implements Sort {
 
   private mpixDown(data: CameraData) {
     return data.sort((a, b) => Number(b.mpix) - Number(a.mpix));
+  }
+
+  public sortReset() {
+    this.shopSortSelect.value = 'nameAZ';
+    localStorage.removeItem('sortOrder');
   }
 }

@@ -15,20 +15,20 @@ const mpixSlider = new ShopSlider('shop-mpix', [2, 46], 1);
 const cartText: HTMLElement = document.querySelector('.cart__text');
 
 const cards = new RenderCards();
-const sort = new SortCards();
+const sort = new SortCards('.shop-sort__select');
 const filters = new CameraFilter();
 
 const cart = new Cart();
 
 let filteredData: CameraData;
 
-// Init sorting list
-const shopSortSelect: HTMLSelectElement = document.querySelector('.shop-sort__select');
-shopSortSelect.addEventListener('change', () => {
+// Eventlistener for sorting list
+sort.shopSortSelect.addEventListener('change', () => {
+  localStorage.setItem('sortOrder', sort.shopSortSelect.value);
   draw();
 });
 
-// Init search box
+// Eventlistener for search box
 const searchBox: HTMLInputElement = document.querySelector('.search-box');
 const searchClear: HTMLInputElement = document.querySelector('.search-clear');
 searchBox.addEventListener('input', () => {
@@ -42,34 +42,54 @@ searchClear.addEventListener('click', () => {
   draw();
 });
 
-// Init filter checkboxes and sliders
+// Eventlistener for filter checkboxes
 const shopOptions: HTMLElement = document.querySelector('.shop-options');
 shopOptions.addEventListener('click', (e) => {
   const target = e.target as HTMLElement;
   if (target.classList.contains('checkbox_shop')) {
+    const checkboxesChecked: boolean[] = [];
+    filters.checkboxes.forEach((chbox, idx) => {
+      checkboxesChecked[idx] = chbox.checked;
+    });
+    localStorage.setItem('checkboxes', JSON.stringify(checkboxesChecked));
     draw();
   }
 });
-priceSlider.sliderTarget.noUiSlider.on('update', () => draw());
-mpixSlider.sliderTarget.noUiSlider.on('update', () => draw());
 
-// Init filter reset button
+// Eventlistener for sliders
+priceSlider.sliderTarget.noUiSlider.on('update', () => {
+  draw();
+});
+priceSlider.sliderTarget.noUiSlider.on('set', () => {
+  const prices = priceSlider.sliderTarget.noUiSlider.get() as [number, number];
+  localStorage.setItem('prices', JSON.stringify(prices));
+});
+
+mpixSlider.sliderTarget.noUiSlider.on('update', () => {
+  draw();
+});
+mpixSlider.sliderTarget.noUiSlider.on('set', () => {
+  const mpixes = mpixSlider.sliderTarget.noUiSlider.get() as [number, number];
+  localStorage.setItem('mpixes', JSON.stringify(mpixes));
+});
+
+// Eventlistener for filter reset button
 const filterReset: HTMLElement = document.querySelector('.shop-reset-filters');
 filterReset.addEventListener('click', () => {
   filters.filtersReset();
   draw();
 });
 
-// Init all reset button
+// Eventlistener for all reset button
 const allReset: HTMLElement = document.querySelector('.shop-reset-storage');
 allReset.addEventListener('click', () => {
   filters.filtersReset();
   cart.clear();
-  shopSortSelect.value = 'nameAZ';
+  sort.sortReset();
   draw();
 });
 
-// Init cart toggle
+// Eventlistener for cart toggle
 const shopGoods: HTMLElement = document.querySelector('.shop-goods');
 shopGoods.addEventListener('click', (e) => {
   const target = (<HTMLElement>e.target).closest('.shop-card');
@@ -79,9 +99,10 @@ shopGoods.addEventListener('click', (e) => {
   }
 });
 
+// Draw/redraw cards
 function draw() {
   filteredData = filters.filter(data);
-  const sortedData: CameraData = sort.sort(filteredData, shopSortSelect.value);
+  const sortedData: CameraData = sort.sort(filteredData);
   cards.draw(sortedData, cart.cartStorage);
 
   cart.cartCounter ? cartText.classList.add('has-items') : cartText.classList.remove('has-items');

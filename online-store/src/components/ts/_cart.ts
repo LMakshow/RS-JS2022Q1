@@ -48,6 +48,6 @@ export default class Cart {
   clear() {
     this.cartStorage = {};
     this.cartCounter = 0;
-    localStorage.setItem('cartStorage', '');
+    localStorage.removeItem('cartStorage');
   }
 }

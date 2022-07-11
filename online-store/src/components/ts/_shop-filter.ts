@@ -9,6 +9,7 @@ export default class CameraFilter {
   private typesList: NodeListOf<HTMLInputElement>;
   private stabList: NodeListOf<HTMLInputElement>;
   private stockCheck: HTMLInputElement;
+  public checkboxes: NodeListOf<HTMLInputElement>;
 
   constructor() {
     this.searchBox = document.querySelector('.search-box');
@@ -18,6 +19,21 @@ export default class CameraFilter {
     this.typesList = document.querySelectorAll('.checkbox_shop[name="type"]');
     this.stabList = document.querySelectorAll('.checkbox_shop[name="stab"]');
     this.stockCheck = document.querySelector('.checkbox_shop[name="stock"]');
+    this.checkboxes = document.querySelectorAll('.checkbox_shop');
+    this.init();
+  }
+
+  init() {
+    const checkboxesChecked = JSON.parse(localStorage.getItem('checkboxes')) as boolean[];
+    if (checkboxesChecked) {
+      this.checkboxes.forEach((chbox, idx) => {
+        chbox.checked = checkboxesChecked[idx];
+      });
+    }
+    const prices = JSON.parse(localStorage.getItem('prices')) as [number, number];
+    const mpixes = JSON.parse(localStorage.getItem('mpixes')) as [number, number];
+    this.priceSlider.noUiSlider.set(prices);
+    this.mpixSlider.noUiSlider.set(mpixes);
   }
 
   filterName(data: CameraData) {
@@ -74,6 +90,10 @@ export default class CameraFilter {
     this.typesList.forEach((chbox) => (chbox.checked = false));
     this.stabList.forEach((chbox) => (chbox.checked = false));
     this.stockCheck.checked = false;
+
+    localStorage.removeItem('checkboxes');
+    localStorage.removeItem('prices');
+    localStorage.removeItem('mpixes');
   }
 
   filter(data: CameraData): CameraData {
