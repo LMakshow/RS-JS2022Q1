@@ -84,8 +84,8 @@ filterReset.addEventListener('click', () => {
 const allReset: HTMLElement = document.querySelector('.shop-reset-storage');
 allReset.addEventListener('click', () => {
   filters.filtersReset();
-  cart.clear();
   sort.sortReset();
+  cart.clear();
   draw();
 });
 
