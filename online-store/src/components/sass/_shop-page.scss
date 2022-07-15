@@ -8,7 +8,9 @@
 .shop-container {
   max-width: 1720px;
   width: 95%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  grid-template-rows: min-content 1fr;
   margin: auto;
   gap: 15px;
 
@@ -17,6 +19,13 @@
   }
 
   @media screen and (max-width: 939px) {
+    grid-template-columns: 210px 1fr;
+    gap: 10px;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 95%;
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 }
@@ -31,6 +40,29 @@
     width: auto;
     gap: 5px;
   }
+
+  @media screen and (max-width: 767px) {
+    margin-left: -3px;
+  }
+}
+
+.dropdown-filters {
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+    background: $primary-color;
+    border-radius: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px 15px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px, rgba(0, 0, 0, 0.09) 0px 2px 5px, rgba(0, 0, 0, 0.07) 0px 0px 2px 0.00144px;
+  }
+}
+
+.dropdown-filters__img {
+  height: 30px;
 }
 
 .shop-options {
@@ -46,6 +78,7 @@
   height: calc(100vh - 210px);
   min-height: 630px;
   max-height: 770px;
+  transition: all .4s ease;
 
   @media screen and (max-width: 939px) {
     width: 210px;
@@ -53,6 +86,10 @@
     height: auto;
     min-height: auto;
     max-height: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: auto;
   }
 }
 
@@ -71,6 +108,10 @@
 
   @media screen and (max-width: 939px) {
     grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -93,6 +134,11 @@
   &:hover {
     filter: $hover-effect;
   }
+
+  @media screen and (max-width: 359px) {
+    font-size: 16px;
+    gap: 10px;
+  }
 }
 
 .checkbox_shop:checked+.shop-maker__option,
@@ -113,6 +159,10 @@
 
 .shop-maker__img {
   height: 17px;
+
+  @media screen and (max-width: 359px) {
+    height: 14px;
+  }
 }
 
 .checkbox_shop {
@@ -218,6 +268,12 @@
     gap: 10px;
     flex-direction: column;
   }
+
+  @media screen and (max-width: 767px) {
+    align-items: center;
+    flex-direction: row;
+    gap: 5%;
+  }
 }
 
 .shop-stab__option {
@@ -230,6 +286,10 @@
 
   &:hover {
     filter: $hover-effect;
+  }
+
+  @media screen and (max-width: 359px) {
+    font-size: 16px;
   }
 }
 
@@ -291,10 +351,24 @@
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px, rgba(0, 0, 0, 0.09) 0px 2px 5px, rgba(0, 0, 0, 0.07) 0px 0px 2px 0.00144px;
   margin-bottom: 15px;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
 
   @media screen and (max-width: 939px) {
     padding: 10px;
     gap: 10px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 0px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+  }
+
+  @media screen and (max-width: 530px) {
+    justify-content: space-around;
   }
 }
 
@@ -307,6 +381,10 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hidden {
+  display: none;
 }
 
 .visible {
@@ -351,4 +429,31 @@
   text-align: center;
   font-size: 24px;
   margin: 40px 20px 25px;
+}
+
+.shop-options {
+  @media screen and (max-width: 767px) {
+    opacity: 0;
+    overflow: hidden;
+    height: 0px;
+    padding: 0;
+  }
+}
+
+#dropdown-filters:checked+.shop-options {
+  @media screen and (max-width: 767px) {
+    opacity: 1;
+    height: 620px;
+    padding: 10px;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    height: 0px;
+  }
+
+  to {
+    height: 620px;
+  }
 }
