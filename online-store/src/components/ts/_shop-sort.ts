@@ -19,7 +19,7 @@ export default class SortCards implements Sort {
     }
   }
 
-  public sort<T extends CameraData>(data: T): T {
+  public sort(data: CameraData) {
     switch (this.shopSortSelect.value) {
       case 'nameAZ':
         return this.nameAZ(data);
@@ -36,27 +36,27 @@ export default class SortCards implements Sort {
     }
   }
 
-  private nameAZ<T extends CameraData>(data: T): T {
+  private nameAZ<T extends { name: string }[]>(data: T): T {
     return data.sort((a, b) => a.name.localeCompare(b.name));
   }
 
-  private nameZA<T extends CameraData>(data: T): T {
+  private nameZA<T extends { name: string }[]>(data: T): T {
     return data.sort((a, b) => b.name.localeCompare(a.name));
   }
 
-  private priceUp<T extends CameraData>(data: T): T {
+  private priceUp<T extends { price: string }[]>(data: T): T {
     return data.sort((a, b) => Number(a.price) - Number(b.price));
   }
 
-  private priceDown<T extends CameraData>(data: T): T {
+  private priceDown<T extends { price: string }[]>(data: T): T {
     return data.sort((a, b) => Number(b.price) - Number(a.price));
   }
 
-  private mpixUp<T extends CameraData>(data: T): T {
+  private mpixUp<T extends { mpix: string }[]>(data: T): T {
     return data.sort((a, b) => Number(a.mpix) - Number(b.mpix));
   }
 
-  private mpixDown<T extends CameraData>(data: T): T {
+  private mpixDown<T extends { mpix: string }[]>(data: T): T {
     return data.sort((a, b) => Number(b.mpix) - Number(a.mpix));
   }
 
