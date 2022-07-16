@@ -9,6 +9,7 @@ import data from './data';
 import './global.scss';
 import SortCards from './components/ts/_shop-sort';
 import Cart from './components/ts/_cart';
+import printSelfcheck from './components/ts/print-selfcheck';
 
 const priceSlider = new ShopSlider('shop-price', [4999, 164988], 1);
 const mpixSlider = new ShopSlider('shop-mpix', [2, 46], 1);
@@ -108,3 +109,5 @@ function draw() {
   cart.cartCounter ? cartText.classList.add('has-items') : cartText.classList.remove('has-items');
   cartText.innerText = String(cart.cartCounter);
 }
+
+window.onload = printSelfcheck;
