@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals';
-import SortCards from '../components/ts/_shop-sort';
+import SortCards from '../components/ts/shop-sort';
 import data from '../data';
 
 global.Storage.prototype.getItem = jest.fn(() => 'nameZA');

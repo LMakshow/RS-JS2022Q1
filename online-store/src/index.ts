@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { CameraData } from './data';
-import ShopSlider from './components/ts/_shop-slider';
-import RenderCards from './components/ts/_shop-cards';
-import CameraFilter from './components/ts/_shop-filter';
+import ShopSlider from './components/ts/shop-slider';
+import RenderCards from './components/ts/shop-cards';
+import CameraFilter from './components/ts/shop-filter';
 import data from './data';
 
 import './global.scss';
-import SortCards from './components/ts/_shop-sort';
-import Cart from './components/ts/_cart';
+import SortCards from './components/ts/shop-sort';
+import Cart from './components/ts/cart';
 import printSelfcheck from './components/ts/print-selfcheck';
 
 const priceSlider = new ShopSlider('shop-price', [4999, 164988], 1);

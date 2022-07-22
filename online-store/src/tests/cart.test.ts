@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals';
-import Cart from '../components/ts/_cart';
+import Cart from '../components/ts/cart';
 
 global.Storage.prototype.getItem = jest.fn(() => '');
 document.body.innerHTML = `
