@@ -154,6 +154,37 @@ a {
   text-shadow: -8px 1px 6px rgba(255, 255, 255, 0.6);
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.footer__link {
+  transition: all 0.2s;
+}
+.footer__link:hover {
+  filter: sepia(49%) saturate(3060%) hue-rotate(340deg) brightness(103%) contrast(97%);
+}
+
+.footer__github {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+}
+
 .dashboard {
   display: flex;
   align-items: flex-start;

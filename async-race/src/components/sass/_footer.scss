@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.footer__link {
+  transition: all 0.2s;
+  &:hover {
+    filter: sepia(49%) saturate(3060%) hue-rotate(340deg) brightness(103%) contrast(97%);
+  }
+}
+
+.footer__github {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 20px;
+  color: $text-secondary-color;
+}
