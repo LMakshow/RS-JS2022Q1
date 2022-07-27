@@ -1,0 +1,52 @@
+.racing-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.car-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.racing-track {
+  position: relative;
+  height: 75px;
+  width: 100%;
+  background: left center repeat-x url("./assets/images/race-track.svg"),
+  radial-gradient(35.57% 321.92% at 50% 50%, #262626 0%, #212121 31.15%, #131313 67.4%, #000000 100%);
+}
+
+.img-finish-line {
+  display: inline;
+  position: absolute;
+  right: 230px;
+}
+
+.footer__garage {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-garage-prev {
+  display: flex;
+  padding-left: 25px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 180px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40px 100%);
+  cursor: pointer;
+}
+
+.btn-garage-next {
+  display: flex;
+  padding-right: 25px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 180px;
+  clip-path: polygon(0% 0%, 100% 0, calc(100% - 40px) 100%, 0% 100%);
+  cursor: pointer;
+}

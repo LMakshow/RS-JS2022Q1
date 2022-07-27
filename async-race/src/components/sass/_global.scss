@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Play:wght@700&display=swap');
+$primary-color: #000;
+$primary-bg: linear-gradient(180deg, #DCDCDC 0%, #FFFFFF 77.6%, #C0C0C0 100%);
+$secondary-bg: linear-gradient(180deg, #BBB7A9 0%, #DADADA 77.6%, #979797 100%);
+$accent-bg: linear-gradient(180deg, #FBC405 0%, #FEE2B6 77.6%, #F7A018 100%);
+$hover-bg: linear-gradient(180deg, #FB9905 0%, #FFD695 77.6%, #F18F1C 100%);
+$accent-color: #9A0000;
+$accent-secondary-color: #F7A018;
+$disabled-color: #9C9C9C;
+$text-color: #000;
+$text-secondary-color: #fff;
+$font-header: 'Faster One', cursive;
+$font-main: 'Play', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+body {
+  font-family: $font-main;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  background: fixed no-repeat center/cover url("./assets/bg/bg-body.jpg");
+  min-height: 100%;
+  // background: $accent-dark-color;
+}
+
+button {
+  font-family: $font-main;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 97%;
+  margin: 24px auto;
+}
+
+.btn {
+  transition: 0.4s all;
+  border: none;
+  background: $primary-bg;
+  cursor: pointer;
+
+  &:hover {
+    &:not([disabled]) {
+      background: $secondary-bg;
+    }
+  }
+
+  &:disabled {
+    border-color: $disabled-color;
+    color: $disabled-color;
+    cursor: auto;
+  }
+
+}
+
+.btn-active {
+  &:hover {
+    &:not([disabled]) {
+      background: $hover-bg;
+    }
+  }
+}
+
+.btn-img {
+  width: auto;
+  height: 24px;
+  margin-bottom: 1px;
+}
+
+.btn-img_small {
+  width: auto;
+  height: 17px;
+}
+
+.btn-text {
+  font-size: 24px;
+}
+
+.garage {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

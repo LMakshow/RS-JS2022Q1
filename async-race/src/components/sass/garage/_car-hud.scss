@@ -1,0 +1,51 @@
+.car-hud {
+  background: $secondary-bg;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 226px;
+}
+
+.car-hud__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 4px 4px 5px 5px;
+  display: flex;
+  align-items: center;
+  border: 1px solid $primary-color;
+}
+
+.car-name {
+  max-width: 108px;
+  align-self: stretch;
+  text-align: center;
+}
+
+.car-hud__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-reset-car {
+  padding: 3px 12px 4px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-start-car {
+  padding: 4px 45px 5px 18px;
+  display: flex;
+  align-items: center;
+  clip-path: polygon(0% 0%, calc(100% - 30px) 0, 100% 100%, 0% 100%);
+}
