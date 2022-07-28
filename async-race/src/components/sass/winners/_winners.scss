@@ -65,8 +65,35 @@
   padding: 5px 10px;
 }
 
-
 .winners-table__cell {
   background: $primary-bg;
   padding: 5px 10px;
+}
+
+.winners__footer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-winner-prev {
+  display: flex;
+  padding-left: 25px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 180px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40px 100%);
+  cursor: pointer;
+}
+
+.btn-winner-next {
+  display: flex;
+  padding-right: 25px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 180px;
+  clip-path: polygon(0% 0%, 100% 0, calc(100% - 40px) 100%, 0% 100%);
+  cursor: pointer;
 }
