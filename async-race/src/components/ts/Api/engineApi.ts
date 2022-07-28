@@ -1,4 +1,4 @@
-import serverUrl from '../global';
+import serverUrl from './apiGlobal';
 
 const engineUrl = `${serverUrl}/engine`;
 

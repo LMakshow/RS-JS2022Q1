@@ -1,13 +1,23 @@
-import serverUrl from '../global';
+import serverUrl, { Car, Winner } from './apiGlobal';
+import { getCar } from './garageApi';
 
-const winnersUrl = `${serverUrl}/garage`;
+const winnersUrl = `${serverUrl}/winners`;
 
 export async function getWinners(page = 1, limit = 10, sort = 'id', order = 'ASC') {
-  const response = fetch(`${winnersUrl}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`);
+  const response = await fetch(`${winnersUrl}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`);
+  let winners = await response.json() as Winner[];
+  winners = await Promise.all(winners.map(async (winner) => {
+    const car = await getCar(winner.id) as Car;
+    return {
+      ...winner,
+      name: car.name,
+      color: car.color,
+    };
+  }));
 
   return {
-    winners: (await response).json(),
-    winnersNumber: (await response).headers.get('X-Total-Count'),
+    winners,
+    winnersNumber: response.headers.get('X-Total-Count'),
   };
 }
 

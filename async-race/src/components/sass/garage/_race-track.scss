@@ -15,7 +15,13 @@
   height: 75px;
   width: 100%;
   background: left center repeat-x url("./assets/images/race-track.svg"),
-  radial-gradient(35.57% 321.92% at 50% 50%, #262626 0%, #212121 31.15%, #131313 67.4%, #000000 100%);
+    radial-gradient(35.57% 321.92% at 50% 50%, #262626 0%, #212121 31.15%, #131313 67.4%, #000000 100%);
+}
+
+.car {
+  position: relative;
+  width: 210px;
+  padding-bottom: 72px;
 }
 
 .img-finish-line {

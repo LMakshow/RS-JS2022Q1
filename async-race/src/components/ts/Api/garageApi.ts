@@ -1,18 +1,21 @@
-import serverUrl from '../global';
+import serverUrl, { Car } from './apiGlobal';
 
 const garageUrl = `${serverUrl}/garage`;
 
 export async function getCars(page = 1, limit = 7) {
-  const response = fetch(`${garageUrl}?_page=${page}&_limit=${limit}`);
+  const response = await fetch(`${garageUrl}?_page=${page}&_limit=${limit}`);
+  const cars = await response.json() as Car[];
 
   return {
-    cars: (await response).json(),
-    carsNumber: (await response).headers.get('X-Total-Count'),
+    cars,
+    carsNumber: Number(response.headers.get('X-Total-Count')),
   };
 }
 
 export async function getCar(carId: number) {
-  return (await fetch(`${garageUrl}?id=${carId}`)).json();
+  const response = await fetch(`${garageUrl}?id=${carId}`);
+  const car = await response.json() as Car[];
+  return car[0];
 }
 
 export async function deleteCar(carId: number) {

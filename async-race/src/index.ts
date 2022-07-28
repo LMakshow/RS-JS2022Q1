@@ -1,7 +1,12 @@
+import {
+  clearBody, drawFooter, drawGarage, drawHeader, drawWinners,
+} from './components/ts/DOM/draw-base-dom';
+import storage from './components/ts/global';
 import './global.scss';
-import { getCars } from './components/ts/Api/garageApi';
 
-getCars().then(async (data) => {
-  console.log(`total cars = ${data.carsNumber}`);
-  console.log(await data.cars);
-});
+// Draw DOM for the first launch
+clearBody();
+drawHeader();
+drawGarage(Number(storage.carsNumber), storage.cars, storage.garagePage);
+drawWinners(Number(storage.winnersNumber), storage.winners, storage.winnersPage);
+drawFooter();

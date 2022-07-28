@@ -1,3 +1,16 @@
-const serverUrl = 'http://127.0.0.1:3000';
+import { getCars } from './Api/garageApi';
+import { getWinners } from './Api/winnersApi';
 
-export default serverUrl;
+const { cars, carsNumber } = await getCars();
+const { winners, winnersNumber } = await getWinners();
+
+const storage = {
+  cars,
+  carsNumber,
+  garagePage: 1,
+  winners,
+  winnersNumber,
+  winnersPage: 1,
+};
+
+export default storage;

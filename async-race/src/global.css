@@ -363,6 +363,12 @@ a {
   background: left center repeat-x url("./assets/images/race-track.svg"), radial-gradient(35.57% 321.92% at 50% 50%, #262626 0%, #212121 31.15%, #131313 67.4%, #000000 100%);
 }
 
+.car {
+  position: relative;
+  width: 210px;
+  padding-bottom: 72px;
+}
+
 .img-finish-line {
   display: inline;
   position: absolute;
@@ -449,8 +455,9 @@ a {
 }
 
 .winners-table__img {
-  height: 30px;
-  width: auto;
+  position: relative;
+  width: 100px;
+  padding-bottom: 30px;
 }
 
 .winners-table__header {
@@ -504,4 +511,12 @@ a {
 
 .left {
   text-align: left;
+}
+
+.scaling-svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
 }/*# sourceMappingURL=global.css.map */
