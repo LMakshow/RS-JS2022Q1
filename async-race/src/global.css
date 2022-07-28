@@ -53,10 +53,6 @@ a {
   text-decoration: none;
 }
 
-.hide {
-  display: none;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -156,9 +152,11 @@ a {
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  width: 380px;
+  justify-content: center;
   align-items: center;
   gap: 10px;
+  margin: auto;
 }
 
 .footer__links {
@@ -371,7 +369,7 @@ a {
   right: 230px;
 }
 
-.footer__garage {
+.garage__footer {
   display: flex;
   gap: 10px;
 }
@@ -398,4 +396,82 @@ a {
   -webkit-clip-path: polygon(0% 0%, 100% 0, calc(100% - 40px) 100%, 0% 100%);
           clip-path: polygon(0% 0%, 100% 0, calc(100% - 40px) 100%, 0% 100%);
   cursor: pointer;
+}
+
+.winners {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 40px;
+}
+
+.winners-text {
+  font-family: "Faster One", cursive;
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 75px;
+  text-align: center;
+  background: linear-gradient(180deg, #FBC405 0%, #FEE2B6 77.6%, #F7A018 100%);
+  color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.winners-table {
+  width: 665px;
+  font-size: 24px;
+  text-align: center;
+  border: none;
+  border-spacing: 0;
+}
+
+.winners-table__no {
+  width: 60px;
+}
+
+.winners-table__winner {
+  width: auto;
+}
+
+.winners-table__wins {
+  width: 90px;
+}
+
+.winners-table__best-time {
+  width: 140px;
+}
+
+.winners-table__container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.winners-table__img {
+  height: 30px;
+  width: auto;
+}
+
+.winners-table__header {
+  background: linear-gradient(180deg, #DCDCDC 0%, #FFFFFF 77.6%, #C0C0C0 100%);
+  padding: 5px 10px;
+}
+
+.winners-table__winner {
+  background: linear-gradient(180deg, #FBC405 0%, #FEE2B6 77.6%, #F7A018 100%);
+  padding: 5px 10px;
+}
+
+.winners-table__cell {
+  background: linear-gradient(180deg, #DCDCDC 0%, #FFFFFF 77.6%, #C0C0C0 100%);
+  padding: 5px 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.left {
+  text-align: left;
 }/*# sourceMappingURL=global.css.map */

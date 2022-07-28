@@ -1,0 +1,72 @@
+.winners {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 40px;
+}
+
+.winners-text {
+  font-family: $font-header;
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 75px;
+  text-align: center;
+  background: $accent-bg;
+  color: $text-secondary-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.winners-table {
+  width: 665px;
+  font-size: 24px;
+  text-align: center;
+  border: none;
+  border-spacing: 0;
+  // grid-template-columns: 60px 1fr 90px 140px;
+  // grid-row-gap: 10px;
+}
+
+.winners-table__no {
+  width: 60px;
+}
+
+.winners-table__winner {
+  width: auto;
+}
+
+.winners-table__wins {
+  width: 90px;
+}
+
+.winners-table__best-time {
+  width: 140px;
+}
+
+.winners-table__container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.winners-table__img {
+  height: 30px;
+  width: auto;
+}
+
+.winners-table__header {
+  background: $primary-bg;
+  padding: 5px 10px;
+}
+
+.winners-table__winner {
+  background: $accent-bg;
+  padding: 5px 10px;
+}
+
+
+.winners-table__cell {
+  background: $primary-bg;
+  padding: 5px 10px;
+}

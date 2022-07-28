@@ -17,7 +17,7 @@
     content="Async Race: create hundreds of RC cars and throw them to the ultimate drag race powered by the async client-server requests!">
 
   <link rel="icon" stabs="512x512" href="./assets/favicon.png">
-  <!-- <link rel="stylesheet" href="global.css"> -->
+  <link rel="stylesheet" href="global.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
       <h1 class="logo">Async&nbsp;&nbsp;Race</h1>
     </header>
 
-    <main class="garage">
+    <main class="garage hide">
       <div class="dashboard">
         <div class="dashboard-container">
           <div class="generate-container">
@@ -606,19 +606,55 @@
           <img alt="" class="img-finish-line" src="./assets/images/finish-line.svg" />
         </div>
       </div>
-
+      <div class="garage__footer">
+        <button class="btn btn-garage-prev" disabled>
+          <p class="btn-text">PREV</p>
+        </button>
+        <button class="btn btn-garage-next btn-active">
+          <p class="btn-text">NEXT</p>
+        </button>
+      </div>
     </main>
 
-    <footer class="footer">
-      <div class="footer__garage">
-        <button class="btn btn-garage-prev" disabled><p class="btn-text">PREV</p></button>
-        <button class="btn btn-garage-next btn-active"><p class="btn-text">NEXT</p></button>
-      </div>
-      <div class="footer__links">
-        <a class="footer__github footer-text footer__link" href="https://github.com/LMakshow">Made by Maksym Lytvyn<img src="./assets/icons/github.svg" alt="GitHub"></a>
-        <a class="footer__link" href="https://rs.school/"><img src="./assets/icons/rss.svg" alt="GitHub"></a>
-      </div>
-    </footer>
+    <div class="winners">
+      <h2 class="winners-text">Winners</h2>
+      <table class="winners-table">
+        <colgroup>
+          <col class="winners-table__no">
+          <col class="winners-table__winner">
+          <col class="winners-table__wins">
+          <col class="winners-table__best-time">
+        </colgroup>
+        <tr>
+          <th class="winners-table__header">No</th>
+          <th class="winners-table__header">Winner</th>
+          <th class="winners-table__header">Wins</th>
+          <th class="winners-table__header">Best Time</th>
+        </tr>
+        <tr>
+          <th class="winners-table__winner">1</th>
+          <th class="winners-table__winner"><div class="winners-table__container"><img class="winners-table__img" src="./assets/images/car.svg" alt=""><span class="winner-table__name txt">Lamborghini Murcielago</span></div></th>
+          <th class="winners-table__winner">2</th>
+          <th class="winners-table__winner">3.56</th>
+        </tr>
+        <tr>
+          <th class="winners-table__cell">1</th>
+          <th class="winners-table__cell"><div class="winners-table__container"><img class="winners-table__img" src="./assets/images/car.svg" alt=""><span class="winner-table__name txt">Lamborghini Murcielago</span></div></th>
+          <th class="winners-table__cell">2</th>
+          <th class="winners-table__cell">3.56</th>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer__links">
+      <a class="footer__github footer-text footer__link" href="https://github.com/LMakshow">Made by Maksym Lytvyn<img
+          src="./assets/icons/github.svg" alt="GitHub"></a>
+      <a class="footer__link" href="https://rs.school/"><img src="./assets/icons/rss.svg" alt="GitHub"></a>
+    </div>
+  </footer>
   </div>
 </body>
 

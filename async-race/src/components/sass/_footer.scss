@@ -1,8 +1,10 @@
 .footer {
   display: flex;
-  justify-content: space-between;
+  width: 380px;
+  justify-content: center;
   align-items: center;
   gap: 10px;
+  margin: auto;
 }
 
 .footer__links {
