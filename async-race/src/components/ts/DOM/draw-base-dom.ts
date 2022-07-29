@@ -19,6 +19,15 @@ export function drawHeader() {
   container.append(header);
 }
 
+export function drawRaceTrack(cars: Car[], racingContainer: Element) {
+  cars.forEach((car) => {
+    const carContainer = document.createElement('div');
+    carContainer.classList.add('car-container');
+    carContainer.innerHTML = (drawCarContainer(car));
+    racingContainer.append(carContainer);
+  });
+}
+
 export function drawGarage(carsNumber: number, cars: Car[], page = 1) {
   const main = document.createElement('main');
   main.classList.add('garage');
@@ -32,12 +41,7 @@ export function drawGarage(carsNumber: number, cars: Car[], page = 1) {
   racingContainer.classList.add('racing-container');
   main.append(racingContainer);
 
-  cars.forEach((car) => {
-    const carContainer = document.createElement('div');
-    carContainer.classList.add('car-container');
-    carContainer.innerHTML = (drawCarContainer(car));
-    racingContainer.append(carContainer);
-  });
+  drawRaceTrack(cars, racingContainer);
 
   const garageFooter = document.createElement('div');
   garageFooter.classList.add('garage__footer');

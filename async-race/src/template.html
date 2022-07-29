@@ -36,26 +36,27 @@
       <h1 class="logo">Async&nbsp;&nbsp;Race</h1>
     </header>
 
-    <main class="garage hide">
+    <main class="garage">
       <div class="dashboard">
         <div class="dashboard-container">
           <div class="generate-container">
             <p class="txt">CARS IN THE GARAGE: <span class="cars-number">7</span></p>
-            <button class="btn btn-generate btn-active">
-              <p class="txt">GENERATE 100 CARS</p>
+            <button class="btn btn-generate btn-active txt">
+              GENERATE 100 CARS
             </button>
           </div>
           <div class="create-container">
             <div class="choose-name">
-              <p class="txt">NAME:</p>
-              <input class="choose-name__input" placeholder="Enter car name" />
+              <label for="car-name" class="txt">NAME:</label>
+              <input id="car-name" class="choose-name__input" placeholder="Enter car name" />
             </div>
             <div class="choose-color">
-              <p class="txt">COLOR:</p>
-              <div class="color-picker"></div>
+              <label for="car-color" class="txt">COLOR:</label>
+              <input class="color-picker" type="color" id="car-color" name="car-color"
+           value="#bf0000">
             </div>
-            <button class="btn btn-create btn-active">
-              <p class="txt">CREATE CAR</p>
+            <button class="btn btn-create btn-active txt">
+              CREATE CAR
             </button>
           </div>
         </div>

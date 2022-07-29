@@ -252,8 +252,7 @@ a {
 .color-picker {
   width: 70px;
   height: 30px;
-  background-color: rgb(191, 0, 0);
-  border: 1px solid rgb(0, 0, 0);
+  border: none;
   cursor: pointer;
 }
 

@@ -1,3 +1,9 @@
+.garage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .dashboard {
   display: flex;
   align-items: flex-start;
@@ -66,8 +72,7 @@
 .color-picker {
   width: 70px;
   height: 30px;
-  background-color: rgba(191, 0, 0, 1);
-  border: 1px solid rgba(0, 0, 0, 1);
+  border: none;
   cursor: pointer;
 }
 

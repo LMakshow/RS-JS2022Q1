@@ -24,29 +24,27 @@ export function garageDashboardHtml(carsNumber: number) {
   return `<div class="dashboard-container">
   <div class="generate-container">
     <p class="txt">CARS IN THE GARAGE: <span class="cars-number">${carsNumber}</span></p>
-    <button class="btn btn-generate btn-active">
-      <p class="txt">GENERATE 100 CARS</p>
+    <button class="btn btn-generate txt btn-active">
+      GENERATE 100 CARS
     </button>
   </div>
   <div class="create-container">
     <div class="choose-name">
-      <p class="txt">NAME:</p>
-      <input class="choose-name__input" placeholder="Enter car name" />
+      <label for="car-name" class="txt">NAME:</label>
+      <input id="car-name" class="choose-name__input" placeholder="Enter car name" />
     </div>
     <div class="choose-color">
-      <p class="txt">COLOR:</p>
-      <div class="color-picker"></div>
+      <label for="car-color" class="txt">COLOR:</label>
+      <input class="color-picker" type="color" id="car-color" name="car-color" value="#bf0000">
     </div>
-    <button class="btn btn-create btn-active">
-      <p class="txt">CREATE CAR</p>
+    <button class="btn btn-create txt btn-active">
+      CREATE CAR
     </button>
   </div>
 </div>
-<button class="btn btn-reset">
-  <p class="btn-text">
+<button class="btn btn-text btn-reset">
     RETURN CARS<br />
     TO THE START
-  </p>
 </button>
 <button class="btn btn-race btn-active">
   <p class="btn-text">START</p>
@@ -66,11 +64,11 @@ export function drawCarContainer(car: Car) {
       </div>
     </div>
     <div class="car-hud__bottom">
-      <button class="btn btn-reset-car" disabled>
-        <p class="txt">RESET</p>
+      <button class="btn btn-reset-car txt" disabled>
+        RESET
       </button>
-      <button class="btn btn-start-car btn-active">
-        <p class="txt">START</p>
+      <button class="btn btn-start-car txt btn-active">
+        START
       </button>
     </div>
   </div>
@@ -84,11 +82,12 @@ export function drawCarContainer(car: Car) {
 }
 
 export function drawGarageFooter(carsNumber: number, garagePage: number) {
-  return `<button class="btn btn-garage-prev" ${garagePage === 1 ? 'disabled' : ''}>
-  <p class="btn-text">PREV</p>
+  return `<button class="btn btn-text btn-garage-prev" ${garagePage === 1 ? 'disabled' : ''}>
+  PREV
 </button>
-<button class="btn btn-garage-next" ${garagePage * 7 >= carsNumber ? 'disabled' : ''}>
-  <p class="btn-text">NEXT</p>
+<div class="btn-text garage-page">${garagePage} / ${Math.ceil(carsNumber / 7)}</div>
+<button class="btn btn-text btn-garage-next" ${garagePage * 7 >= carsNumber ? 'disabled' : ''}>
+  NEXT
 </button>`;
 }
 
@@ -132,10 +131,11 @@ export function drawWinnersTable(winners: Winner[]) {
 }
 
 export function drawWinnersFooter(winnersNumber: number, winnersPage: number) {
-  return `<button class="btn btn-winner-prev" ${winnersPage === 1 ? 'disabled' : ''}>
-  <p class="btn-text">PREV</p>
+  return `<button class="btn btn-text btn-winner-prev" ${winnersPage === 1 ? 'disabled' : ''}>
+  PREV
 </button>
-<button class="btn btn-winner-next" ${winnersPage * 10 >= winnersNumber ? 'disabled' : ''}>
-  <p class="btn-text">NEXT</p>
+<div class="btn-text winners-page">${winnersPage} / ${Math.ceil(winnersNumber / 10)}</div>
+<button class="btn btn-text btn-winner-next" ${winnersPage * 10 >= winnersNumber ? 'disabled' : ''}>
+  NEXT
 </button>`;
 }

@@ -56,3 +56,13 @@
   clip-path: polygon(0% 0%, 100% 0, calc(100% - 40px) 100%, 0% 100%);
   cursor: pointer;
 }
+
+.garage-page,
+.winners-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+  background: $secondary-bg;
+}

@@ -1,11 +1,12 @@
 .car-hud {
   background: $secondary-bg;
-  padding: 8px;
+  padding: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   width: 226px;
+  height: 84px;
 }
 
 .car-hud__top {
@@ -24,7 +25,9 @@
 }
 
 .car-name {
-  max-width: 108px;
+  max-width: 140px;
+  height: 36px;
+  line-height: 18px;
   align-self: stretch;
   text-align: center;
 }
