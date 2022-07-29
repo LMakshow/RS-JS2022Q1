@@ -73,8 +73,8 @@ export function drawCarContainer(car: Car) {
     </div>
   </div>
 
-  <div class="racing-track">
-    <div class="car" data-id=${car.id}>
+  <div class="racing-track" data-id=${car.id}>
+    <div class="car car-${car.id}" data-id=${car.id}>
      ${drawCar(car.color)}
     </div>
   </div>

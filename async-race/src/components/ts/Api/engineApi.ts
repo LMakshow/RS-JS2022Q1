@@ -17,5 +17,5 @@ export async function engineStop(carId: number) {
 export async function engineDrive(carId: number) {
   return (await fetch(`${engineUrl}?id=${carId}&status=drive`, {
     method: 'PATCH',
-  })).json();
+  })).status;
 }

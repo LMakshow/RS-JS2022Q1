@@ -3,8 +3,10 @@ import {
 } from './components/ts/DOM/draw-base-dom';
 import {
   carHUDButtonsEvents,
-  createCarButtonEvent, garageFooterButtonsEvents, generate100CarsButtonEvent, navButtonsEvents,
+  createCarButtonEvent, garageFooterButtonsEvents, generate100CarsButtonEvent,
 } from './components/ts/Events/garage-events';
+import navButtonsEvents from './components/ts/Events/nav-events';
+import { raceButtonEvent, resetAllCarsButtonEvent } from './components/ts/Events/race-events';
 import storage from './components/ts/global';
 import './global.scss';
 
@@ -21,3 +23,5 @@ createCarButtonEvent();
 generate100CarsButtonEvent();
 garageFooterButtonsEvents();
 carHUDButtonsEvents();
+resetAllCarsButtonEvent();
+raceButtonEvent();

@@ -3,6 +3,7 @@ import {
 } from '../Api/garageApi';
 import { drawRaceTrack } from '../DOM/draw-base-dom';
 import storage, { generateColor, generateName } from '../global';
+import { resetCar, startCar } from './race-events';
 
 export async function updateCarStorage() {
   const { cars, carsNumber } = await getCars(storage.garagePage);
@@ -87,21 +88,6 @@ async function removeCar(target: HTMLElement) {
   updateGarage();
 }
 
-export function navButtonsEvents() {
-  function toggleNavButtons() {
-    document.querySelector('.btn-garage').classList.toggle('btn-active');
-    document.querySelector('.btn-winners').classList.toggle('btn-active');
-    document.querySelector('.garage').classList.toggle('hide');
-    document.querySelector('.winners').classList.toggle('hide');
-  }
-  document.querySelector('.btn-garage').addEventListener('click', () => {
-    toggleNavButtons();
-  });
-  document.querySelector('.btn-winners').addEventListener('click', () => {
-    toggleNavButtons();
-  });
-}
-
 export function generate100CarsButtonEvent() {
   const generateButton = document.querySelector('.btn-generate') as HTMLButtonElement;
 
@@ -145,7 +131,7 @@ export function carHUDButtonsEvents() {
     const target = e.target as HTMLElement;
     if (target.closest('.btn-edit')) editCar(target.closest('.btn-edit'));
     if (target.closest('.btn-delete')) removeCar(target.closest('.btn-delete'));
-    // if (target.classList.contains('btn-reset-car')) resetCar(target);
-    // if (target.classList.contains('btn-start-car')) startCar(target);
+    if (target.classList.contains('btn-reset-car')) resetCar(Number(target.dataset.id));
+    if (target.classList.contains('btn-start-car')) startCar(Number(target.dataset.id));
   });
 }

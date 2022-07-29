@@ -1,16 +1,29 @@
+import { Car, Winner } from './Api/apiGlobal';
 import { getCars } from './Api/garageApi';
 import { getWinners } from './Api/winnersApi';
 
 const { cars, carsNumber } = await getCars();
 const { winners, winnersNumber } = await getWinners();
 
-const storage = {
+interface Storage {
+  cars: Car[],
+  carsNumber: number,
+  garagePage: number,
+  updateCar: number,
+  animations: { [index: number]: number },
+  winners: Winner[],
+  winnersNumber: number,
+  winnersPage: number,
+}
+
+const storage: Storage = {
   cars,
   carsNumber,
   garagePage: 1,
   updateCar: 0,
+  animations: {},
   winners,
-  winnersNumber,
+  winnersNumber: Number(winnersNumber),
   winnersPage: 1,
 };
 
@@ -37,7 +50,7 @@ export function generateName() {
 }
 
 export function generateColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${(0x1000000 + (Math.random()) * 0xffffff).toString(16).substring(1, 7)}`;
 }
 
 export default storage;
