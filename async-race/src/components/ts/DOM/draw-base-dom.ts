@@ -1,6 +1,6 @@
 import {
   headerHtml, footerHtml, drawCarContainer, garageDashboardHtml,
-  drawGarageFooter, drawWinnersTable, drawWinnersFooter,
+  drawGarageFooter, drawWinnersTable, drawWinnersFooter, modalHtml, winnersHeaderHtml,
 } from './DOM-html';
 import { Car, Winner } from '../Api/apiGlobal';
 
@@ -61,9 +61,19 @@ export function drawWinners(winnersNumber: number, winners: Winner[], page = 1) 
   winnersText.innerHTML = 'Winners';
   winList.append(winnersText);
 
-  const winnersTable = document.createElement('table');
-  winnersTable.classList.add('winners-table');
-  winnersTable.innerHTML = drawWinnersTable(winners);
+  const winnersTable = document.createElement('div');
+  winnersTable.classList.add('table-container');
+
+  const winnersTableHeader = document.createElement('table');
+  winnersTableHeader.classList.add('winners-table');
+  winnersTableHeader.innerHTML = winnersHeaderHtml;
+  winnersTable.append(winnersTableHeader);
+
+  const winnersTableList = document.createElement('table');
+  winnersTableList.classList.add('winners-table__list');
+  winnersTableList.innerHTML = drawWinnersTable(winners);
+  winnersTable.append(winnersTableList);
+
   winList.append(winnersTable);
 
   const winnersFooter = document.createElement('div');
@@ -79,4 +89,12 @@ export function drawFooter() {
   footer.classList.add('footer');
   footer.innerHTML = footerHtml;
   container.append(footer);
+}
+
+export function drawModal() {
+  const modal = document.createElement('div');
+  modal.classList.add('modal-overlay');
+  modal.classList.add('hide');
+  modal.innerHTML = modalHtml;
+  container.append(modal);
 }

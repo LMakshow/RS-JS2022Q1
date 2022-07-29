@@ -91,19 +91,26 @@ export function drawGarageFooter(carsNumber: number, garagePage: number) {
 </button>`;
 }
 
+export const winnersHeaderHtml = `<colgroup>
+<col class="winners-table__no">
+<col class="winners-table__winner">
+<col class="winners-table__wins">
+<col class="winners-table__best-time">
+</colgroup>
+<tr>
+<th class="winners-table__header">No</th>
+<th class="winners-table__header">Winner</th>
+<th class="winners-table__header"><div class="sort-wins">Wins<img class="sort-wins__img hide" src="./assets/icons/arrow.svg" alt="▼"></div></th>
+<th class="winners-table__header"><div class="sort-time">Best Time<img class="sort-time__img" src="./assets/icons/arrow.svg" alt="▼"></div></th>
+</tr>`;
+
 export function drawWinnersTable(winners: Winner[]) {
   let innerHTML = `<colgroup>
     <col class="winners-table__no">
     <col class="winners-table__winner">
     <col class="winners-table__wins">
     <col class="winners-table__best-time">
-  </colgroup>
-  <tr>
-    <th class="winners-table__header">No</th>
-    <th class="winners-table__header">Winner</th>
-    <th class="winners-table__header">Wins</th>
-    <th class="winners-table__header">Best Time</th>
-  </tr>`;
+  </colgroup>`;
   if (winners.length === 0) {
     innerHTML += `<tr>
     <th class="winners-table__cell" colspan="4">No winners yet! Time to start a race!</th>
@@ -139,3 +146,13 @@ export function drawWinnersFooter(winnersNumber: number, winnersPage: number) {
   NEXT
 </button>`;
 }
+
+export const modalHtml = `<div class="winner-popup">
+<div class="modal-popup__button">
+  <img src="./assets/icons/close.svg" alt="&times;">
+</div>
+<div class="inner-popup">
+<div class="btn-text-big">Winner!</div>
+<div class="inner-popup__text btn-txt"></div>
+</div>
+</div>`;

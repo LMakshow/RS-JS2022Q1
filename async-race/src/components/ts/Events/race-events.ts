@@ -1,5 +1,6 @@
 import { engineDrive, engineStart, engineStop } from '../Api/engineApi';
 import storage from '../global';
+import { newWinner } from './winner-events';
 
 async function animateCar(
   id: number,
@@ -66,9 +67,17 @@ export function resetAllCars() {
   storage.cars.forEach((e) => resetCar(e.id));
 }
 
-export function startAllCars() {
+function showModalWinner(id: number, duration: number) {
+  document.querySelector('.inner-popup__text').innerHTML = `${storage.cars.find((e) => e.id === id).name} finished!<br>Time: ${Math.floor(duration) / 1000} sec`;
+  document.querySelector('.modal-overlay').classList.remove('hide');
+}
+
+export async function startAllCars() {
   Promise.any(storage.cars.map((e) => startCar(e.id)))
-    .then((result) => console.log(`car #${result.id} finished with ${result.duration} sec`));
+    .then((result) => {
+      showModalWinner(result.id, result.duration);
+      newWinner(result.id, Math.floor(result.duration) / 1000);
+    });
 }
 
 export function resetAllCarsButtonEvent() {
@@ -77,4 +86,15 @@ export function resetAllCarsButtonEvent() {
 
 export function raceButtonEvent() {
   document.querySelector('.btn-race').addEventListener('click', startAllCars);
+}
+
+export function closeModalEvent() {
+  const modal = document.querySelector('.modal-overlay');
+  const modalButton = document.querySelector('.modal-popup__button');
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.add('hide');
+  });
+  modalButton.addEventListener('click', () => {
+    modal.classList.add('hide');
+  });
 }

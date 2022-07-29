@@ -3,7 +3,7 @@ import { getCar } from './garageApi';
 
 const winnersUrl = `${serverUrl}/winners`;
 
-export async function getWinners(page = 1, limit = 10, sort = 'id', order = 'ASC') {
+export async function getWinners(page = 1, limit = 10, sort = 'time', order = 'ASC') {
   const response = await fetch(`${winnersUrl}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`);
   let winners = await response.json() as Winner[];
   winners = await Promise.all(winners.map(async (winner) => {
@@ -22,18 +22,20 @@ export async function getWinners(page = 1, limit = 10, sort = 'id', order = 'ASC
 }
 
 export async function getWinner(carId: number) {
-  return (await fetch(`${winnersUrl}?id=${carId}`)).json();
+  const response = await fetch(`${winnersUrl}/${carId}`);
+  const winner = await response.json();
+  return winner;
 }
 
 export async function deleteWinner(carId: number) {
-  return (await fetch(`${winnersUrl}?id=${carId}`, {
+  return (await fetch(`${winnersUrl}/${carId}`, {
     method: 'DELETE',
   })).status;
 }
 
-export async function createWinner(carId: number, time: number, wins = 1) {
+export async function createWinner(id: number, time: number, wins = 1) {
   const data = {
-    carId,
+    id,
     wins,
     time,
   };
@@ -47,13 +49,13 @@ export async function createWinner(carId: number, time: number, wins = 1) {
   })).json();
 }
 
-export async function updateCar(carId: number, time: number, wins: number) {
+export async function updateWinner(carId: number, time: number, wins: number) {
   const data = {
     wins,
     time,
   };
 
-  return (await fetch(`${winnersUrl}?id=${carId}`, {
+  return (await fetch(`${winnersUrl}/${carId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

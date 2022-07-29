@@ -58,7 +58,7 @@ a {
   flex-direction: column;
   gap: 30px;
   width: 97%;
-  margin: 24px auto;
+  margin: 16px auto;
 }
 
 .btn {
@@ -93,12 +93,6 @@ a {
 
 .btn-text {
   font-size: 24px;
-}
-
-.garage {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
 }
 
 .header {
@@ -181,6 +175,12 @@ a {
   font-size: 14px;
   line-height: 20px;
   color: #fff;
+}
+
+.garage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .dashboard {
@@ -292,12 +292,13 @@ a {
 
 .car-hud {
   background: linear-gradient(180deg, #BBB7A9 0%, #DADADA 77.6%, #979797 100%);
-  padding: 8px;
+  padding: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   width: 226px;
+  height: 84px;
 }
 
 .car-hud__top {
@@ -316,7 +317,9 @@ a {
 }
 
 .car-name {
-  max-width: 108px;
+  max-width: 140px;
+  height: 36px;
+  line-height: 18px;
   align-self: stretch;
   text-align: center;
 }
@@ -403,6 +406,16 @@ a {
   cursor: pointer;
 }
 
+.garage-page,
+.winners-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px;
+  background: linear-gradient(180deg, #BBB7A9 0%, #DADADA 77.6%, #979797 100%);
+}
+
 .winners {
   display: flex;
   flex-direction: column;
@@ -423,7 +436,8 @@ a {
   background-clip: text;
 }
 
-.winners-table {
+.winners-table,
+.winners-table__list {
   width: 665px;
   font-size: 24px;
   text-align: center;
@@ -440,11 +454,11 @@ a {
 }
 
 .winners-table__wins {
-  width: 90px;
+  width: 100px;
 }
 
 .winners-table__best-time {
-  width: 140px;
+  width: 170px;
 }
 
 .winners-table__container {
@@ -502,6 +516,80 @@ a {
   -webkit-clip-path: polygon(0% 0%, 100% 0, calc(100% - 40px) 100%, 0% 100%);
           clip-path: polygon(0% 0%, 100% 0, calc(100% - 40px) 100%, 0% 100%);
   cursor: pointer;
+}
+
+.sort-wins__img,
+.sort-time__img {
+  width: 15px;
+  height: auto;
+  margin: 5px;
+}
+
+.sort-wins,
+.sort-time {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.winner-popup {
+  background: linear-gradient(180deg, #FBC405 0%, #FEE2B6 77.6%, #F7A018 100%);
+  margin: 40vh auto;
+  padding: 15px;
+  border: 3px solid #9A0000;
+  width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 10px;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.modal-popup__button {
+  float: right;
+  width: 25px;
+  height: 25px;
+}
+.modal-popup__button:hover, .modal-popup__button:focus {
+  filter: invert(10%) sepia(93%) saturate(5894%) hue-rotate(2deg) brightness(91%) contrast(113%);
+  cursor: pointer;
+}
+
+.inner-popup {
+  text-align: center;
+  font-size: 24px;
+  margin: 40px 20px 25px;
+}
+
+.inner-popup__text {
+  padding-top: 20px;
 }
 
 .hide {

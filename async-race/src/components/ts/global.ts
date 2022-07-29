@@ -14,6 +14,8 @@ interface Storage {
   winners: Winner[],
   winnersNumber: number,
   winnersPage: number,
+  winnersSort: 'id' | 'wins' | 'time',
+  winnersOrder: 'ASC' | 'DESC',
 }
 
 const storage: Storage = {
@@ -25,6 +27,8 @@ const storage: Storage = {
   winners,
   winnersNumber: Number(winnersNumber),
   winnersPage: 1,
+  winnersSort: 'time',
+  winnersOrder: 'ASC',
 };
 
 const carBrands = ['Acura', 'Alfa-Romeo', 'Aston-Martin', 'Audi', 'Bentley', 'BMW',

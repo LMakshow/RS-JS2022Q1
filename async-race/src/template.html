@@ -52,8 +52,7 @@
             </div>
             <div class="choose-color">
               <label for="car-color" class="txt">COLOR:</label>
-              <input class="color-picker" type="color" id="car-color" name="car-color"
-           value="#bf0000">
+              <input class="color-picker" type="color" id="car-color" name="car-color" value="#bf0000">
             </div>
             <button class="btn btn-create btn-active txt">
               CREATE CAR
@@ -619,32 +618,48 @@
 
     <div class="winners">
       <h2 class="winners-text">Winners</h2>
-      <table class="winners-table">
-        <colgroup>
-          <col class="winners-table__no">
-          <col class="winners-table__winner">
-          <col class="winners-table__wins">
-          <col class="winners-table__best-time">
-        </colgroup>
-        <tr>
-          <th class="winners-table__header">No</th>
-          <th class="winners-table__header">Winner</th>
-          <th class="winners-table__header">Wins</th>
-          <th class="winners-table__header">Best Time</th>
-        </tr>
-        <tr>
-          <th class="winners-table__winner">1</th>
-          <th class="winners-table__winner"><div class="winners-table__container"><img class="winners-table__img" src="./assets/images/car.svg" alt=""><span class="winner-table__name txt">Lamborghini Murcielago</span></div></th>
-          <th class="winners-table__winner">2</th>
-          <th class="winners-table__winner">3.56</th>
-        </tr>
-        <tr>
-          <th class="winners-table__cell">1</th>
-          <th class="winners-table__cell"><div class="winners-table__container"><img class="winners-table__img" src="./assets/images/car.svg" alt=""><span class="winner-table__name txt">Lamborghini Murcielago</span></div></th>
-          <th class="winners-table__cell">2</th>
-          <th class="winners-table__cell">3.56</th>
-        </tr>
-      </table>
+      <div class="table-container">
+        <table class="winners-table">
+          <colgroup>
+            <col class="winners-table__no">
+            <col class="winners-table__winner">
+            <col class="winners-table__wins">
+            <col class="winners-table__best-time">
+          </colgroup>
+          <tr>
+            <th class="winners-table__header">No</th>
+            <th class="winners-table__header">Winner</th>
+            <th class="winners-table__header"><div class="sort-wins">Wins<img class="sort-wins__img" src="./assets/icons/arrow.svg" alt="▼"></div></th>
+            <th class="winners-table__header"><div class="sort-time">Best Time<img class="sort-time__img" src="./assets/icons/arrow.svg" alt="▼"></div></th>
+          </tr>
+        </table>
+        <table class="winners-table__list">
+          <colgroup>
+            <col class="winners-table__no">
+            <col class="winners-table__winner">
+            <col class="winners-table__wins">
+            <col class="winners-table__best-time">
+          </colgroup>
+          <tr>
+            <th class="winners-table__winner">1</th>
+            <th class="winners-table__winner">
+              <div class="winners-table__container"><img class="winners-table__img" src="./assets/images/car.svg"
+                  alt=""><span class="winner-table__name txt">Lamborghini Murcielago</span></div>
+            </th>
+            <th class="winners-table__winner">2</th>
+            <th class="winners-table__winner">3.56</th>
+          </tr>
+          <tr>
+            <th class="winners-table__cell">1</th>
+            <th class="winners-table__cell">
+              <div class="winners-table__container"><img class="winners-table__img" src="./assets/images/car.svg"
+                  alt=""><span class="winner-table__name txt">Lamborghini Murcielago</span></div>
+            </th>
+            <th class="winners-table__cell">2</th>
+            <th class="winners-table__cell">3.56</th>
+          </tr>
+        </table>
+      </div>
       <div class="winners__footer">
         <button class="btn btn-winner-prev" disabled>
           <p class="btn-text">PREV</p>
@@ -664,6 +679,16 @@
       <a class="footer__link" href="https://rs.school/"><img src="./assets/icons/rss.svg" alt="GitHub"></a>
     </div>
   </footer>
+  </div>
+
+  <div class="winner-popup">
+    <div class="modal-popup__button">
+      <img src="./assets/icons/close.svg" alt="&times;">
+    </div>
+    <div class="inner-popup">
+      <div class="btn-text-big">Winner!</div>
+      <div class="inner-popup__text btn-txt">!</div>
+    </div>
   </div>
 </body>
 

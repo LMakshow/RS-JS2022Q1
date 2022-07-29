@@ -18,14 +18,13 @@
   background-clip: text;
 }
 
-.winners-table {
+.winners-table,
+.winners-table__list {
   width: 665px;
   font-size: 24px;
   text-align: center;
   border: none;
   border-spacing: 0;
-  // grid-template-columns: 60px 1fr 90px 140px;
-  // grid-row-gap: 10px;
 }
 
 .winners-table__no {
@@ -37,11 +36,11 @@
 }
 
 .winners-table__wins {
-  width: 90px;
+  width: 100px;
 }
 
 .winners-table__best-time {
-  width: 140px;
+  width: 170px;
 }
 
 .winners-table__container {
@@ -97,4 +96,18 @@
   width: 180px;
   clip-path: polygon(0% 0%, 100% 0, calc(100% - 40px) 100%, 0% 100%);
   cursor: pointer;
+}
+
+.sort-wins__img,
+.sort-time__img {
+  width: 15px;
+  height: auto;
+  margin: 5px;
+}
+
+.sort-wins,
+.sort-time {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
