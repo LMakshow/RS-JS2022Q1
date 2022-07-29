@@ -2,6 +2,7 @@ import {
   clearBody, drawFooter, drawGarage, drawHeader, drawWinners,
 } from './components/ts/DOM/draw-base-dom';
 import {
+  carHUDButtonsEvents,
   createCarButtonEvent, garageFooterButtonsEvents, generate100CarsButtonEvent, navButtonsEvents,
 } from './components/ts/Events/garage-events';
 import storage from './components/ts/global';
@@ -19,3 +20,4 @@ navButtonsEvents();
 createCarButtonEvent();
 generate100CarsButtonEvent();
 garageFooterButtonsEvents();
+carHUDButtonsEvents();

@@ -19,7 +19,7 @@ export async function getCar(carId: number) {
 }
 
 export async function deleteCar(carId: number) {
-  return (await fetch(`${garageUrl}?id=${carId}`, {
+  return (await fetch(`${garageUrl}/${carId}`, {
     method: 'DELETE',
   })).status;
 }
@@ -45,7 +45,7 @@ export async function updateCar(carId: number, name: string, color: string) {
     color,
   };
 
-  return (await fetch(`${garageUrl}?id=${carId}`, {
+  return (await fetch(`${garageUrl}/${carId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

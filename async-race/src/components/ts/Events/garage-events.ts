@@ -1,4 +1,6 @@
-import { createCar, getCars } from '../Api/garageApi';
+import {
+  createCar, deleteCar, getCars, updateCar,
+} from '../Api/garageApi';
 import { drawRaceTrack } from '../DOM/draw-base-dom';
 import storage, { generateColor, generateName } from '../global';
 
@@ -23,6 +25,68 @@ export function updateGarage() {
   garagePageNumber.innerHTML = `${storage.garagePage} / ${Math.ceil(storage.carsNumber / 7)}`;
 }
 
+const createCarBtn = async () => {
+  const inputCreateCar = document.querySelector('.choose-name__input') as HTMLInputElement;
+  const colorCreateCar = document.querySelector('.color-picker') as HTMLInputElement;
+
+  if (!inputCreateCar.value) inputCreateCar.value = generateName();
+
+  await createCar(inputCreateCar.value, colorCreateCar.value);
+  await updateCarStorage();
+  updateGarage();
+
+  inputCreateCar.value = '';
+};
+
+export function createCarButtonEvent() {
+  document.querySelector('.btn-create').addEventListener('click', createCarBtn);
+}
+
+const updateCarBtn = async () => {
+  const inputCreateCar = document.querySelector('.choose-name__input') as HTMLInputElement;
+  const colorCreateCar = document.querySelector('.color-picker') as HTMLInputElement;
+  const buttonCreateCar = document.querySelector('.btn-create') as HTMLInputElement;
+
+  await updateCar(storage.updateCar, inputCreateCar.value, colorCreateCar.value);
+  await updateCarStorage();
+  updateGarage();
+  buttonCreateCar.classList.toggle('btn-active');
+  buttonCreateCar.innerHTML = 'CREATE CAR';
+  buttonCreateCar.removeEventListener('click', updateCarBtn);
+  createCarButtonEvent();
+};
+
+function editCar(target: HTMLElement) {
+  const inputCreateCar = document.querySelector('.choose-name__input') as HTMLInputElement;
+  const colorCreateCar = document.querySelector('.color-picker') as HTMLInputElement;
+  const buttonCreateCar = document.querySelector('.btn-create') as HTMLInputElement;
+
+  target.classList.toggle('btn-active');
+  if (target.classList.contains('btn-active')) {
+    const id = Number(target.dataset.id);
+    const car = storage.cars.find((x) => x.id === id);
+    storage.updateCar = id;
+    inputCreateCar.value = car.name;
+    colorCreateCar.value = car.color;
+    buttonCreateCar.classList.toggle('btn-active');
+    buttonCreateCar.innerHTML = 'UPDATE CAR';
+    buttonCreateCar.addEventListener('click', updateCarBtn);
+  } else {
+    inputCreateCar.value = '';
+    buttonCreateCar.classList.toggle('btn-active');
+    buttonCreateCar.innerHTML = 'CREATE CAR';
+    buttonCreateCar.removeEventListener('click', updateCarBtn);
+    createCarButtonEvent();
+  }
+}
+
+async function removeCar(target: HTMLElement) {
+  const id = Number(target.dataset.id);
+  await deleteCar(id);
+  await updateCarStorage();
+  updateGarage();
+}
+
 export function navButtonsEvents() {
   function toggleNavButtons() {
     document.querySelector('.btn-garage').classList.toggle('btn-active');
@@ -35,21 +99,6 @@ export function navButtonsEvents() {
   });
   document.querySelector('.btn-winners').addEventListener('click', () => {
     toggleNavButtons();
-  });
-}
-
-export function createCarButtonEvent() {
-  document.querySelector('.btn-create').addEventListener('click', async () => {
-    const inputCreateCar = document.querySelector('.choose-name__input') as HTMLInputElement;
-    const colorCreateCar = document.querySelector('.color-picker') as HTMLInputElement;
-
-    if (!inputCreateCar.value) inputCreateCar.value = generateName();
-
-    await createCar(inputCreateCar.value, colorCreateCar.value);
-    await updateCarStorage();
-    updateGarage();
-
-    inputCreateCar.value = '';
   });
 }
 
@@ -88,5 +137,15 @@ export function garageFooterButtonsEvents() {
     storage.garagePage += 1;
     await updateCarStorage();
     updateGarage();
+  });
+}
+
+export function carHUDButtonsEvents() {
+  document.querySelector('.racing-container').addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('.btn-edit')) editCar(target.closest('.btn-edit'));
+    if (target.closest('.btn-delete')) removeCar(target.closest('.btn-delete'));
+    // if (target.classList.contains('btn-reset-car')) resetCar(target);
+    // if (target.classList.contains('btn-start-car')) startCar(target);
   });
 }

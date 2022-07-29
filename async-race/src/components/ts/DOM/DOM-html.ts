@@ -55,26 +55,26 @@ export function garageDashboardHtml(carsNumber: number) {
 export function drawCarContainer(car: Car) {
   return `<div class="car-hud">
     <div class="car-hud__top">
-      <div class="btn btn-edit">
+      <div class="btn btn-edit" data-id=${car.id}>
         <img alt="E" class="btn-img_small" src="./assets/icons/btn-edit.svg" />
       </div>
       <p class="car-name">${car.name}</p>
-      <div class="btn btn-delete">
+      <div class="btn btn-delete" data-id=${car.id}>
         <img alt="X" class="btn-img_small" src="./assets/icons/btn-delete.svg" />
       </div>
     </div>
     <div class="car-hud__bottom">
-      <button class="btn btn-reset-car txt" disabled>
+      <button class="btn btn-reset-car txt" data-id=${car.id} disabled>
         RESET
       </button>
-      <button class="btn btn-start-car txt btn-active">
+      <button class="btn btn-start-car txt btn-active" data-id=${car.id}>
         START
       </button>
     </div>
   </div>
 
   <div class="racing-track">
-    <div class="car car-id${car.id}">
+    <div class="car" data-id=${car.id}>
      ${drawCar(car.color)}
     </div>
   </div>

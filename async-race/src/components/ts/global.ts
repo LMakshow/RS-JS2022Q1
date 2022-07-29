@@ -8,6 +8,7 @@ const storage = {
   cars,
   carsNumber,
   garagePage: 1,
+  updateCar: 0,
   winners,
   winnersNumber,
   winnersPage: 1,
