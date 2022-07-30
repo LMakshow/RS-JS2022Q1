@@ -2,6 +2,9 @@ import { engineDrive, engineStart, engineStop } from '../Api/engineApi';
 import storage from '../global';
 import { newWinner } from './winner-events';
 
+/** Animates car after the start of the engine and stops animation
+ * if the engine is broken in mid-way.
+ */
 async function animateCar(
   id: number,
   raceCar: HTMLElement,
@@ -33,6 +36,7 @@ async function animateCar(
   return true;
 }
 
+/** Starts the car's engine: gets velocity from the server and launch animation */
 export async function startCar(id: number) {
   const startButton = document.querySelector(`.btn-start-car[data-id="${id}"]`) as HTMLButtonElement;
   const resetButton = document.querySelector(`.btn-reset-car[data-id="${id}"]`) as HTMLButtonElement;
@@ -50,6 +54,7 @@ export async function startCar(id: number) {
   return result ? { id, duration } : Promise.reject();
 }
 
+/** Resets the car to the starting position after the Reset button pressed */
 export async function resetCar(id: number) {
   const startButton = document.querySelector(`.btn-start-car[data-id="${id}"]`) as HTMLButtonElement;
   const resetButton = document.querySelector(`.btn-reset-car[data-id="${id}"]`) as HTMLButtonElement;
@@ -64,15 +69,18 @@ export async function resetCar(id: number) {
   raceCar.style.transform = 'none';
 }
 
+/** Sends Reset car command for each of the cars in the storage */
 export function resetAllCars() {
   storage.cars.forEach((e) => resetCar(e.id));
 }
 
+/** Shows modal window with the winner name and time */
 function showModalWinner(id: number, duration: number) {
   document.querySelector('.inner-popup__text').innerHTML = `${storage.cars.find((e) => e.id === id).name} finished!<br>Time: ${Math.floor(duration) / 1000} sec`;
   document.querySelector('.modal-overlay').classList.remove('hide');
 }
 
+/** Starts all the cars and after one of them finishes, shows modal window and adds a winner */
 export async function startAllCars() {
   Promise.any(storage.cars.map((e) => startCar(e.id)))
     .then((result) => {
@@ -81,6 +89,7 @@ export async function startAllCars() {
     });
 }
 
+/** Event listeners for the buttons */
 export function resetAllCarsButtonEvent() {
   document.querySelector('.btn-reset').addEventListener('click', resetAllCars);
 }

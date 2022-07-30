@@ -142,7 +142,7 @@ export function drawWinnersTable(winners: Winner[], winnersPage: number) {
 
 export function drawWinnersNumberText(winnersNumber: string) {
   return `<div class="winners-number-container">
-  <p class="winners-number-text txt">TOTAL WINNERS: <span class="cars-number">${winnersNumber}</span></p>
+  <p class="winners-number-text txt">TOTAL WINNERS: <span class="winners-number cars-number">${winnersNumber}</span></p>
 </div>`;
 }
 

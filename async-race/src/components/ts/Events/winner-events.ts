@@ -7,6 +7,7 @@ import {
 import { drawWinnersTable, drawWinnersTableHeader } from '../DOM/DOM-html';
 import storage from '../global';
 
+/** Updates storage Winners and Winners number */
 export async function updateWinnerStorage() {
   try {
     const { winners, winnersNumber } = await getWinners(
@@ -20,7 +21,10 @@ export async function updateWinnerStorage() {
   } catch (e) { storage.winnersNumber = 'SERVER LOST'; }
 }
 
+/** Updates the table: winners list, number of winners,
+ * checks the buttons if they should be disabled or not. */
 export async function updateWinnersTable() {
+  const winnersNumberSpan = document.querySelector('.winners-number');
   const winnersTableHeader = document.querySelector('.winners-table');
   const winnersTableList = document.querySelector('.winners-table__list');
   const winnersButtonPrev = document.querySelector('.btn-winner-prev') as HTMLButtonElement;
@@ -28,6 +32,7 @@ export async function updateWinnersTable() {
   const winnersPageNumber = document.querySelector('.winners-page');
 
   await updateWinnerStorage();
+  winnersNumberSpan.innerHTML = storage.winnersNumber;
   winnersTableHeader.innerHTML = drawWinnersTableHeader(storage.winnersSort, storage.winnersOrder);
   winnersTableList.innerHTML = drawWinnersTable(storage.winners, storage.winnersPage);
 
@@ -37,6 +42,7 @@ export async function updateWinnersTable() {
   winnersPageNumber.innerHTML = `${storage.winnersPage} / ${Math.ceil(Number(storage.winnersNumber) / 10)}`;
 }
 
+/** Adds winner to the table. Called after the race is over. */
 export async function newWinner(id: number, time: number) {
   const existingWinner = await getWinner(id);
   if (Object.keys(existingWinner).length > 0) {

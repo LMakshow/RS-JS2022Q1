@@ -1,9 +1,11 @@
 import {
   createCar, deleteCar, getCars, updateCar,
 } from '../Api/garageApi';
+import { deleteWinner } from '../Api/winnersApi';
 import { drawRaceTrack } from '../DOM/draw-base-dom';
 import storage, { generateColor, generateName } from '../global';
 import { resetCar, startCar } from './race-events';
+import { updateWinnersTable, updateWinnerStorage } from './winner-events';
 
 /** Updates storage Cars and CarsNumber */
 export async function updateCarStorage() {
@@ -61,6 +63,8 @@ const updateCarBtn = async () => {
   await updateCar(storage.updateCar, inputCreateCar.value, colorCreateCar.value);
   await updateCarStorage();
   updateGarage();
+  await updateWinnerStorage();
+  updateWinnersTable();
   buttonCreateCar.classList.toggle('btn-active');
   buttonCreateCar.innerHTML = 'CREATE CAR';
   buttonCreateCar.removeEventListener('click', updateCarBtn);
@@ -97,8 +101,11 @@ function editCar(target: HTMLElement) {
 async function removeCar(target: HTMLElement) {
   const id = Number(target.dataset.id);
   await deleteCar(id);
+  await deleteWinner(id);
   await updateCarStorage();
   updateGarage();
+  await updateWinnerStorage();
+  updateWinnersTable();
 }
 
 /** Event listeners for all HUD buttons: edit car, delete car, start and stop */

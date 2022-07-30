@@ -1,3 +1,4 @@
+/** Toggles between the Garage and Winners pages */
 export default function navButtonsEvents() {
   function toggleNavButtons() {
     document.querySelector('.btn-garage').classList.toggle('btn-active');
