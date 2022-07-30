@@ -13,3 +13,12 @@
   left: 0;
   top: 0;
 }
+
+.flex-direction-column {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.turn-180 {
+  transform: rotate(180deg);
+}

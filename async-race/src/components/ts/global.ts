@@ -1,31 +1,36 @@
 import { Car, Winner } from './Api/apiGlobal';
-import { getCars } from './Api/garageApi';
-import { getWinners } from './Api/winnersApi';
-
-const { cars, carsNumber } = await getCars();
-const { winners, winnersNumber } = await getWinners();
 
 interface Storage {
   cars: Car[],
-  carsNumber: number,
+  carsNumber: string,
   garagePage: number,
   updateCar: number,
   animations: { [index: number]: number },
   winners: Winner[],
-  winnersNumber: number,
+  winnersNumber: string,
   winnersPage: number,
   winnersSort: 'id' | 'wins' | 'time',
   winnersOrder: 'ASC' | 'DESC',
 }
 
 const storage: Storage = {
-  cars,
-  carsNumber,
+  cars: [{
+    name: 'Demo Car',
+    color: '#fff',
+    id: 1,
+  }],
+  carsNumber: 'SERVER LOST',
   garagePage: 1,
   updateCar: 0,
   animations: {},
-  winners,
-  winnersNumber: Number(winnersNumber),
+  winners: [
+    {
+      id: 1,
+      wins: '1',
+      time: '10',
+    },
+  ],
+  winnersNumber: 'SERVER LOST',
   winnersPage: 1,
   winnersSort: 'time',
   winnersOrder: 'ASC',

@@ -4,6 +4,7 @@ $primary-bg: linear-gradient(180deg, #DCDCDC 0%, #FFFFFF 77.6%, #C0C0C0 100%);
 $secondary-bg: linear-gradient(180deg, #BBB7A9 0%, #DADADA 77.6%, #979797 100%);
 $accent-bg: linear-gradient(180deg, #FBC405 0%, #FEE2B6 77.6%, #F7A018 100%);
 $hover-bg: linear-gradient(180deg, #FB9905 0%, #FFD695 77.6%, #F18F1C 100%);
+$hover-effect: invert(10%) sepia(93%) saturate(5894%) hue-rotate(2deg) brightness(91%) contrast(113%);
 $accent-color: #9A0000;
 $accent-secondary-color: #F7A018;
 $disabled-color: #9C9C9C;

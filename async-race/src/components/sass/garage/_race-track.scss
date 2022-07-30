@@ -1,7 +1,7 @@
 .racing-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .car-container {
@@ -27,7 +27,7 @@
 .img-finish-line {
   display: inline;
   position: absolute;
-  right: 230px;
+  right: calc(1.5% + 210px);
 }
 
 .garage__footer {

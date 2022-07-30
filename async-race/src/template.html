@@ -36,6 +36,8 @@
       <h1 class="logo">Async&nbsp;&nbsp;Race</h1>
     </header>
 
+    <!-- <div class="wait-for-server btn-text"></div> -->
+
     <main class="garage">
       <div class="dashboard">
         <div class="dashboard-container">
@@ -606,6 +608,9 @@
           <img alt="" class="img-finish-line" src="./assets/images/finish-line.svg" />
         </div>
       </div>
+      
+    </main>
+    <footer class="footer">
       <div class="garage__footer">
         <button class="btn btn-garage-prev" disabled>
           <p class="btn-text">PREV</p>
@@ -614,7 +619,13 @@
           <p class="btn-text">NEXT</p>
         </button>
       </div>
-    </main>
+  
+      <div class="footer__links">
+        <a class="footer__github footer-text footer__link" href="https://github.com/LMakshow">Made by Maksym Lytvyn<img
+            src="./assets/icons/github.svg" alt="GitHub"></a>
+        <a class="footer__link" href="https://rs.school/"><img src="./assets/icons/rss.svg" alt="GitHub"></a>
+      </div>
+    </footer>
 
     <div class="winners">
       <h2 class="winners-text">Winners</h2>
@@ -629,7 +640,7 @@
           <tr>
             <th class="winners-table__header">No</th>
             <th class="winners-table__header">Winner</th>
-            <th class="winners-table__header"><div class="sort-wins">Wins<img class="sort-wins__img" src="./assets/icons/arrow.svg" alt="▼"></div></th>
+            <th class="winners-table__header"><div class="sort-wins">Wins<img class="sort-wins__img turn-180" src="./assets/icons/arrow.svg" alt="▼"></div></th>
             <th class="winners-table__header"><div class="sort-time">Best Time<img class="sort-time__img" src="./assets/icons/arrow.svg" alt="▼"></div></th>
           </tr>
         </table>
@@ -659,27 +670,31 @@
             <th class="winners-table__cell">3.56</th>
           </tr>
         </table>
+        <div class="winners-number-container">
+          <p class="winners-number-text txt">TOTAL WINNERS: <span class="cars-number">7</span></p>
+        </div>
       </div>
-      <div class="winners__footer">
-        <button class="btn btn-winner-prev" disabled>
-          <p class="btn-text">PREV</p>
-        </button>
-        <button class="btn btn-winner-next btn-active">
-          <p class="btn-text">NEXT</p>
-        </button>
-      </div>
+      
     </div>
 
   </div>
 
   <footer class="footer">
+    <div class="winners__footer">
+      <button class="btn btn-winner-prev" disabled>
+        <p class="btn-text">PREV</p>
+      </button>
+      <button class="btn btn-winner-next btn-active">
+        <p class="btn-text">NEXT</p>
+      </button>
+    </div>
+
     <div class="footer__links">
       <a class="footer__github footer-text footer__link" href="https://github.com/LMakshow">Made by Maksym Lytvyn<img
           src="./assets/icons/github.svg" alt="GitHub"></a>
       <a class="footer__link" href="https://rs.school/"><img src="./assets/icons/rss.svg" alt="GitHub"></a>
     </div>
   </footer>
-  </div>
 
   <div class="winner-popup">
     <div class="modal-popup__button">

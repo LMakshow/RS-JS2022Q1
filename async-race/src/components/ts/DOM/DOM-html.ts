@@ -1,6 +1,5 @@
 import { Car, Winner } from '../Api/apiGlobal';
 import drawCar from './draw-car';
-import '../../../assets/icons/btn-garage.svg';
 
 export const headerHtml = `<nav class="nav">
 <button class="btn btn-garage btn-active">
@@ -20,7 +19,7 @@ export const footerHtml = `<div class="footer__links">
 <a class="footer__link" href="https://rs.school/"><img src="./assets/icons/rss.svg" alt="GitHub"></a>
 </div>`;
 
-export function garageDashboardHtml(carsNumber: number) {
+export function garageDashboardHtml(carsNumber: string) {
   return `<div class="dashboard-container">
   <div class="generate-container">
     <p class="txt">CARS IN THE GARAGE: <span class="cars-number">${carsNumber}</span></p>
@@ -81,17 +80,19 @@ export function drawCarContainer(car: Car) {
   <img alt="" class="img-finish-line" src="./assets/images/finish-line.svg" />`;
 }
 
-export function drawGarageFooter(carsNumber: number, garagePage: number) {
+export function drawGarageFooter(carsNumber: string, garagePage: number) {
+  const carsNum = Number(carsNumber);
   return `<button class="btn btn-text btn-garage-prev" ${garagePage === 1 ? 'disabled' : ''}>
   PREV
 </button>
-<div class="btn-text garage-page">${garagePage} / ${Math.ceil(carsNumber / 7)}</div>
-<button class="btn btn-text btn-garage-next" ${garagePage * 7 >= carsNumber ? 'disabled' : ''}>
+<div class="btn-text garage-page">${garagePage} / ${Math.ceil(carsNum / 7)}</div>
+<button class="btn btn-text btn-garage-next" ${carsNum > garagePage * 7 ? '' : 'disabled'}>
   NEXT
 </button>`;
 }
 
-export const winnersHeaderHtml = `<colgroup>
+export function drawWinnersTableHeader(winnersSort: 'id' | 'wins' | 'time', winnersOrder: 'ASC' | 'DESC') {
+  return `<colgroup>
 <col class="winners-table__no">
 <col class="winners-table__winner">
 <col class="winners-table__wins">
@@ -100,11 +101,12 @@ export const winnersHeaderHtml = `<colgroup>
 <tr>
 <th class="winners-table__header">No</th>
 <th class="winners-table__header">Winner</th>
-<th class="winners-table__header"><div class="sort-wins">Wins<img class="sort-wins__img hide" src="./assets/icons/arrow.svg" alt="▼"></div></th>
-<th class="winners-table__header"><div class="sort-time">Best Time<img class="sort-time__img" src="./assets/icons/arrow.svg" alt="▼"></div></th>
+<th class="winners-table__header"><div class="sort-wins">Wins<img class="sort-wins__img ${winnersSort === 'wins' ? '' : 'hide'} ${winnersOrder === 'ASC' ? 'turn-180' : ''}" src="./assets/icons/arrow.svg" alt="▼"></div></th>
+<th class="winners-table__header"><div class="sort-time">Time<img class="sort-time__img ${winnersSort === 'time' ? '' : 'hide'} ${winnersOrder === 'ASC' ? '' : 'turn-180'}" src="./assets/icons/arrow.svg" alt="▼"></div></th>
 </tr>`;
+}
 
-export function drawWinnersTable(winners: Winner[]) {
+export function drawWinnersTable(winners: Winner[], winnersPage: number) {
   let innerHTML = `<colgroup>
     <col class="winners-table__no">
     <col class="winners-table__winner">
@@ -118,16 +120,16 @@ export function drawWinnersTable(winners: Winner[]) {
   }
   if (winners.length > 0) {
     innerHTML += `<tr>
-    <th class="winners-table__winner">1</th>
-    <th class="winners-table__winner"><div class="winners-table__container"><div class="winners-table__img">${drawCar(winners[0].color)}</div><span class="winner-table__name txt">${winners[0].name}</span></div></th>
-    <th class="winners-table__winner">${winners[0].wins}</th>
-    <th class="winners-table__winner">${winners[0].time}</th>
+    <th class="${winnersPage === 1 ? 'winners-table__winner' : 'winners-table__cell'}">${winnersPage * 10 - 9}</th>
+    <th class="${winnersPage === 1 ? 'winners-table__winner' : 'winners-table__cell'}"><div class="winners-table__container"><div class="winners-table__img">${drawCar(winners[0].color)}</div><span class="winner-table__name txt">${winners[0].name}</span></div></th>
+    <th class="${winnersPage === 1 ? 'winners-table__winner' : 'winners-table__cell'}">${winners[0].wins}</th>
+    <th class="${winnersPage === 1 ? 'winners-table__winner' : 'winners-table__cell'}">${winners[0].time}</th>
   </tr>`;
   }
   if (winners.length > 1) {
     winners.slice(1).forEach((winner, index) => {
       innerHTML += `<tr>
-      <th class="winners-table__cell">${index + 2}</th>
+      <th class="winners-table__cell">${winnersPage * 10 - 10 + index + 2}</th>
       <th class="winners-table__cell"><div class="winners-table__container"><div class="winners-table__img">${drawCar(winner.color)}</div><span class="winner-table__name txt">${winner.name}</span></div></th>
       <th class="winners-table__cell">${winner.wins}</th>
       <th class="winners-table__cell">${winner.time}</th>
@@ -137,15 +139,24 @@ export function drawWinnersTable(winners: Winner[]) {
   return innerHTML;
 }
 
-export function drawWinnersFooter(winnersNumber: number, winnersPage: number) {
+export function drawWinnersNumberText(winnersNumber: string) {
+  return `<div class="winners-number-container">
+  <p class="winners-number-text txt">TOTAL WINNERS: <span class="cars-number">${winnersNumber}</span></p>
+</div>`;
+}
+
+export function drawWinnersFooter(winnersNumber: string, winnersPage: number) {
+  const winnersNum = Number(winnersNumber);
   return `<button class="btn btn-text btn-winner-prev" ${winnersPage === 1 ? 'disabled' : ''}>
   PREV
 </button>
-<div class="btn-text winners-page">${winnersPage} / ${Math.ceil(winnersNumber / 10)}</div>
-<button class="btn btn-text btn-winner-next" ${winnersPage * 10 >= winnersNumber ? 'disabled' : ''}>
+<div class="btn-text winners-page">${winnersPage} / ${Math.ceil(winnersNum / 10)}</div>
+<button class="btn btn-text btn-winner-next" ${winnersNum > winnersPage * 10 ? '' : 'disabled'}>
   NEXT
 </button>`;
 }
+
+export const waitForServerHtml = 'Waiting for the server response<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
 
 export const modalHtml = `<div class="winner-popup">
 <div class="modal-popup__button">

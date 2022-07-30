@@ -8,7 +8,7 @@ export async function getCars(page = 1, limit = 7) {
 
   return {
     cars,
-    carsNumber: Number(response.headers.get('X-Total-Count')),
+    carsNumber: response.headers.get('X-Total-Count'),
   };
 }
 

@@ -36,11 +36,11 @@
 }
 
 .winners-table__wins {
-  width: 100px;
+  width: 120px;
 }
 
 .winners-table__best-time {
-  width: 170px;
+  width: 120px;
 }
 
 .winners-table__container {
@@ -76,6 +76,17 @@
   justify-content: center;
 }
 
+.winners-number-container {
+  display: flex;
+  background: $primary-bg;
+  align-items: center;
+  justify-content: center;
+}
+
+.winners-number-text {
+  padding: 5px 10px;
+}
+
 .btn-winner-prev {
   display: flex;
   padding-left: 25px;
@@ -109,5 +120,14 @@
 .sort-time {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
+  cursor: pointer;
+
+  &:hover {
+    filter: $hover-effect;
+  }
+}
+
+.table-container {
+  margin-bottom: 20px;
 }

@@ -39,6 +39,7 @@ export async function startCar(id: number) {
   const raceTrack = document.querySelector(`.racing-track[data-id="${id}"]`) as HTMLElement;
   const raceCar = document.querySelector(`.car[data-id="${id}"]`) as HTMLElement;
 
+  raceCar.style.transform = 'none';
   startButton.disabled = true;
   resetButton.disabled = false;
 

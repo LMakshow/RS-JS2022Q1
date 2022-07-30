@@ -3,7 +3,7 @@ import { getCar } from './garageApi';
 
 const winnersUrl = `${serverUrl}/winners`;
 
-export async function getWinners(page = 1, limit = 10, sort = 'time', order = 'ASC') {
+export async function getWinners(page = 1, sort = 'time', order = 'ASC', limit = 10) {
   const response = await fetch(`${winnersUrl}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`);
   let winners = await response.json() as Winner[];
   winners = await Promise.all(winners.map(async (winner) => {

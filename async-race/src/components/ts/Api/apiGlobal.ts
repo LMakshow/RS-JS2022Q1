@@ -3,7 +3,7 @@ const serverUrl = 'http://127.0.0.1:3000';
 export interface Car {
   name: string,
   color: string,
-  id?: number,
+  id: number,
 }
 
 export interface Winner {
