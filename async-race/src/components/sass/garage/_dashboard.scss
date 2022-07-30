@@ -8,6 +8,29 @@
   display: flex;
   align-items: flex-start;
   gap: 40px;
+
+  @media screen and (max-width: 1199px) {
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 1079px) {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.race-btn-container {
+  display: flex;
+  gap: 40px;
+
+  @media screen and (max-width: 1199px) {
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 1079px) {
+    gap: 10px;
+  }
 }
 
 .dashboard-container {
@@ -16,6 +39,10 @@
   align-items: flex-start;
   gap: 8px;
   width: 600px;
+
+  @media screen and (max-width: 699px) {
+    width: 430px;
+  }
 }
 
 .generate-container {
@@ -29,6 +56,10 @@
 
 .txt {
   font-size: 18px;
+
+  @media screen and (max-width: 699px) {
+    font-size: 14px;
+  }
 }
 
 .cars-number {
@@ -38,7 +69,7 @@
 .btn-generate {
   background: $accent-bg;
   padding: 4px 51.76px 5px 26px;
-    clip-path: polygon(0% 0%, 100% 0, calc(100% - 30px) 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0, calc(100% - 30px) 100%, 0% 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +80,7 @@
   background: $secondary-bg;
   padding: 5px 8px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
@@ -71,7 +102,19 @@
   font-weight: 700;
   line-height: normal;
   color: rgba(0, 0, 0, 1);
+
+  @media screen and (max-width: 699px) {
+    font-size: 15px;
+  }
 }
+
+.choose-name__label,
+.choose-color__label {
+  @media screen and (max-width: 699px) {
+    display: none;
+  }
+}
+
 
 .color-picker {
   width: 70px;
@@ -89,18 +132,42 @@
 }
 
 .btn-reset {
+  width: 200px;
   padding: 17px 17px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  @media screen and (max-width: 1079px) {
+    height: 50px;
+    width: auto;
+  }
+
+  @media screen and (max-width: 699px) {
+    height: 35px;
+  }
 }
 
 .btn-race {
+  width: 200px;
   padding: 9px 21px;
   height: 88px;
   position: relative;
   cursor: pointer;
+
+  @media screen and (max-width: 1079px) {
+    height: 50px;
+    width: 224px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 699px) {
+    height: 35px;
+    width: auto;
+  }
 }
 
 .btn-text-big {
@@ -111,4 +178,12 @@
   color: $accent-color;
   position: relative;
   letter-spacing: -9px;
+
+  @media screen and (max-width: 1079px) {
+    font-size: 40px;
+  }
+
+  @media screen and (max-width: 699px) {
+    font-size: 36px;
+  }
 }

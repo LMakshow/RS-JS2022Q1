@@ -94,11 +94,22 @@ a {
 .btn-text {
   font-size: 24px;
 }
+@media screen and (max-width: 699px) {
+  .btn-text {
+    font-size: 16px;
+  }
+}
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
+}
+@media screen and (max-width: 979px) {
+  .header {
+    flex-direction: column;
+  }
 }
 
 .nav {
@@ -135,13 +146,24 @@ a {
 }
 
 .logo {
-  width: 683px;
   font-family: "Faster One", cursive;
   font-size: 100px;
   font-weight: 400;
   line-height: 75px;
   color: #fff;
   text-shadow: -8px 1px 6px rgba(255, 255, 255, 0.6);
+}
+@media screen and (max-width: 1199px) {
+  .logo {
+    font-size: 7vw;
+  }
+}
+@media screen and (max-width: 979px) {
+  .logo {
+    font-size: 66px;
+    line-height: 66px;
+    order: -1;
+  }
 }
 
 .wait-for-server {
@@ -251,6 +273,11 @@ a {
   gap: 20px;
   margin-top: -20px;
 }
+@media screen and (max-width: 899px) {
+  .footer {
+    flex-direction: column;
+  }
+}
 
 .footer__links {
   display: flex;
@@ -287,6 +314,33 @@ a {
   align-items: flex-start;
   gap: 40px;
 }
+@media screen and (max-width: 1199px) {
+  .dashboard {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 1079px) {
+  .dashboard {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.race-btn-container {
+  display: flex;
+  gap: 40px;
+}
+@media screen and (max-width: 1199px) {
+  .race-btn-container {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 1079px) {
+  .race-btn-container {
+    gap: 10px;
+  }
+}
 
 .dashboard-container {
   display: flex;
@@ -294,6 +348,11 @@ a {
   align-items: flex-start;
   gap: 8px;
   width: 600px;
+}
+@media screen and (max-width: 699px) {
+  .dashboard-container {
+    width: 430px;
+  }
 }
 
 .generate-container {
@@ -307,6 +366,11 @@ a {
 
 .txt {
   font-size: 18px;
+}
+@media screen and (max-width: 699px) {
+  .txt {
+    font-size: 14px;
+  }
 }
 
 .cars-number {
@@ -328,7 +392,7 @@ a {
   background: linear-gradient(180deg, #BBB7A9 0%, #DADADA 77.6%, #979797 100%);
   padding: 5px 8px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
@@ -351,6 +415,18 @@ a {
   line-height: normal;
   color: rgb(0, 0, 0);
 }
+@media screen and (max-width: 699px) {
+  .choose-name__input {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .choose-name__label,
+.choose-color__label {
+    display: none;
+  }
+}
 
 .color-picker {
   width: 70px;
@@ -369,18 +445,46 @@ a {
 }
 
 .btn-reset {
+  width: 200px;
   padding: 17px 17px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
+@media screen and (max-width: 1079px) {
+  .btn-reset {
+    height: 50px;
+    width: auto;
+  }
+}
+@media screen and (max-width: 699px) {
+  .btn-reset {
+    height: 35px;
+  }
+}
 
 .btn-race {
+  width: 200px;
   padding: 9px 21px;
   height: 88px;
   position: relative;
   cursor: pointer;
+}
+@media screen and (max-width: 1079px) {
+  .btn-race {
+    height: 50px;
+    width: 224px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 699px) {
+  .btn-race {
+    height: 35px;
+    width: auto;
+  }
 }
 
 .btn-text-big {
@@ -391,6 +495,16 @@ a {
   color: #9A0000;
   position: relative;
   letter-spacing: -9px;
+}
+@media screen and (max-width: 1079px) {
+  .btn-text-big {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 699px) {
+  .btn-text-big {
+    font-size: 36px;
+  }
 }
 
 .car-hud {
@@ -403,12 +517,26 @@ a {
   width: 226px;
   height: 84px;
 }
+@media screen and (max-width: 899px) {
+  .car-hud {
+    flex-direction: row;
+    height: auto;
+    width: 470px;
+    padding: 4px;
+    gap: 10px;
+  }
+}
 
 .car-hud__top {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
+}
+@media screen and (max-width: 899px) {
+  .car-hud__top {
+    align-items: center;
+  }
 }
 
 .btn-edit,
@@ -426,6 +554,15 @@ a {
   align-self: stretch;
   text-align: center;
 }
+@media screen and (max-width: 899px) {
+  .car-name {
+    height: auto;
+    max-width: auto;
+    width: 190px;
+    line-height: 16px;
+    align-self: center;
+  }
+}
 
 .car-hud__bottom {
   display: flex;
@@ -434,19 +571,31 @@ a {
   gap: 8px;
   width: 100%;
 }
+@media screen and (max-width: 899px) {
+  .car-hud__bottom {
+    width: auto;
+  }
+}
 
 .btn-reset-car {
-  padding: 3px 12px 4px;
+  height: 30px;
+  padding: 4px 12px 5px;
   display: flex;
   align-items: center;
 }
 
 .btn-start-car {
+  height: 30px;
   padding: 4px 45px 5px 18px;
   display: flex;
   align-items: center;
   -webkit-clip-path: polygon(0% 0%, calc(100% - 30px) 0, 100% 100%, 0% 100%);
           clip-path: polygon(0% 0%, calc(100% - 30px) 0, 100% 100%, 0% 100%);
+}
+@media screen and (max-width: 899px) {
+  .btn-start-car {
+    padding: 4px 40px 5px 16px;
+  }
 }
 
 .racing-container {
@@ -460,24 +609,35 @@ a {
   align-items: center;
   gap: 20px;
 }
+@media screen and (max-width: 899px) {
+  .car-container {
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
 .racing-track {
   position: relative;
   height: 75px;
   width: 100%;
   background: left center repeat-x url("./assets/images/race-track.svg"), radial-gradient(35.57% 321.92% at 50% 50%, #262626 0%, #212121 31.15%, #131313 67.4%, #000000 100%);
+  display: flex;
 }
 
 .car {
   position: relative;
   width: 210px;
   padding-bottom: 72px;
+  z-index: 2;
 }
 
 .img-finish-line {
   display: inline;
   position: absolute;
-  right: calc(1.5% + 210px);
+  z-index: 1;
+  right: 0px;
+  top: -10px;
 }
 
 .garage__footer {
@@ -525,6 +685,11 @@ a {
   margin: auto;
   gap: 40px;
 }
+@media screen and (max-width: 699px) {
+  .winners {
+    gap: 20px;
+  }
+}
 
 .winners-text {
   font-family: "Faster One", cursive;
@@ -538,6 +703,18 @@ a {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+@media screen and (max-width: 1199px) {
+  .winners-text {
+    font-size: 7vw;
+  }
+}
+@media screen and (max-width: 979px) {
+  .winners-text {
+    font-size: 66px;
+    line-height: 66px;
+    order: -1;
+  }
+}
 
 .winners-table,
 .winners-table__list {
@@ -547,9 +724,21 @@ a {
   border: none;
   border-spacing: 0;
 }
+@media screen and (max-width: 699px) {
+  .winners-table,
+.winners-table__list {
+    width: 100%;
+    font-size: 18px;
+  }
+}
 
 .winners-table__no {
   width: 60px;
+}
+@media screen and (max-width: 699px) {
+  .winners-table__no {
+    width: 40px;
+  }
 }
 
 .winners-table__winner {
@@ -559,9 +748,19 @@ a {
 .winners-table__wins {
   width: 120px;
 }
+@media screen and (max-width: 699px) {
+  .winners-table__wins {
+    width: 70px;
+  }
+}
 
 .winners-table__best-time {
   width: 120px;
+}
+@media screen and (max-width: 699px) {
+  .winners-table__best-time {
+    width: 70px;
+  }
 }
 
 .winners-table__container {
@@ -574,6 +773,11 @@ a {
   position: relative;
   width: 100px;
   padding-bottom: 30px;
+}
+@media screen and (max-width: 699px) {
+  .winners-table__img {
+    width: 70px;
+  }
 }
 
 .winners-table__header {
@@ -643,6 +847,7 @@ a {
 .sort-time {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5px;
   cursor: pointer;
 }

@@ -29,11 +29,11 @@ export function garageDashboardHtml(carsNumber: string) {
   </div>
   <div class="create-container">
     <div class="choose-name">
-      <label for="car-name" class="txt">NAME:</label>
+      <label for="car-name" class="choose-name__label txt">NAME:</label>
       <input id="car-name" class="choose-name__input" placeholder="Enter car name" />
     </div>
     <div class="choose-color">
-      <label for="car-color" class="txt">COLOR:</label>
+      <label for="car-color" class="choose-color__label txt">COLOR:</label>
       <input class="color-picker" type="color" id="car-color" name="car-color" value="#bf0000">
     </div>
     <button class="btn btn-create txt btn-active">
@@ -41,14 +41,15 @@ export function garageDashboardHtml(carsNumber: string) {
     </button>
   </div>
 </div>
+<div class="race-btn-container">
 <button class="btn btn-text btn-reset">
-    RETURN CARS<br />
-    TO THE START
+    RETURN CARS TO THE START
 </button>
 <button class="btn btn-race btn-active">
   <p class="btn-text">START</p>
   <p class="btn-text-big">RACE</p>
-</button>`;
+</button>
+</div>`;
 }
 
 export function drawCarContainer(car: Car) {
@@ -76,8 +77,8 @@ export function drawCarContainer(car: Car) {
     <div class="car car-${car.id}" data-id=${car.id}>
      ${drawCar(car.color)}
     </div>
-  </div>
-  <img alt="" class="img-finish-line" src="./assets/images/finish-line.svg" />`;
+    <img alt="" class="img-finish-line" src="./assets/images/finish-line.svg" />
+  </div>`;
 }
 
 export function drawGarageFooter(carsNumber: string, garagePage: number) {

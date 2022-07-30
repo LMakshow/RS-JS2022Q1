@@ -8,6 +8,12 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
+  @media screen and (max-width: 899px) {
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .racing-track {
@@ -16,18 +22,22 @@
   width: 100%;
   background: left center repeat-x url("./assets/images/race-track.svg"),
     radial-gradient(35.57% 321.92% at 50% 50%, #262626 0%, #212121 31.15%, #131313 67.4%, #000000 100%);
+  display: flex;
 }
 
 .car {
   position: relative;
   width: 210px;
   padding-bottom: 72px;
+  z-index: 2;
 }
 
 .img-finish-line {
   display: inline;
   position: absolute;
-  right: calc(1.5% + 210px);
+  z-index: 1;
+  right: 0px;
+  top: -10px;
 }
 
 .garage__footer {

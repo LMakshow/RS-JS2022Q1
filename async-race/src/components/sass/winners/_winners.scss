@@ -3,6 +3,10 @@
   flex-direction: column;
   margin: auto;
   gap: 40px;
+
+  @media screen and (max-width: 699px) {
+    gap: 20px;
+  }
 }
 
 .winners-text {
@@ -16,6 +20,16 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 7vw;
+  }
+
+  @media screen and (max-width: 979px) {
+    font-size: 66px;
+    line-height: 66px;
+    order: -1;
+  }
 }
 
 .winners-table,
@@ -25,10 +39,19 @@
   text-align: center;
   border: none;
   border-spacing: 0;
+
+  @media screen and (max-width: 699px) {
+    width: 100%;
+    font-size: 18px;
+  }
 }
 
 .winners-table__no {
   width: 60px;
+
+  @media screen and (max-width: 699px) {
+    width: 40px;
+  }
 }
 
 .winners-table__winner {
@@ -37,10 +60,18 @@
 
 .winners-table__wins {
   width: 120px;
+
+  @media screen and (max-width: 699px) {
+    width: 70px;
+  }
 }
 
 .winners-table__best-time {
   width: 120px;
+
+  @media screen and (max-width: 699px) {
+    width: 70px;
+  }
 }
 
 .winners-table__container {
@@ -53,6 +84,10 @@
   position: relative;
   width: 100px;
   padding-bottom: 30px;
+
+  @media screen and (max-width: 699px) {
+    width: 70px;
+  }
 }
 
 .winners-table__header {
@@ -120,6 +155,7 @@
 .sort-time {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5px;
   cursor: pointer;
 

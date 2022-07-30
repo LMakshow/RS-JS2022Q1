@@ -2,6 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
+
+  @media screen and (max-width: 979px) {
+    flex-direction: column;
+  }
 }
 
 .nav {
@@ -37,11 +42,20 @@
 }
 
 .logo {
-  width: 683px;
   font-family: $font-header;
   font-size: 100px;
   font-weight: 400;
   line-height: 75px;
   color: $text-secondary-color;
   text-shadow: -8px 1px 6px rgba(255, 255, 255, 0.6);
+
+  @media screen and (max-width: 1199px) {
+    font-size: 7vw;
+  }
+
+  @media screen and (max-width: 979px) {
+    font-size: 66px;
+    line-height: 66px;
+    order: -1;
+  }
 }
