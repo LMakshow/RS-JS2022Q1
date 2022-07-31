@@ -66,6 +66,7 @@ const updateCarBtn = async () => {
   await updateWinnerStorage();
   updateWinnersTable();
   buttonCreateCar.classList.toggle('btn-active');
+  inputCreateCar.value = '';
   buttonCreateCar.innerHTML = 'CREATE CAR';
   buttonCreateCar.removeEventListener('click', updateCarBtn);
   buttonCreateCar.addEventListener('click', createCarBtn);
