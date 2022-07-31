@@ -47,9 +47,9 @@ export async function startCar(id: number) {
   startButton.disabled = true;
   resetButton.disabled = false;
 
+  const trackLength = raceTrack.offsetWidth - raceCar.offsetWidth;
   const { velocity, distance } = await engineStart(id) as { velocity: number, distance: number };
   const duration = distance / velocity;
-  const trackLength = raceTrack.offsetWidth - raceCar.offsetWidth;
   const result = await animateCar(id, raceCar, duration, trackLength);
   return result ? { id, duration } : Promise.reject();
 }
@@ -82,10 +82,16 @@ function showModalWinner(id: number, duration: number) {
 
 /** Starts all the cars and after one of them finishes, shows modal window and adds a winner */
 export async function startAllCars() {
+  const raceButton = document.querySelector('.btn-race') as HTMLButtonElement;
+  raceButton.disabled = true;
   Promise.any(storage.cars.map((e) => startCar(e.id)))
     .then((result) => {
       showModalWinner(result.id, result.duration);
       newWinner(result.id, Math.floor(result.duration) / 1000);
+    })
+    .catch(() => {})
+    .finally(() => {
+      raceButton.disabled = false;
     });
 }
 

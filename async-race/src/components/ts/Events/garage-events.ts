@@ -68,7 +68,7 @@ const updateCarBtn = async () => {
   buttonCreateCar.classList.toggle('btn-active');
   buttonCreateCar.innerHTML = 'CREATE CAR';
   buttonCreateCar.removeEventListener('click', updateCarBtn);
-  createCarButtonEvent();
+  buttonCreateCar.addEventListener('click', createCarBtn);
 };
 
 /** On edit car button click changes Create Car button to the Edit Car button.
@@ -87,13 +87,14 @@ function editCar(target: HTMLElement) {
     colorCreateCar.value = car.color;
     buttonCreateCar.classList.toggle('btn-active');
     buttonCreateCar.innerHTML = 'UPDATE CAR';
+    buttonCreateCar.removeEventListener('click', createCarBtn);
     buttonCreateCar.addEventListener('click', updateCarBtn);
   } else {
     inputCreateCar.value = '';
     buttonCreateCar.classList.toggle('btn-active');
     buttonCreateCar.innerHTML = 'CREATE CAR';
     buttonCreateCar.removeEventListener('click', updateCarBtn);
-    createCarButtonEvent();
+    buttonCreateCar.addEventListener('click', createCarBtn);
   }
 }
 
@@ -114,8 +115,8 @@ export function carHUDButtonsEvents() {
     const target = e.target as HTMLElement;
     if (target.closest('.btn-edit')) editCar(target.closest('.btn-edit'));
     if (target.closest('.btn-delete')) removeCar(target.closest('.btn-delete'));
-    if (target.classList.contains('btn-reset-car')) resetCar(Number(target.dataset.id));
-    if (target.classList.contains('btn-start-car')) startCar(Number(target.dataset.id));
+    if (target.classList.contains('btn-reset-car')) resetCar(Number(target.dataset.id)).catch(() => {});
+    if (target.classList.contains('btn-start-car')) startCar(Number(target.dataset.id)).catch(() => {});
   });
 }
 
