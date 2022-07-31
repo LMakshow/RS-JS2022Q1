@@ -50,27 +50,31 @@ const createCarBtn = async () => {
   inputCreateCar.value = '';
 };
 
-export function createCarButtonEvent() {
-  document.querySelector('.btn-create').addEventListener('click', createCarBtn);
-}
-
 /** Updates selected car with user entered name and color. */
 const updateCarBtn = async () => {
   const inputCreateCar = document.querySelector('.choose-name__input') as HTMLInputElement;
   const colorCreateCar = document.querySelector('.color-picker') as HTMLInputElement;
-  const buttonCreateCar = document.querySelector('.btn-create') as HTMLInputElement;
 
   await updateCar(storage.updateCar, inputCreateCar.value, colorCreateCar.value);
   await updateCarStorage();
   updateGarage();
   await updateWinnerStorage();
   updateWinnersTable();
-  buttonCreateCar.classList.toggle('btn-active');
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+  createCarButtonEvent();
+};
+
+/** Clears car name input and restores Create Car button default event */
+export function createCarButtonEvent() {
+  const inputCreateCar = document.querySelector('.choose-name__input') as HTMLInputElement;
+  const buttonCreateCar = document.querySelector('.btn-create') as HTMLInputElement;
+
   inputCreateCar.value = '';
+  buttonCreateCar.classList.add('btn-active');
   buttonCreateCar.innerHTML = 'CREATE CAR';
   buttonCreateCar.removeEventListener('click', updateCarBtn);
   buttonCreateCar.addEventListener('click', createCarBtn);
-};
+}
 
 /** On edit car button click changes Create Car button to the Edit Car button.
  * Second click on the button returns Create Car button back, cancelling the edit. */
@@ -78,24 +82,24 @@ function editCar(target: HTMLElement) {
   const inputCreateCar = document.querySelector('.choose-name__input') as HTMLInputElement;
   const colorCreateCar = document.querySelector('.color-picker') as HTMLInputElement;
   const buttonCreateCar = document.querySelector('.btn-create') as HTMLInputElement;
+  const allButtonsEditCar = document.querySelectorAll('.btn-edit') as NodeListOf<HTMLInputElement>;
 
   target.classList.toggle('btn-active');
   if (target.classList.contains('btn-active')) {
+    allButtonsEditCar.forEach((e) => {
+      if (e !== target) e.classList.remove('btn-active');
+    });
     const id = Number(target.dataset.id);
     const car = storage.cars.find((x) => x.id === id);
     storage.updateCar = id;
     inputCreateCar.value = car.name;
     colorCreateCar.value = car.color;
-    buttonCreateCar.classList.toggle('btn-active');
+    buttonCreateCar.classList.remove('btn-active');
     buttonCreateCar.innerHTML = 'UPDATE CAR';
     buttonCreateCar.removeEventListener('click', createCarBtn);
     buttonCreateCar.addEventListener('click', updateCarBtn);
   } else {
-    inputCreateCar.value = '';
-    buttonCreateCar.classList.toggle('btn-active');
-    buttonCreateCar.innerHTML = 'CREATE CAR';
-    buttonCreateCar.removeEventListener('click', updateCarBtn);
-    buttonCreateCar.addEventListener('click', createCarBtn);
+    createCarButtonEvent();
   }
 }
 
@@ -116,8 +120,8 @@ export function carHUDButtonsEvents() {
     const target = e.target as HTMLElement;
     if (target.closest('.btn-edit')) editCar(target.closest('.btn-edit'));
     if (target.closest('.btn-delete')) removeCar(target.closest('.btn-delete'));
-    if (target.classList.contains('btn-reset-car')) resetCar(Number(target.dataset.id)).catch(() => {});
-    if (target.classList.contains('btn-start-car')) startCar(Number(target.dataset.id)).catch(() => {});
+    if (target.classList.contains('btn-reset-car')) resetCar(Number(target.dataset.id)).catch(() => { });
+    if (target.classList.contains('btn-start-car')) startCar(Number(target.dataset.id)).catch(() => { });
   });
 }
 
@@ -152,6 +156,7 @@ export function garageFooterButtonsEvents() {
     storage.garagePage -= 1;
     await updateCarStorage();
     updateGarage();
+    createCarButtonEvent();
   });
 
   garageButtonNext.addEventListener('click', async () => {
@@ -159,6 +164,7 @@ export function garageFooterButtonsEvents() {
       storage.garagePage += 1;
       await updateCarStorage();
       updateGarage();
+      createCarButtonEvent();
     }
   });
 }
