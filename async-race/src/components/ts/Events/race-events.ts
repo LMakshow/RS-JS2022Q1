@@ -30,6 +30,7 @@ async function animateCar(
 
   const result = await engineDrive(id);
   if (result !== 200) {
+    storage.carsInRace[id] = false;
     cancelAnimationFrame(storage.animations[id]);
     return false;
   }
@@ -46,6 +47,7 @@ export async function startCar(id: number) {
   raceCar.style.transform = 'none';
   startButton.disabled = true;
   resetButton.disabled = false;
+  storage.carsInRace[id] = true;
 
   const trackLength = raceTrack.offsetWidth - raceCar.offsetWidth;
   const { velocity, distance } = await engineStart(id) as { velocity: number, distance: number };
@@ -61,7 +63,7 @@ export async function resetCar(id: number) {
   const raceCar = document.querySelector(`.car[data-id="${id}"]`) as HTMLElement;
 
   resetButton.disabled = true;
-
+  storage.carsInRace[id] = false;
   await engineStop(id);
   cancelAnimationFrame(storage.animations[id]);
 
@@ -86,10 +88,12 @@ export async function startAllCars() {
   raceButton.disabled = true;
   Promise.any(storage.cars.map((e) => startCar(e.id)))
     .then((result) => {
-      showModalWinner(result.id, result.duration);
-      newWinner(result.id, Math.floor(result.duration) / 1000);
+      if (storage.carsInRace[result.id] === true) {
+        showModalWinner(result.id, result.duration);
+        newWinner(result.id, Math.floor(result.duration) / 1000);
+      }
     })
-    .catch(() => {})
+    .catch(() => { })
     .finally(() => {
       raceButton.disabled = false;
     });

@@ -2,6 +2,7 @@ import { Car, Winner } from './Api/apiGlobal';
 
 interface Storage {
   cars: Car[],
+  carsInRace: { [index: number]: boolean },
   carsNumber: string,
   garagePage: number,
   updateCar: number,
@@ -19,6 +20,7 @@ const storage: Storage = {
     color: '#fff',
     id: 1,
   }],
+  carsInRace: {},
   carsNumber: 'SERVER LOST',
   garagePage: 1,
   updateCar: 0,
@@ -46,9 +48,9 @@ const carBrands = ['Acura', 'Alfa-Romeo', 'Aston-Martin', 'Audi', 'Bentley', 'BM
   'Smart', 'Subaru', 'Suzuki', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo',
 ];
 
-const carModels = ['Durango', 'Challenger', 'Charger', 'Grand Caravan', 'X7', 'X5', 'X3', 'X6 M', 'X6', 'X1', 'X4', 'C3 Aircross', 'Duster', 'CR-V', 'Corolla',
-  'C4 Cactus', 'DS3 Crossback', 'C1', 'C3', 'DS4 Crossback', 'UX 250h', 'NX 300h', 'LC 500', 'RX 350/200t', 'Rapid', 'Largus',
-  'IS 200t', 'LS 500h', 'RX', 'Hatchback', 'CX-5', 'Sedan', 'CX-30', 'CX-9', 'CX-3', 'MX-5 Roadster', 'Phantom', 'Camry', 'Polo',
+const carModels = ['Durango', 'Challenger', 'Charger', 'Grand Caravan', 'X7', 'X5', 'X3', 'X6 M', 'X6', 'X1', 'X4', 'Aircross', 'Duster', 'CR-V', 'Corolla',
+  'C4 Cactus', 'DS3', 'C1', 'C3', 'Crossback', 'UX 250h', 'NX 300h', 'LC 500', 'RX 350/200t', 'Rapid', 'Largus',
+  'IS 200t', 'LS 500h', 'RX', 'Hatchback', 'CX-5', 'Sedan', 'CX-30', 'CX-9', 'CX-3', 'Roadster', 'Phantom', 'Camry', 'Polo',
   'Cullinan', 'Ghost', 'Dawn', 'Duster', 'Arkana', 'Sandero', 'Logan', 'Logan MCV', 'Captur', 'Kadjar', 'RAV4', 'Rio', 'Creta', 'Solaris',
 ];
 
