@@ -1,0 +1,26 @@
+#canvas-slide1,
+#text {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -3;
+}
+
+#text {
+  min-height: 70vh;
+  margin: auto;
+  z-index: -1;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 8vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  right: 0;
+}
+
+#text h1 {
+  opacity: 0.9
+}
