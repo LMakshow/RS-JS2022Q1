@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Canvas Presentation</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+	<link rel="stylesheet" href="dist/custom.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<a href="https://codepen.io/dudleystorey/pen/NbNjjX">Codepen by Dudley Storey</a>
+				<canvas id="canvas-slide1"></canvas>
+				<div id="text">
+					<h1>Canvas</h1>
+				</div>
+				<p>Presentation by <a href="https://github.com/lmakshow">Maksym Lytvyn</a> for <a href="https://rs.school/">RS
+						School</a></p>
+			</section>
+			<section><a href="https://codepen.io/DavidLambauer/pen/AYzzdo">Codepen by DavidLambauer</a>
+				<h2>Another canvas example</h2>
+				<canvas id='canvas-slide2'>Canvas</canvas>
+			</section>
+			<section>
+				<h2>What is a Canvas API?</h2>
+				<p>The Canvas API provides a means for drawing graphics via JavaScript and the HTML <code>&lt;canvas&gt;</code>
+					element.</p>
+			</section>
+			<section>
+				<h2>Canvas API can be used for:</h2>
+				<ul>
+					<li class="fragment">animation</li>
+					<li class="fragment">game graphics</li>
+					<li class="fragment">data visualization</li>
+					<li class="fragment">photo manipulation</li>
+					<li class="fragment">and real-time video processing</li>
+				</ul>
+				<p class="fragment">Canvas API focuses on 2D, but there's also <a
+						href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">WebGL API</a> which uses canvas to make
+					3D!</p>
+				<p class="fragment">Raster, not vector!</p>
+			</section>
+			<section>
+				<h2>The <code>&lt;canvas&gt;</code> element</h2>
+				<p>Very simple, just like &lt;img&gt;:</p>
+				<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					<canvas id="canvas" width="600" height="600"></canvas>
+				</code></pre>
+			</section>
+			<section>
+				<h2>Rendering context</h2>
+				<p>2D or WebGL (WebGL2)</p>
+				<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					<script>
+						const canvas = document.getElementById('canvas');
+						const ctx = canvas.getContext('2d');
+
+						function draw() {
+							
+						}
+						draw();
+					</script>
+				</code></pre>
+			</section>
+			<section>
+				<section>
+					<h2>Drawing Shapes</h2>
+					<p>MoveTo, Paths, Lines, Rectangles, Arcs, Beziers, Path2D&nbsp;(SVG path data), Text, etc...</p>
+					<img class="r-frame" data-src="./img/canvas-shapes.png" alt="Canvas shapes">
+				</section>
+				<section>
+					<h2>Code example: Shapes</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					ctx.fillStyle = "red";
+					ctx.fillRect(10, 10, 300, 300);
+			
+					ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+					ctx.fillRect(150, 150, 300, 300);
+			
+					ctx.fillStyle = "rgba(0, 200, 0, 0.5)";
+					ctx.beginPath();
+					ctx.arc(400, 400, 200, 0, 2 * Math.PI);
+					ctx.fill();
+			
+					ctx.fillStyle = "#000";
+					ctx.font = "60px 'Arial Black'";
+					ctx.fillText("RS SCHOOL", 100, 510);
+			
+					ctx.strokeStyle = "rgb(100,100,100)";
+					ctx.strokeText("RS SCHOOL", 100, 560);
+				</code></pre>
+				</section>
+				<section>
+					<h2>Canvas Grid</h2>
+					<img class="r-frame" data-src="./img/canvas-default-grid.png" alt="Canvas grid">
+					<ul>
+						<li class="fragment">The origin of the grid is in the top left corner (0,0).</li>
+						<li class="fragment">All elements are placed relative to this origin.</li>
+						<li class="fragment">We can translate the origin, rotate grid and scale.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Result of the <a href="#/7">Shapes</a> code</h2>
+					<img class="r-stretch" data-src="./img/result-1.png" style="margin: 10px;" alt="Shapes result">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Draw Image</h2>
+					<p>Any format supported by a browser!</p>
+					<ul>
+						<li>Images: JPG, PNG, WEBP...</li>
+						<li>SVG</li>
+						<li>Video</li>
+						<li>ImageBitmaps (sprites, textures)</li>
+						<li>Another canvas (onscreen, offscreen)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Code example: Image</h2>
+					<p>Just two steps: find source and drawImage</p>
+					<ol>
+						<li>Find source</li>
+						<li>drawImage</li>
+					</ol>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					const img1 = new Image();
+					img1.src = "./img/superhero.png";
+					img1.onload = () => ctx.drawImage(img1, 0, 0);
+			
+					const img2 = new Image();
+					img2.src = "./img/rs_school.svg";
+					img2.onload = () => ctx.drawImage(img2, 210, 320, 170, 65);
+				</code></pre>
+				</section>
+				<section>
+					<h2>Result of the <a href="#/11">Image</a> code</h2>
+					<img class="r-stretch" data-src="./img/result-2.png" style="margin: 10px;" alt="Shapes result">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Animation</h2>
+					<p>As the canvas is raster, we would redraw the picture every frame:</p>
+					<ol>
+						<li class="fragment">Clear the canvas: <code>clearRect()</code> </li>
+						<li class="fragment">Save the canvas state: <code>save()</code></li>
+						<li class="fragment">Draw an animated object</li>
+						<li class="fragment">Restore the canvas state: <code>restore()</code></li>
+					</ol>
+					<p class="fragment">As we use JavaScript, it's easy to make interactive elements!</p>
+				</section>
+				<section>
+					<h2>Clear the canvas</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					function clear() {
+						ctx.fillStyle = "rgba(255, 255, 255, 1)";
+						ctx.fillRect(0, 0, canvas.width, canvas.height);
+					}
+				</code></pre>
+				</section>
+				<section>
+					<h2>Animated object</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					const rsImage = new Image();
+					rsImage.src = './img/rs_school.svg';
+				
+					const obj = {
+						x: 220, // Starting coordinate x
+						y: 50, // Starting coordinate y
+						velocity: 2, // Starting falling speed
+						draw() {
+							ctx.drawImage(rsImage, this.x, this.y, 170, 65);
+						}
+					};
+				</code></pre>
+				</section>
+				<section>
+					<h2>Draw animated object</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					function animateObj() {
+						clear();
+						obj.draw(); // Draw the object
+						obj.y += obj.velocity; // Change the object y coordinate
+						obj.velocity += .25; // Increase velocity due to gravity
+
+						// Request animation if still falling
+						if (obj.y < (canvas.height - 65)) { 
+							window.requestAnimationFrame(animateObj); 
+						}
+					}
+				
+					animateObj();
+				</code></pre>
+				</section>
+				<section>
+					<h2>Result of the <a href="#/15">Animation</a></h2>
+					<video class="r-stretch" data-autoplay loop>
+						<source src="./img/result-3.mp4" type="video/mp4">
+					</video>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Interactivity</h2>
+					<pre><code class="hljs" data-trim data-line-numbers>
+					let running = false;
+				</code></pre>
+					<pre><code class="hljs" data-trim data-line-numbers data-ln-start-from="2">
+					canvas.addEventListener("mousemove", (e) => {
+						if (!running) { // When mouse moves, attach object to the mouse
+							clear(); 
+							obj.x = e.clientX; 
+							obj.y = e.clientY; 
+							obj.draw();
+						}
+					});
+				</code></pre>
+					<pre><code class="hljs" data-trim data-line-numbers data-ln-start-from="10">
+					canvas.addEventListener("click", (e) => {
+						if (!running) { // When click, drop object
+							window.requestAnimationFrame(animateObj);
+							running = true;
+						}
+					});
+				</code></pre>
+				</section>
+				<section>
+					<h2>Result of the <a href="#/18">Interactivity</a></h2>
+					<video class="r-stretch" data-autoplay loop>
+						<source src="./img/result-4.mp4" type="video/mp4">
+					</video>
+				</section>
+			</section>
+			<section>
+				<h2>Libraries</h2>
+				<p>Canvas might not be simple, but libraries would help!</p>
+				<ul>
+					<li><a href="https://www.createjs.com/easeljs">EaselJS</a> — simple library to help with the canvas</li>
+					<li><a href="https://p5js.org/">p5.js</a> — canvas library for creative coding</li>
+					<li><a href="https://konvajs.org/">Konva</a> — more powerful framework for applications</li>
+					<li><a href="https://phaser.io/">Phaser</a> — top pick for RS Clone games!</li>
+					<li><a href="https://playcanvas.com/">PlayCanvas</a> — most advanced WebGL game engine</li>
+					<li>Much more for 2D and 3D!</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Thank you!</h2>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="dist/canvas-slide1.js"></script>
+	<script src="dist/canvas-slide2.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
