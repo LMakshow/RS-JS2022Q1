@@ -2,6 +2,8 @@
 
 ### Hello! This is the repository for study projects I did on the RS School course in 2022. There was quite a few!
 
+Each of the project is in its separate branch. Some of them are in different repositories. Here are projects and their deploys:
+
 ## Shelter
 ![Shelter screenshot](https://user-images.githubusercontent.com/19377176/162006224-d105139b-0b87-4823-9a06-bb85711623c8.png)
 
