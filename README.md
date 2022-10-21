@@ -1,6 +1,6 @@
 # lmakshow-JSFE2022Q1
 
-### Hello! This is the repository for study projects I did on the RS School course in 2022. There was quite a few!
+### Hello! This is the repository for pet/study projects I did in 2022. 
 
 Each of the project is in its separate branch. Some of them are in different repositories. Here are projects and their deployments:
 
