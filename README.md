@@ -2,7 +2,14 @@
 
 ### Hello! This is the repository for study projects I did on the RS School course in 2022. There was quite a few!
 
-Each of the project is in its separate branch. Some of them are in different repositories. Here are projects and their deploys:
+Each of the project is in its separate branch. Some of them are in different repositories. Here are projects and their deployments:
+
+## The Movie Database
+![image](https://user-images.githubusercontent.com/19377176/195115239-e8b137e0-8dc9-45c0-9037-08f910a2cba4.png)
+
+Deploy: https://rolling-scopes-school.github.io/lmakshow-REACT2022Q3/06-redux/
+
+REST API Client of The Movie Database. I use it to find out the most popular movies and tv shows to watch (updates daily), and also you can search for any movie or tv show and get a detailed description, posters and videos (trailers, featurettes, etc.). As a playground of everything React.js, it covers lots of tech: React.js, class components, function components, hooks, forms, pagination, API requests, state management using Context, Redux, Redux Toolkit with Query and more.
 
 ## RSLang
 ![RSLang screenshot](https://user-images.githubusercontent.com/19377176/188272212-90246231-9114-44fa-a0ac-40d1dbbb49c3.png)
@@ -11,7 +18,7 @@ Deploy: https://lmakshow.github.io/rslang/
 
 **Take note:** The back-end server is hosted on Heroku, so the first vocabulary loading might take up to 1 minute. 
 
-More screenshots and info (on Russian): https://github.com/LMakshow/rslang/pull/82
+More screenshots and info (in Russian): https://github.com/LMakshow/rslang/pull/82
 
 The app for learning English tailored to Russian users. 3600 words in 6 categories, user login to track progress, two mini-games and statistics. User also can mark the words as learned and create his own category to learn difficult words. Comics style, mascot hero and more - that's the capstone project made with me leading a team of 3 people.
 
